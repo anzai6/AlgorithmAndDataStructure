@@ -2,7 +2,7 @@ package com.example.lib.course5_array.my;
 
 /**
  * Created by qinshunan on 2019/1/29.
- * 查，插入，删除
+ * 查，插入,delete
  */
 public class MyArray {
 
