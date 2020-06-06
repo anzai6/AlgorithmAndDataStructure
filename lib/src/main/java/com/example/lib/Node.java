@@ -1,4 +1,4 @@
-package com.example.lib.course6_linkedlist.my;
+package com.example.lib;
 
 /**
  * 单链表的节点

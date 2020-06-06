@@ -1,5 +1,7 @@
 package com.example.lib.course6_linkedlist.my;
 
+import com.example.lib.Node;
+
 /**
  * 单链表：头部节点next指向下一个节点，尾部节点next为空
  * <p>
