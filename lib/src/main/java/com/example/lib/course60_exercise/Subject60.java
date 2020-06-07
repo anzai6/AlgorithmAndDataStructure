@@ -4,27 +4,27 @@ public class Subject60 {
     /**
      *
 
-     å…³äºæ•£åˆ—è¡¨å’Œå­—ç¬¦ä¸²çš„ 4 ä¸ªå¿…çŸ¥å¿…ä¼šçš„ä»£ç å®ç°
-     æ•£åˆ—è¡¨
-     å®ç°ä¸€ä¸ªåŸºäºé“¾è¡¨æ³•è§£å†³å†²çªé—®é¢˜çš„æ•£åˆ—è¡¨
+     ¹ØÓÚÉ¢ÁĞ±íºÍ×Ö·û´®µÄ 4 ¸ö±ØÖª±Ø»áµÄ´úÂëÊµÏÖ
+     É¢ÁĞ±í
+     ÊµÏÖÒ»¸ö»ùÓÚÁ´±í·¨½â¾ö³åÍ»ÎÊÌâµÄÉ¢ÁĞ±í
 
-     å®ç°ä¸€ä¸ª LRU ç¼“å­˜æ·˜æ±°ç®—æ³•
+     ÊµÏÖÒ»¸ö LRU »º´æÌÔÌ­Ëã·¨
 
-     å­—ç¬¦ä¸²
-     å®ç°ä¸€ä¸ªå­—ç¬¦é›†ï¼ŒåªåŒ…å« aï½z è¿™ 26 ä¸ªè‹±æ–‡å­—æ¯çš„ Trie æ ‘
+     ×Ö·û´®
+     ÊµÏÖÒ»¸ö×Ö·û¼¯£¬Ö»°üº¬ a¡«z Õâ 26 ¸öÓ¢ÎÄ×ÖÄ¸µÄ Trie Ê÷
 
-     å®ç°æœ´ç´ çš„å­—ç¬¦ä¸²åŒ¹é…ç®—æ³•
+     ÊµÏÖÆÓËØµÄ×Ö·û´®Æ¥ÅäËã·¨
 
-     å¯¹åº”çš„ LeetCode ç»ƒä¹ é¢˜ï¼ˆ@Smallfly æ•´ç†ï¼‰
-     å­—ç¬¦ä¸²
-     Reverse String ï¼ˆåè½¬å­—ç¬¦ä¸²ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/reverse-string/
+     ¶ÔÓ¦µÄ LeetCode Á·Ï°Ìâ£¨@Smallfly ÕûÀí£©
+     ×Ö·û´®
+     Reverse String £¨·´×ª×Ö·û´®£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/reverse-string/
 
-     Reverse Words in a Stringï¼ˆç¿»è½¬å­—ç¬¦ä¸²é‡Œçš„å•è¯ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/reverse-words-in-a-string/
+     Reverse Words in a String£¨·­×ª×Ö·û´®ÀïµÄµ¥´Ê£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/reverse-words-in-a-string/
 
-     String to Integer (atoi)ï¼ˆå­—ç¬¦ä¸²è½¬æ¢æ•´æ•° (atoi)ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/string-to-integer-atoi/
+     String to Integer (atoi)£¨×Ö·û´®×ª»»ÕûÊı (atoi)£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/string-to-integer-atoi/
 
 
      */

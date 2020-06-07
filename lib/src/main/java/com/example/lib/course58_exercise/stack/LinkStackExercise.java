@@ -1,11 +1,11 @@
 package com.example.lib.course58_exercise.stack;
 
 /**
- * ç”¨é“¾è¡¨å®ç°ä¸€ä¸ªé“¾å¼æ ˆ
+ * ÓÃÁ´±íÊµÏÖÒ»¸öÁ´Ê½Õ»
  */
 public class LinkStackExercise<T> {
 
-    int size; // æ ˆå†…å†…å®¹é•¿åº¦
+    int size; // Õ»ÄÚÄÚÈİ³¤¶È
     Node head;
     Node tail;
 
@@ -13,7 +13,7 @@ public class LinkStackExercise<T> {
     }
 
     /**
-     * å…¥æ ˆ
+     * ÈëÕ»
      *
      * @param obj
      * @return
@@ -33,7 +33,7 @@ public class LinkStackExercise<T> {
     }
 
     /**
-     * å‡ºæ ˆ
+     * ³öÕ»
      *
      * @return
      */
@@ -50,11 +50,11 @@ public class LinkStackExercise<T> {
         }
 
         T obj = p.data;
-        if (pre == null) { // åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹
+        if (pre == null) { // Ö»ÓĞÒ»¸ö½Úµã
             size = 0;
             head = null;
             tail = null;
-        } else { // å»æ‰å°¾èŠ‚ç‚¹
+        } else { // È¥µôÎ²½Úµã
             size--;
             tail = pre;
             tail.next = null;

@@ -3,16 +3,16 @@ package com.example.lib.course11_sorts.finals;
 import com.example.lib.course11_sorts.my.MySorts;
 
 /**
- * å†’æ³¡æ’åºã€æ’å…¥æ’åºã€é€‰æ‹©æ’åº
+ * Ã°ÅİÅÅĞò¡¢²åÈëÅÅĞò¡¢Ñ¡ÔñÅÅĞò
  * <p>
  * Author: Zheng
  */
 public class Sorts {
 
     /**
-     * å†’æ³¡æ’åºï¼Œä¸æ–­çš„è·Ÿç›¸é‚»çš„itemå»æ¯”è¾ƒï¼Œç„¶åäº¤æ¢
-     * (ç¨³å®šæ€§æ’åºï¼Œå³ç›¸åŒçš„itemä½ç½®ä¸ä¼šæ”¹å˜)
-     * è¿™æ˜¯å‘ä¸Šå†’æ³¡ï¼Œè¿˜æœ‰å‘ä¸‹å†’æ³¡ï¼Œå³ä»0å¼€å§‹ä¾æ¬¡å¾€ä¸Šæ¯”è¾ƒï¼Œå°äºåˆ™äº¤æ¢åˆ°0çš„ä½ç½®ï¼Œä¸€è½®ä¸‹æ¥0é¡¹å°±æ˜¯æœ€å°çš„ï¼Œä»¥æ­¤ç±»æ¨ã€‚
+     * Ã°ÅİÅÅĞò£¬²»¶ÏµÄ¸úÏàÁÚµÄitemÈ¥±È½Ï£¬È»ºó½»»»
+     * (ÎÈ¶¨ĞÔÅÅĞò£¬¼´ÏàÍ¬µÄitemÎ»ÖÃ²»»á¸Ä±ä)
+     * ÕâÊÇÏòÉÏÃ°Åİ£¬»¹ÓĞÏòÏÂÃ°Åİ£¬¼´´Ó0¿ªÊ¼ÒÀ´ÎÍùÉÏ±È½Ï£¬Ğ¡ÓÚÔò½»»»µ½0µÄÎ»ÖÃ£¬Ò»ÂÖÏÂÀ´0Ïî¾ÍÊÇ×îĞ¡µÄ£¬ÒÔ´ËÀàÍÆ¡£
      *
      * @param data
      * @return
@@ -22,9 +22,9 @@ public class Sorts {
     }
 
     /**
-     * æ’å…¥æ’åºï¼Œå·¦è¾¹æ˜¯æ’åºå¥½çš„ï¼Œä¸æ–­å¾€å³æ‰©æ•£ï¼Œå¦‚ï¼š0å’Œ1é¡¹æ’åºå¥½äº†ï¼Œæ‹¿2é¡¹è·Ÿ0å’Œ1æ¯”è¾ƒï¼Œæ’å…¥åˆé€‚çš„ä½ç½®ï¼Œ
-     * ç„¶å0ã€1ã€2æ’åºå¥½äº†ï¼Œæ‹¿3é¡¹è·Ÿ0ã€1ã€2æ¯”è¾ƒï¼Œæ’å…¥åˆé€‚çš„ä½ç½®ï¼Œä»¥æ­¤ç±»æ¨åç»­ã€‚
-     * (ç¨³å®šæ€§æ’åºï¼Œå³ç›¸åŒçš„itemä½ç½®ä¸ä¼šæ”¹å˜)
+     * ²åÈëÅÅĞò£¬×ó±ßÊÇÅÅĞòºÃµÄ£¬²»¶ÏÍùÓÒÀ©É¢£¬Èç£º0ºÍ1ÏîÅÅĞòºÃÁË£¬ÄÃ2Ïî¸ú0ºÍ1±È½Ï£¬²åÈëºÏÊÊµÄÎ»ÖÃ£¬
+     * È»ºó0¡¢1¡¢2ÅÅĞòºÃÁË£¬ÄÃ3Ïî¸ú0¡¢1¡¢2±È½Ï£¬²åÈëºÏÊÊµÄÎ»ÖÃ£¬ÒÔ´ËÀàÍÆºóĞø¡£
+     * (ÎÈ¶¨ĞÔÅÅĞò£¬¼´ÏàÍ¬µÄitemÎ»ÖÃ²»»á¸Ä±ä)
      *
      * @param data
      * @return
@@ -34,8 +34,8 @@ public class Sorts {
     }
 
     /**
-     * é€‰æ‹©æ’åºï¼Œå–n-1é¡¹ä¸æ–­è·Ÿé¡¹ç›®æ¯”è¾ƒï¼Œå¤§äºn-1é¡¹åˆ™äº¤æ¢ï¼Œæœ€ç»ˆn-1é¡¹å°±æ˜¯æœ€å¤§å€¼ï¼Œç„¶ån-2ã€n-3....ä»¥æ­¤ç±»æ¨
-     * (éç¨³å®šæ€§æ’åº,å› ä¸ºå­˜åœ¨äº¤æ¢ä½ç½®)
+     * Ñ¡ÔñÅÅĞò£¬È¡n-1Ïî²»¶Ï¸úÏîÄ¿±È½Ï£¬´óÓÚn-1ÏîÔò½»»»£¬×îÖÕn-1Ïî¾ÍÊÇ×î´óÖµ£¬È»ºón-2¡¢n-3....ÒÔ´ËÀàÍÆ
+     * (·ÇÎÈ¶¨ĞÔÅÅĞò,ÒòÎª´æÔÚ½»»»Î»ÖÃ)
      *
      * @param data
      * @return
@@ -45,9 +45,9 @@ public class Sorts {
     }
 
     /**
-     * æ‰©å±•ï¼š
-     * æŠ˜åŠæ’å…¥æ’åºï¼Œ0~i-1é¡¹æ˜¯å·²æ’åºå¥½çš„ï¼Œç„¶ååˆ©ç”¨æŠ˜åŠæœç´¢æ³•å¯»æ‰¾ié¡¹çš„æ’å…¥ä½ç½®ã€‚ç„¶åå¯¹åº”çš„æ•°æ®å¾€åç§»åŠ¨
-     * (ç¨³å®šæ€§æ’åºï¼Œå³ç›¸åŒçš„itemä½ç½®ä¸ä¼šæ”¹å˜)
+     * À©Õ¹£º
+     * ÕÛ°ë²åÈëÅÅĞò£¬0~i-1ÏîÊÇÒÑÅÅĞòºÃµÄ£¬È»ºóÀûÓÃÕÛ°ëËÑË÷·¨Ñ°ÕÒiÏîµÄ²åÈëÎ»ÖÃ¡£È»ºó¶ÔÓ¦µÄÊı¾İÍùºóÒÆ¶¯
+     * (ÎÈ¶¨ĞÔÅÅĞò£¬¼´ÏàÍ¬µÄitemÎ»ÖÃ²»»á¸Ä±ä)
      *
      * @param data
      * @return
@@ -58,9 +58,9 @@ public class Sorts {
 
 
     /**
-     * æ‰©å±•ï¼š
-     * å¸Œå°”æ’åºï¼šhttps://blog.csdn.net/qq_39207948/article/details/80006224
-     * (éç¨³å®šæ€§æ’åº)
+     * À©Õ¹£º
+     * Ï£¶ûÅÅĞò£ºhttps://blog.csdn.net/qq_39207948/article/details/80006224
+     * (·ÇÎÈ¶¨ĞÔÅÅĞò)
      *
      * @param data
      * @return
@@ -70,7 +70,7 @@ public class Sorts {
     }
 
     /**
-     * å°†arr[i]æ’å…¥åˆ°æ‰€åœ¨åˆ†ç»„çš„æ­£ç¡®ä½ç½®
+     * ½«arr[i]²åÈëµ½ËùÔÚ·Ö×éµÄÕıÈ·Î»ÖÃ
      *
      * @param arr
      * @param interval
@@ -92,38 +92,39 @@ public class Sorts {
         int[] data1 = getRandomArray(n);
         int[] data2 = getRandomArray(n);
         int[] data3 = getRandomArray(n);
-//        System.out.println("æ’åºå‰");
+//        System.out.println("ÅÅĞòÇ°");
 //        mySorts.printArray(data1);
-//        System.out.println("å†’æ³¡æ’åºï¼š");
+//        System.out.println("Ã°ÅİÅÅĞò£º");
 //        mySorts.bubblingSort(data1);
 //        mySorts.printArray(data1);
 //
-//        System.out.println("æ’åºå‰");
+//        System.out.println("ÅÅĞòÇ°");
 //        mySorts.printArray(data2);
-//        System.out.println("æ’å…¥æ’åºï¼š");
+//        System.out.println("²åÈëÅÅĞò£º");
 //        mySorts.insertionSort(data2);
 //        mySorts.printArray(data2);
 //
-//        System.out.println("æ’åºå‰");
+//        System.out.println("ÅÅĞòÇ°");
 //        mySorts.printArray(data3);
-//        System.out.println("é€‰æ‹©æ’åºï¼š");
+//        System.out.println("Ñ¡ÔñÅÅĞò£º");
 //        mySorts.selectionSort(data3);
 //        mySorts.printArray(data3);
 //
-//        System.out.println("æ’åºå‰");
+//        System.out.println("ÅÅĞòÇ°");
 //        mySorts.printArray(data3);
-//        System.out.println("æŠ˜åŠæ’å…¥æ’åºï¼š");
+//        System.out.println("ÕÛ°ë²åÈëÅÅĞò£º");
 //        mySorts.halfInsertionSort(data3);
 //        mySorts.printArray(data3);
 //
-        System.out.println("æ’åºå‰");
-        mySorts.printArray(data3);
-        System.out.println("å¸Œå°”æ’åºï¼š");
-        mySorts.shellSort(data3);
-        mySorts.printArray(data3);
+//        System.out.println("ÅÅĞòÇ°");
+        System.out.println("Ë®µç·ÑµÄÊÇ");
+//        mySorts.printArray(data3);
+//        System.out.println("Ï£¶ûÅÅĞò£º");
+//        mySorts.shellSort(data3);
+//        mySorts.printArray(data3);
 
 
-        // æ¯”è¾ƒå†’æ³¡å’Œæ’å…¥æ’åºçš„è€—æ—¶ï¼šéšæœºaä¸ªaé•¿åº¦çš„æ•°ç»„æ¥æ’åº
+        // ±È½ÏÃ°ÅİºÍ²åÈëÅÅĞòµÄºÄÊ±£ºËæ»úa¸öa³¤¶ÈµÄÊı×éÀ´ÅÅĞò
         /*int a = 5000;
 
         int[][] data4 = new int[a][a];
@@ -135,27 +136,27 @@ public class Sorts {
             data5[i] = getRandomArray(a);
         }
 
-        // å†’æ³¡æ’åº
+        // Ã°ÅİÅÅĞò
         long buTime = System.currentTimeMillis();
         for (int i = 0; i < a; i++) {
             mySorts.bubblingSort(data4[i]);
         }
         buTime = System.currentTimeMillis() - buTime;
-        System.out.println("å†’æ³¡æ’åºï¼š" + buTime);
+        System.out.println("Ã°ÅİÅÅĞò£º" + buTime);
 
-        // æ’å…¥æ’åº
+        // ²åÈëÅÅĞò
         long insertTime = System.currentTimeMillis();
         for (int i = 0; i < a; i++) {
             mySorts.insertionSort(data5[i]);
         }
         insertTime = System.currentTimeMillis() - insertTime;
-        System.out.println("æ’å…¥æ’åºï¼š" + insertTime);*/
+        System.out.println("²åÈëÅÅĞò£º" + insertTime);*/
     }
 
     /**
-     * è·å–ä¸€ä¸ªéšæœºæ•°ç»„
+     * »ñÈ¡Ò»¸öËæ»úÊı×é
      *
-     * @param n é•¿åº¦
+     * @param n ³¤¶È
      * @return
      */
     public static int[] getRandomArray(int n) {

@@ -1,14 +1,14 @@
 package com.example.lib.course58_exercise.stack;
 
 /**
- * ç”¨æ•°ç»„å®ç°ä¸€ä¸ªé¡ºåºæ ˆ
+ * ÓÃÊı×éÊµÏÖÒ»¸öË³ĞòÕ»
  */
 public class ArrayStackExercise {
 
     private final static int CAPACITY = 16;
     Object[] data;
-    int size; // æ ˆå†…å†…å®¹é•¿åº¦
-    int mCapacity; // æ•°ç»„é•¿åº¦
+    int size; // Õ»ÄÚÄÚÈİ³¤¶È
+    int mCapacity; // Êı×é³¤¶È
 
     public ArrayStackExercise() {
         this(CAPACITY);
@@ -21,7 +21,7 @@ public class ArrayStackExercise {
     }
 
     /**
-     * å…¥æ ˆ
+     * ÈëÕ»
      *
      * @param obj
      * @return
@@ -29,7 +29,7 @@ public class ArrayStackExercise {
     public boolean push(Object obj) {
         if (obj == null)
             return false;
-        if (size == mCapacity) // æ ˆæ»¡
+        if (size == mCapacity) // Õ»Âú
             return false;
 
         data[size] = obj;
@@ -38,7 +38,7 @@ public class ArrayStackExercise {
     }
 
     /**
-     * å‡ºæ ˆæ ˆ
+     * ³öÕ»Õ»
      *
      * @return
      */

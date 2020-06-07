@@ -1,7 +1,7 @@
 package com.example.lib.course62_exercise.graph;
 
 /**
- * æŸä¸ªé¡¶ç‚¹åˆ°è¾¾Pé¡¶ç‚¹çš„è·ç¦»,preæ˜¯å‰ä¸€ä¸ªé¡¶ç‚¹
+ * Ä³¸ö¶¥µãµ½´ïP¶¥µãµÄ¾àÀë,preÊÇÇ°Ò»¸ö¶¥µã
  */
 public class Vertex {
     int p;

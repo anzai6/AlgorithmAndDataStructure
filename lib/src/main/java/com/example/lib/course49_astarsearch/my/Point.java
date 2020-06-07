@@ -1,12 +1,12 @@
 package com.example.lib.course49_astarsearch.my;
 
 /**
- * é¡¶ç‚¹ï¼Œä¹Ÿå¯ç†è§£ä¸ºåœ°å›¾çš„æŸä¸ªåæ ‡
+ * ¶¥µã£¬Ò²¿ÉÀí½âÎªµØÍ¼µÄÄ³¸ö×ø±ê
  */
 public class Point {
-    int s; // é¡¶ç‚¹çš„ç¼–å·
-    int x; // é¡¶ç‚¹çš„xåæ ‡
-    int y; // é¡¶ç‚¹çš„yåæ ‡
+    int s; // ¶¥µãµÄ±àºÅ
+    int x; // ¶¥µãµÄx×ø±ê
+    int y; // ¶¥µãµÄy×ø±ê
 
     public Point(int s, int x, int y) {
         this.s = s;

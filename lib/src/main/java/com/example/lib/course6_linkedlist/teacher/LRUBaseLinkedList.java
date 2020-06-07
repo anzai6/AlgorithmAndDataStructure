@@ -3,7 +3,7 @@ package com.example.lib.course6_linkedlist.teacher;
 import java.util.Scanner;
 
 /**
- * åŸºäºå•é“¾è¡¨LRUç®—æ³•ï¼ˆjavaï¼‰
+ * »ùÓÚµ¥Á´±íLRUËã·¨£¨java£©
  *
  * @author hoda
  * @create 2018-12-17
@@ -11,22 +11,22 @@ import java.util.Scanner;
 public class LRUBaseLinkedList<T> {
 
     /**
-     * é»˜è®¤é“¾è¡¨å®¹é‡
+     * Ä¬ÈÏÁ´±íÈİÁ¿
      */
     private final static Integer DEFAULT_CAPACITY = 10;
 
     /**
-     * å¤´ç»“ç‚¹
+     * Í·½áµã
      */
     private SNode<T> headNode;
 
     /**
-     * é“¾è¡¨é•¿åº¦
+     * Á´±í³¤¶È
      */
     private Integer length;
 
     /**
-     * é“¾è¡¨å®¹é‡
+     * Á´±íÈİÁ¿
      */
     private Integer capacity;
 
@@ -45,13 +45,13 @@ public class LRUBaseLinkedList<T> {
     public void add(T data) {
         SNode preNode = findPreNode(data);
 
-        // é“¾è¡¨ä¸­å­˜åœ¨ï¼Œåˆ é™¤åŸæ•°æ®ï¼Œå†æ’å…¥åˆ°é“¾è¡¨çš„å¤´éƒ¨
+        // Á´±íÖĞ´æÔÚ£¬É¾³ıÔ­Êı¾İ£¬ÔÙ²åÈëµ½Á´±íµÄÍ·²¿
         if (preNode != null) {
             deleteElemOptim(preNode);
             intsertElemAtBegin(data);
         } else {
             if (length >= this.capacity) {
-                //åˆ é™¤å°¾ç»“ç‚¹
+                //É¾³ıÎ²½áµã
                 deleteElemAtEnd();
             }
             intsertElemAtBegin(data);
@@ -59,7 +59,7 @@ public class LRUBaseLinkedList<T> {
     }
 
     /**
-     * åˆ é™¤preNodeç»“ç‚¹ä¸‹ä¸€ä¸ªå…ƒç´ 
+     * É¾³ıpreNode½áµãÏÂÒ»¸öÔªËØ
      *
      * @param preNode
      */
@@ -71,7 +71,7 @@ public class LRUBaseLinkedList<T> {
     }
 
     /**
-     * é“¾è¡¨å¤´éƒ¨æ’å…¥èŠ‚ç‚¹
+     * Á´±íÍ·²¿²åÈë½Úµã
      *
      * @param data
      */
@@ -82,7 +82,7 @@ public class LRUBaseLinkedList<T> {
     }
 
     /**
-     * è·å–æŸ¥æ‰¾åˆ°å…ƒç´ çš„å‰ä¸€ä¸ªç»“ç‚¹
+     * »ñÈ¡²éÕÒµ½ÔªËØµÄÇ°Ò»¸ö½áµã
      *
      * @param data
      * @return
@@ -99,16 +99,16 @@ public class LRUBaseLinkedList<T> {
     }
 
     /**
-     * åˆ é™¤å°¾ç»“ç‚¹
+     * É¾³ıÎ²½áµã
      */
     private void deleteElemAtEnd() {
         SNode ptr = headNode;
-        // ç©ºé“¾è¡¨ç›´æ¥è¿”å›
+        // ¿ÕÁ´±íÖ±½Ó·µ»Ø
         if (ptr.getNext() == null) {
             return;
         }
 
-        // å€’æ•°ç¬¬äºŒä¸ªç»“ç‚¹
+        // µ¹ÊıµÚ¶ş¸ö½áµã
         while (ptr.getNext().getNext() != null) {
             ptr = ptr.getNext();
         }

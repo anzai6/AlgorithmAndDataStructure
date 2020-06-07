@@ -1,17 +1,17 @@
 package com.example.lib.course48_bplustree.teacher;
 
 /**
- * è¿™æ˜¯ B+ æ ‘éå¶å­èŠ‚ç‚¹çš„å®šä¹‰ã€‚
+ * ÕâÊÇ B+ Ê÷·ÇÒ¶×Ó½ÚµãµÄ¶¨Òå¡£
  * <p>
- * å‡è®¾ keywords=[3, 5, 8, 10]
- * 4 ä¸ªé”®å€¼å°†æ•°æ®åˆ†ä¸º 5 ä¸ªåŒºé—´ï¼š(-INF,3), [3,5), [5,8), [8,10), [10,INF)
- * 5 ä¸ªåŒºé—´åˆ†åˆ«å¯¹åº”ï¼šchildren[0]...children[4]
+ * ¼ÙÉè keywords=[3, 5, 8, 10]
+ * 4 ¸ö¼üÖµ½«Êı¾İ·ÖÎª 5 ¸öÇø¼ä£º(-INF,3), [3,5), [5,8), [8,10), [10,INF)
+ * 5 ¸öÇø¼ä·Ö±ğ¶ÔÓ¦£ºchildren[0]...children[4]
  * <p>
- * m å€¼æ˜¯äº‹å…ˆè®¡ç®—å¾—åˆ°çš„ï¼Œè®¡ç®—çš„ä¾æ®æ˜¯è®©æ‰€æœ‰ä¿¡æ¯çš„å¤§å°æ­£å¥½ç­‰äºé¡µçš„å¤§å°ï¼šint-4ä¸ªå­—èŠ‚ï¼Œlong-8ä¸ªå­—èŠ‚
- * PAGE_SIZE = (m-1)*4[keywordss å¤§å°]+m*8[children å¤§å°]
+ * m ÖµÊÇÊÂÏÈ¼ÆËãµÃµ½µÄ£¬¼ÆËãµÄÒÀ¾İÊÇÈÃËùÓĞĞÅÏ¢µÄ´óĞ¡ÕıºÃµÈÓÚÒ³µÄ´óĞ¡£ºint-4¸ö×Ö½Ú£¬long-8¸ö×Ö½Ú
+ * PAGE_SIZE = (m-1)*4[keywordss ´óĞ¡]+m*8[children ´óĞ¡]
  */
 public class BPlusTreeNode {
-    public static int m = 5; // 5 å‰æ ‘
-    public int[] keywords = new int[m - 1]; // é”®å€¼ï¼Œç”¨æ¥åˆ’åˆ†æ•°æ®åŒºé—´
-    public BPlusTreeNode[] children = new BPlusTreeNode[m];// ä¿å­˜å­èŠ‚ç‚¹æŒ‡é’ˆ
+    public static int m = 5; // 5 ²æÊ÷
+    public int[] keywords = new int[m - 1]; // ¼üÖµ£¬ÓÃÀ´»®·ÖÊı¾İÇø¼ä
+    public BPlusTreeNode[] children = new BPlusTreeNode[m];// ±£´æ×Ó½ÚµãÖ¸Õë
 }

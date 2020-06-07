@@ -11,8 +11,8 @@ import java.util.PriorityQueue;
 
 public class AStarSearchExercise {
 
-    private int mTotalPoint; // é¡¶ç‚¹çš„ä¸ªæ•°
-    private LinkedList<AStarEdge>[] adj; // é‚»æ¥è¡¨,è¡¨ç¤ºå›¾
+    private int mTotalPoint; // ¶¥µãµÄ¸öÊı
+    private LinkedList<AStarEdge>[] adj; // ÁÚ½Ó±í,±íÊ¾Í¼
     private ArrayList<Point> mPointArrayList;
 
     public AStarSearchExercise(int points) {
@@ -21,8 +21,8 @@ public class AStarSearchExercise {
         for (int i = 0; i < mTotalPoint; i++) {
             adj[i] = new LinkedList<>();
         }
-        //        å‚è€ƒAStart.jpgå›¾ç‰‡
-        // è¿™é‡Œå¿½ç•¥11,12,13è¿™ä¸‰ä¸ªç‚¹
+        //        ²Î¿¼AStart.jpgÍ¼Æ¬
+        // ÕâÀïºöÂÔ11,12,13ÕâÈı¸öµã
         mPointArrayList = new ArrayList<>();
         Point point0 = new Point(0, 320, 630);
         Point point1 = new Point(1, 300, 630);
@@ -67,11 +67,11 @@ public class AStarSearchExercise {
     }
 
     /**
-     * æ·»åŠ ä¸€æ¡è¾¹(å¸¦æƒé‡)
+     * Ìí¼ÓÒ»Ìõ±ß(´øÈ¨ÖØ)
      *
-     * @param startPoint èµ·ç‚¹
-     * @param endPoint   ç»ˆç‚¹
-     * @param weight     æƒé‡
+     * @param startPoint Æğµã
+     * @param endPoint   ÖÕµã
+     * @param weight     È¨ÖØ
      */
     public void addEdge(Point startPoint, Point endPoint, int weight) {
         AStarEdge aStarEdge = new AStarEdge(startPoint, endPoint, weight);
@@ -79,7 +79,7 @@ public class AStarSearchExercise {
     }
 
     /**
-     * æœ€çŸ­è·¯å¾„ç®—æ³•ï¼šä»såˆ°t
+     * ×î¶ÌÂ·¾¶Ëã·¨£º´Ósµ½t
      *
      * @param startPoint
      * @param endPoint
@@ -87,13 +87,13 @@ public class AStarSearchExercise {
     public void aStarSearch(Point startPoint, Point endPoint) {
         if (startPoint == endPoint)
             return;
-        AStartVertex[] vertexList = new AStartVertex[mTotalPoint]; // å­˜å‚¨sé¡¶ç‚¹åˆ°è¾¾æ‰€æœ‰é¡¶ç‚¹çš„è·ç¦»
+        AStartVertex[] vertexList = new AStartVertex[mTotalPoint]; // ´æ´¢s¶¥µãµ½´ïËùÓĞ¶¥µãµÄ¾àÀë
         for (int i = 0; i < mTotalPoint; i++) {
             Point point = mPointArrayList.get(i);
             vertexList[i] = new AStartVertex(point);
             vertexList[i].h = getH(point, endPoint);
         }
-        boolean[] inQueue = new boolean[mTotalPoint]; // trueè¡¨ç¤ºé¡¶ç‚¹ï¼ˆä¸‹æ ‡ç¼–å·ï¼‰å·²ç»åŠ å…¥é˜Ÿåˆ—ï¼Œé˜²æ­¢é‡å¤åŠ å…¥é˜Ÿåˆ—
+        boolean[] inQueue = new boolean[mTotalPoint]; // true±íÊ¾¶¥µã£¨ÏÂ±ê±àºÅ£©ÒÑ¾­¼ÓÈë¶ÓÁĞ£¬·ÀÖ¹ÖØ¸´¼ÓÈë¶ÓÁĞ
         PriorityQueue<AStartVertex> queue = new PriorityQueue<>(new Comparator<AStartVertex>() {
             @Override
             public int compare(AStartVertex o1, AStartVertex o2) {
@@ -109,8 +109,8 @@ public class AStarSearchExercise {
         inQueue[startPoint.s] = true;
 
         while (!queue.isEmpty()) {
-            AStartVertex w = queue.poll(); // å–å‡ºå½“å‰åˆ°è¾¾æ‰€æœ‰é¡¶ç‚¹çš„æœ€çŸ­è·¯å¾„
-            if (w.p == endPoint) {// ç»ˆæ­¢
+            AStartVertex w = queue.poll(); // È¡³öµ±Ç°µ½´ïËùÓĞ¶¥µãµÄ×î¶ÌÂ·¾¶
+            if (w.p == endPoint) {// ÖÕÖ¹
                 printRoute(vertexList, startPoint, endPoint);
                 System.out.print("" + startPoint.s);
                 return;
@@ -121,7 +121,7 @@ public class AStarSearchExercise {
                 int distance = w.distance + AStarEdge.weight;
                 int f = distance + nextVertex.h;
 
-                if (inQueue[AStarEdge.endPoint.s]) { // å·²ç»åœ¨é˜Ÿåˆ—
+                if (inQueue[AStarEdge.endPoint.s]) { // ÒÑ¾­ÔÚ¶ÓÁĞ
                     if (f < nextVertex.f) {
                         nextVertex.pre = AStarEdge.startPoint;
                         nextVertex.f = f;
@@ -143,7 +143,7 @@ public class AStarSearchExercise {
     }
 
     /**
-     * æ±‚ä¸¤ä¸ªé¡¶ç‚¹çš„æ›¼å“ˆé¡¿è·ç¦»
+     * ÇóÁ½¸ö¶¥µãµÄÂü¹ş¶Ù¾àÀë
      *
      * @return
      */
@@ -162,7 +162,7 @@ public class AStarSearchExercise {
 
         AStarSearchExercise myAStartSearch = new AStarSearchExercise(11);
 
-        // æ±‚ç›¸å¯¹è¾ƒçŸ­è·¯å¾„,0ç‚¹åˆ°10ç‚¹
+        // ÇóÏà¶Ô½Ï¶ÌÂ·¾¶,0µãµ½10µã
         myAStartSearch.aStarSearch(myAStartSearch.mPointArrayList.get(0), myAStartSearch.mPointArrayList.get(10));
     }
 

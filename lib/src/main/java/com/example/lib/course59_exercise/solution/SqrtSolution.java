@@ -1,7 +1,7 @@
 package com.example.lib.course59_exercise.solution;
 
 /**
- * x çš„å¹³æ–¹æ ¹
+ * x µÄÆ½·½¸ù
  * https://leetcode-cn.com/problems/sqrtx/
  */
 
@@ -9,22 +9,22 @@ public class SqrtSolution {
 
     /**
      *
-     å®žçŽ° int sqrt(int x) å‡½æ•°ã€‚
+     ÊµÏÖ int sqrt(int x) º¯Êý¡£
 
-     è®¡ç®—å¹¶è¿”å›ž x çš„å¹³æ–¹æ ¹ï¼Œå…¶ä¸­ x æ˜¯éžè´Ÿæ•´æ•°ã€‚
+     ¼ÆËã²¢·µ»Ø x µÄÆ½·½¸ù£¬ÆäÖÐ x ÊÇ·Ç¸ºÕûÊý¡£
 
-     ç”±äºŽè¿”å›žç±»åž‹æ˜¯æ•´æ•°ï¼Œç»“æžœåªä¿ç•™æ•´æ•°çš„éƒ¨åˆ†ï¼Œå°æ•°éƒ¨åˆ†å°†è¢«èˆåŽ»ã€‚
+     ÓÉÓÚ·µ»ØÀàÐÍÊÇÕûÊý£¬½á¹ûÖ»±£ÁôÕûÊýµÄ²¿·Ö£¬Ð¡Êý²¿·Ö½«±»ÉáÈ¥¡£
 
-     ç¤ºä¾‹ 1:
+     Ê¾Àý 1:
 
-     è¾“å…¥: 4
-     è¾“å‡º: 2
-     ç¤ºä¾‹ 2:
+     ÊäÈë: 4
+     Êä³ö: 2
+     Ê¾Àý 2:
 
-     è¾“å…¥: 8
-     è¾“å‡º: 2
-     è¯´æ˜Ž: 8 çš„å¹³æ–¹æ ¹æ˜¯ 2.82842...,
-     ç”±äºŽè¿”å›žç±»åž‹æ˜¯æ•´æ•°ï¼Œå°æ•°éƒ¨åˆ†å°†è¢«èˆåŽ»ã€‚
+     ÊäÈë: 8
+     Êä³ö: 2
+     ËµÃ÷: 8 µÄÆ½·½¸ùÊÇ 2.82842...,
+     ÓÉÓÚ·µ»ØÀàÐÍÊÇÕûÊý£¬Ð¡Êý²¿·Ö½«±»ÉáÈ¥¡£
      *
      */
 

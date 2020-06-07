@@ -1,38 +1,38 @@
 package com.example.lib.course38_backtracking.teacher;
 
 /**
- * ç®€å•çš„æ­£åˆ™è¡¨è¾¾å¼å›æº¯ç®—æ³•
+ * ¼òµ¥µÄÕıÔò±í´ïÊ½»ØËİËã·¨
  */
 public class Pattern {
     private boolean matched = false;
-    private char[] pattern; // æ­£åˆ™è¡¨è¾¾å¼
-    private int plen; // æ­£åˆ™è¡¨è¾¾å¼é•¿åº¦
+    private char[] pattern; // ÕıÔò±í´ïÊ½
+    private int plen; // ÕıÔò±í´ïÊ½³¤¶È
 
     public Pattern(char[] pattern, int plen) {
         this.pattern = pattern;
         this.plen = plen;
     }
 
-    public boolean match(char[] text, int tlen) { // æ–‡æœ¬ä¸²åŠé•¿åº¦
+    public boolean match(char[] text, int tlen) { // ÎÄ±¾´®¼°³¤¶È
         matched = false;
         rmatch(0, 0, text, tlen);
         return matched;
     }
 
     private void rmatch(int ti, int pj, char[] text, int tlen) {
-        if (matched) return; // å¦‚æœå·²ç»åŒ¹é…äº†ï¼Œå°±ä¸è¦ç»§ç»­é€’å½’äº†
-        if (pj == plen) { // æ­£åˆ™è¡¨è¾¾å¼åˆ°ç»“å°¾äº†
-            if (ti == tlen) matched = true; // æ–‡æœ¬ä¸²ä¹Ÿåˆ°ç»“å°¾äº†
+        if (matched) return; // Èç¹ûÒÑ¾­Æ¥ÅäÁË£¬¾Í²»Òª¼ÌĞøµİ¹éÁË
+        if (pj == plen) { // ÕıÔò±í´ïÊ½µ½½áÎ²ÁË
+            if (ti == tlen) matched = true; // ÎÄ±¾´®Ò²µ½½áÎ²ÁË
             return;
         }
-        if (pattern[pj] == '*') { // * åŒ¹é…ä»»æ„ä¸ªå­—ç¬¦
+        if (pattern[pj] == '*') { // * Æ¥ÅäÈÎÒâ¸ö×Ö·û
             for (int k = 0; k <= tlen - ti; ++k) {
                 rmatch(ti + k, pj + 1, text, tlen);
             }
-        } else if (pattern[pj] == '?') { // ? åŒ¹é… 0 ä¸ªæˆ–è€… 1 ä¸ªå­—ç¬¦
+        } else if (pattern[pj] == '?') { // ? Æ¥Åä 0 ¸ö»òÕß 1 ¸ö×Ö·û
             rmatch(ti, pj + 1, text, tlen);
             rmatch(ti + 1, pj + 1, text, tlen);
-        } else if (ti < tlen && pattern[pj] == text[ti]) { // çº¯å­—ç¬¦åŒ¹é…æ‰è¡Œ
+        } else if (ti < tlen && pattern[pj] == text[ti]) { // ´¿×Ö·ûÆ¥Åä²ÅĞĞ
             rmatch(ti + 1, pj + 1, text, tlen);
         }
     }

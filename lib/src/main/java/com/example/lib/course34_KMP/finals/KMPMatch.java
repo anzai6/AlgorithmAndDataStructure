@@ -13,7 +13,7 @@ public class KMPMatch {
 
 
     /**
-     * 预处理找到模式串中所有子串对应的最长匹配前缀子串，也是最长匹配后缀子串
+     * Ԥ�����ҵ�ģʽ���������Ӵ���Ӧ���ƥ��ǰ׺�Ӵ���Ҳ���ƥ���׺�Ӵ�
      */
     private int[] getPreMatchData(char[] b, int matchLen) {
 

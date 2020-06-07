@@ -1,6 +1,6 @@
 package com.example.lib.course44_bitmap.teacher;
 
-public class BitMap { // Java ä¸­ char ç±»å‹å  16bitï¼Œä¹Ÿå³æ˜¯ 2 ä¸ªå­—èŠ‚
+public class BitMap { // Java ÖĞ char ÀàĞÍÕ¼ 16bit£¬Ò²¼´ÊÇ 2 ¸ö×Ö½Ú
     private char[] bytes;
     private int nbits;
 

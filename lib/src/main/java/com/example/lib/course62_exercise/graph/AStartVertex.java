@@ -1,13 +1,13 @@
 package com.example.lib.course62_exercise.graph;
 
 /**
- * æŸä¸ªé¡¶ç‚¹åˆ°è¾¾Pé¡¶ç‚¹çš„è·ç¦»,preæ˜¯å‰ä¸€ä¸ªé¡¶ç‚¹
+ * Ä³¸ö¶¥µãµ½´ïP¶¥µãµÄ¾àÀë,preÊÇÇ°Ò»¸ö¶¥µã
  */
 public class AStartVertex {
     Point p;
     int distance = Integer.MAX_VALUE;
-    int f = Integer.MAX_VALUE; // ä¼°ä»·å‡½æ•°
-    int h = Integer.MAX_VALUE; // å¯å‘å‡½æ•°
+    int f = Integer.MAX_VALUE; // ¹À¼Ûº¯Êı
+    int h = Integer.MAX_VALUE; // Æô·¢º¯Êı
     Point pre;
 
 

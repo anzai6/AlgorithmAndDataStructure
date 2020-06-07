@@ -1,7 +1,7 @@
 package com.example.lib.course8_stack.finals;
 
 /**
- * ä½¿ç”¨å‰åæ ˆå®ç°æµè§ˆå™¨çš„å‰è¿›åé€€ã€‚
+ * Ê¹ÓÃÇ°ºóÕ»ÊµÏÖä¯ÀÀÆ÷µÄÇ°½øºóÍË¡£
  *
  * @author chinalwb
  */

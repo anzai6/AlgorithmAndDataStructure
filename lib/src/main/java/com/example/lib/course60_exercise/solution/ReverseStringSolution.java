@@ -1,34 +1,34 @@
 package com.example.lib.course60_exercise.solution;
 
 /**
- * Reverse String ï¼ˆåè½¬å­—ç¬¦ä¸²ï¼‰
+ * Reverse String £¨·´×ª×Ö·û´®£©
  * https://leetcode-cn.com/problems/reverse-string/
  */
 public class ReverseStringSolution {
 
     /**
      *
-     ç¼–å†™ä¸€ä¸ªå‡½æ•°ï¼Œå…¶ä½œç”¨æ˜¯å°†è¾“å…¥çš„å­—ç¬¦ä¸²åè½¬è¿‡æ¥ã€‚è¾“å…¥å­—ç¬¦ä¸²ä»¥å­—ç¬¦æ•°ç»„ char[] çš„å½¢å¼ç»™å‡ºã€‚
+     ±àÐ´Ò»¸öº¯Êý£¬Æä×÷ÓÃÊÇ½«ÊäÈëµÄ×Ö·û´®·´×ª¹ýÀ´¡£ÊäÈë×Ö·û´®ÒÔ×Ö·ûÊý×é char[] µÄÐÎÊ½¸ø³ö¡£
 
-     ä¸è¦ç»™å¦å¤–çš„æ•°ç»„åˆ†é…é¢å¤–çš„ç©ºé—´ï¼Œä½ å¿…é¡»åŽŸåœ°ä¿®æ”¹è¾“å…¥æ•°ç»„ã€ä½¿ç”¨ O(1) çš„é¢å¤–ç©ºé—´è§£å†³è¿™ä¸€é—®é¢˜ã€‚
+     ²»Òª¸øÁíÍâµÄÊý×é·ÖÅä¶îÍâµÄ¿Õ¼ä£¬Äã±ØÐëÔ­µØÐÞ¸ÄÊäÈëÊý×é¡¢Ê¹ÓÃ O(1) µÄ¶îÍâ¿Õ¼ä½â¾öÕâÒ»ÎÊÌâ¡£
 
-     ä½ å¯ä»¥å‡è®¾æ•°ç»„ä¸­çš„æ‰€æœ‰å­—ç¬¦éƒ½æ˜¯ ASCII ç è¡¨ä¸­çš„å¯æ‰“å°å­—ç¬¦ã€‚
+     Äã¿ÉÒÔ¼ÙÉèÊý×éÖÐµÄËùÓÐ×Ö·û¶¼ÊÇ ASCII Âë±íÖÐµÄ¿É´òÓ¡×Ö·û¡£
 
-     ç¤ºä¾‹ 1ï¼š
+     Ê¾Àý 1£º
 
-     è¾“å…¥ï¼š["h","e","l","l","o"]
-     è¾“å‡ºï¼š["o","l","l","e","h"]
-     ç¤ºä¾‹ 2ï¼š
+     ÊäÈë£º["h","e","l","l","o"]
+     Êä³ö£º["o","l","l","e","h"]
+     Ê¾Àý 2£º
 
-     è¾“å…¥ï¼š["H","a","n","n","a","h"]
-     è¾“å‡ºï¼š["h","a","n","n","a","H"]
+     ÊäÈë£º["H","a","n","n","a","h"]
+     Êä³ö£º["h","a","n","n","a","H"]
 
      *
      */
 
 
     /**
-     * åè½¬å­—ç¬¦ä¸²
+     * ·´×ª×Ö·û´®
      *
      * @param s
      */

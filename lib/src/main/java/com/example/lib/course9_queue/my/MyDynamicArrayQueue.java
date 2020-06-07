@@ -1,13 +1,13 @@
 package com.example.lib.course9_queue.my;
 
 /**
- * åŠ¨æ€æ•°ç»„é˜Ÿåˆ—(ä¸å«æ‰©å®¹)
+ * ¶¯Ì¬Êı×é¶ÓÁĞ(²»º¬À©Èİ)
  * Created by qinshunan on 2019/2/27.
  */
 public class MyDynamicArrayQueue<T> {
 
-    private int capacity; // æ•°ç»„å®¹é‡
-    // headè¡¨ç¤ºé˜Ÿå¤´ä¸‹æ ‡ï¼Œtailè¡¨ç¤ºé˜Ÿå°¾ä¸‹æ ‡
+    private int capacity; // Êı×éÈİÁ¿
+    // head±íÊ¾¶ÓÍ·ÏÂ±ê£¬tail±íÊ¾¶ÓÎ²ÏÂ±ê
     private int head;
     private int tail;
     private T[] items;
@@ -20,18 +20,18 @@ public class MyDynamicArrayQueue<T> {
     }
 
     /**
-     * å…¥é˜Ÿ
+     * Èë¶Ó
      *
      * @param t
      */
     public boolean enQueue(T t) {
-        if (tail == capacity) { // åˆ°è¾¾å°¾éƒ¨
-            if (head == 0) return false;// å·²æ»¡
-            // æ•°æ®æ¬ç§»
+        if (tail == capacity) { // µ½´ïÎ²²¿
+            if (head == 0) return false;// ÒÑÂú
+            // Êı¾İ°áÒÆ
             for (int i = head; i < tail; i++) {
                 items[i - head] = items[i];
             }
-            // æ¬ç§»å®Œä¹‹åé‡æ–°æ›´æ–°headå’Œtail
+            // °áÒÆÍêÖ®ºóÖØĞÂ¸üĞÂheadºÍtail
             head = 0;
             tail = tail - head;
         }
@@ -44,7 +44,7 @@ public class MyDynamicArrayQueue<T> {
      * @return
      */
     public T deQueue() {
-        if (head == tail) // é˜Ÿåˆ—ç©ºäº†
+        if (head == tail) // ¶ÓÁĞ¿ÕÁË
             return null;
         T t = items[head];
         ++head;

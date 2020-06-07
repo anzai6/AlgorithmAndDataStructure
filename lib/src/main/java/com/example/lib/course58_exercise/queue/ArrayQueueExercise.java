@@ -1,14 +1,14 @@
 package com.example.lib.course58_exercise.queue;
 
 /**
- * ç”¨æ•°ç»„å®ç°ä¸€ä¸ªé¡ºåºé˜Ÿåˆ—
+ * ÓÃÊı×éÊµÏÖÒ»¸öË³Ğò¶ÓÁĞ
  */
 public class ArrayQueueExercise<T> {
 
     private final static int CAPACITY = 16;
     T[] data;
-    int mCapacity; // æ•°ç»„é•¿åº¦
-    // headè¡¨ç¤ºé˜Ÿå¤´ä¸‹æ ‡ï¼Œtailè¡¨ç¤ºé˜Ÿå°¾ä¸‹æ ‡
+    int mCapacity; // Êı×é³¤¶È
+    // head±íÊ¾¶ÓÍ·ÏÂ±ê£¬tail±íÊ¾¶ÓÎ²ÏÂ±ê
     private int head = 0;
     private int tail = 0;
 
@@ -24,7 +24,7 @@ public class ArrayQueueExercise<T> {
     }
 
     /**
-     * å…¥é˜Ÿ
+     * Èë¶Ó
      *
      * @param obj
      * @return
@@ -32,7 +32,7 @@ public class ArrayQueueExercise<T> {
     public boolean enQueue(T obj) {
         if (obj == null)
             return false;
-        if (tail == mCapacity) // é˜Ÿæ»¡
+        if (tail == mCapacity) // ¶ÓÂú
             return false;
 
         data[tail] = obj;
@@ -41,12 +41,12 @@ public class ArrayQueueExercise<T> {
     }
 
     /**
-     * å‡ºé˜Ÿ
+     * ³ö¶Ó
      *
      * @return
      */
     public T deQueue() {
-        if (head == tail) // é˜Ÿåˆ—ä¸ºç©º
+        if (head == tail) // ¶ÓÁĞÎª¿Õ
             return null;
 
         T obj = data[head];

@@ -1,7 +1,7 @@
 package com.example.lib.course62_exercise.solution;
 
 /**
- * å²›å±¿çš„ä¸ªæ•°
+ * µºÓìµÄ¸öÊı
  * https://leetcode-cn.com/problems/number-of-islands/description/
  */
 
@@ -9,29 +9,29 @@ public class NumberOfIslandsSolution {
 
     /**
      *
-     ç»™å®šä¸€ä¸ªç”±Â '1'ï¼ˆé™†åœ°ï¼‰å’Œ '0'ï¼ˆæ°´ï¼‰ç»„æˆçš„çš„äºŒç»´ç½‘æ ¼ï¼Œè®¡ç®—å²›å±¿çš„æ•°é‡ã€‚
-     ä¸€ä¸ªå²›è¢«æ°´åŒ…å›´ï¼Œå¹¶ä¸”å®ƒæ˜¯é€šè¿‡æ°´å¹³æ–¹å‘æˆ–å‚ç›´æ–¹å‘ä¸Šç›¸é‚»çš„é™†åœ°è¿æ¥è€Œæˆçš„ã€‚
-     ä½ å¯ä»¥å‡è®¾ç½‘æ ¼çš„å››ä¸ªè¾¹å‡è¢«æ°´åŒ…å›´ã€‚
+     ¸ø¶¨Ò»¸öÓÉ?'1'£¨Â½µØ£©ºÍ '0'£¨Ë®£©×é³ÉµÄµÄ¶şÎ¬Íø¸ñ£¬¼ÆËãµºÓìµÄÊıÁ¿¡£
+     Ò»¸öµº±»Ë®°üÎ§£¬²¢ÇÒËüÊÇÍ¨¹ıË®Æ½·½Ïò»ò´¹Ö±·½ÏòÉÏÏàÁÚµÄÂ½µØÁ¬½Ó¶ø³ÉµÄ¡£
+     Äã¿ÉÒÔ¼ÙÉèÍø¸ñµÄËÄ¸ö±ß¾ù±»Ë®°üÎ§¡£
 
-     ç¤ºä¾‹ 1:
+     Ê¾Àı 1:
 
-     è¾“å…¥:
+     ÊäÈë:
      11110
      11010
      11000
      00000
 
-     è¾“å‡º:Â 1
+     Êä³ö:?1
 
-     ç¤ºä¾‹Â 2:
+     Ê¾Àı?2:
 
-     è¾“å…¥:
+     ÊäÈë:
      11000
      11000
      00100
      00011
 
-     è¾“å‡º: 3
+     Êä³ö: 3
 
      010
      101
@@ -51,7 +51,7 @@ public class NumberOfIslandsSolution {
      */
 
     /**
-     * ç½‘å‹åŠ å¼ºç‰ˆï¼Œä»ä¸Šä¸‹å·¦å³éå†çš„è§£æ³•ï¼Œæ¯”è¾ƒç®€å•
+     * ÍøÓÑ¼ÓÇ¿°æ£¬´ÓÉÏÏÂ×óÓÒ±éÀúµÄ½â·¨£¬±È½Ï¼òµ¥
      * @param grid
      * @return
      */
@@ -80,23 +80,23 @@ public class NumberOfIslandsSolution {
 
 
     /**
-     * ä»æ¨ªå‘çºµå‘éå†çš„è§£æ³•ï¼Œæ¯”è¾ƒç¹çéº»çƒ¦ï¼Œèœé€¼çš„æˆ‘
+     * ´ÓºáÏò×İÏò±éÀúµÄ½â·¨£¬±È½Ï·±ËöÂé·³£¬²Ë±ÆµÄÎÒ
      * @param grid
      * @return
      */
     public int numIslands1(char[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0)
             return 0;
-        int row = grid.length; // è¡Œ
-        int column = grid[0].length; // åˆ—
-        boolean[][] visited = new boolean[row][column];  // è®°å½•è®¿é—®è¿‡çš„ç‚¹
-        int count = 0; // å²›å±¿ä¸ªæ•°
+        int row = grid.length; // ĞĞ
+        int column = grid[0].length; // ÁĞ
+        boolean[][] visited = new boolean[row][column];  // ¼ÇÂ¼·ÃÎÊ¹ıµÄµã
+        int count = 0; // µºÓì¸öÊı
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
-                if (!visited[i][j]) { // æ²¡æœ‰è®¿é—®è¿‡
+                if (!visited[i][j]) { // Ã»ÓĞ·ÃÎÊ¹ı
                     visited[i][j] = true;
-                    if (grid[i][j] == '1') { // é‡è§ä¸€ä¸ªé™†åœ°
-                        scan(grid, visited, i, j); // æŠŠæ‰€æœ‰è·Ÿè¿™ä¸ªé™†åœ°ç›¸è¿çš„å…¶å®ƒé™†åœ°ç½®ä¸ºå·²ç»è®¿é—®è¿‡,å³ä»æ¨ªå‘å’Œçºµå‘æ‰«æ
+                    if (grid[i][j] == '1') { // Óö¼ûÒ»¸öÂ½µØ
+                        scan(grid, visited, i, j); // °ÑËùÓĞ¸úÕâ¸öÂ½µØÏàÁ¬µÄÆäËüÂ½µØÖÃÎªÒÑ¾­·ÃÎÊ¹ı,¼´´ÓºáÏòºÍ×İÏòÉ¨Ãè
                         count++;
                     }
                 }
@@ -106,12 +106,12 @@ public class NumberOfIslandsSolution {
     }
 
     private void scan(char[][] grid, boolean[][] visited, int row, int column) {
-        scanRow(grid, visited, row, column); // æŠŠæ‰€æœ‰è·Ÿè¿™ä¸ªé™†åœ°ç›¸è¿çš„å…¶å®ƒé™†åœ°ç½®ä¸ºå·²ç»è®¿é—®è¿‡,å³ä»æ¨ªå‘å’Œçºµå‘æ‰«æ
-        scanColumn(grid, visited, row, column); // æŠŠæ‰€æœ‰è·Ÿè¿™ä¸ªé™†åœ°ç›¸è¿çš„å…¶å®ƒé™†åœ°ç½®ä¸ºå·²ç»è®¿é—®è¿‡,å³ä»æ¨ªå‘å’Œçºµå‘æ‰«æ
+        scanRow(grid, visited, row, column); // °ÑËùÓĞ¸úÕâ¸öÂ½µØÏàÁ¬µÄÆäËüÂ½µØÖÃÎªÒÑ¾­·ÃÎÊ¹ı,¼´´ÓºáÏòºÍ×İÏòÉ¨Ãè
+        scanColumn(grid, visited, row, column); // °ÑËùÓĞ¸úÕâ¸öÂ½µØÏàÁ¬µÄÆäËüÂ½µØÖÃÎªÒÑ¾­·ÃÎÊ¹ı,¼´´ÓºáÏòºÍ×İÏòÉ¨Ãè
     }
 
     /**
-     * éå†é¡¶ç‚¹grid[row][column]çš„æ‰€æœ‰ç›¸é‚»é™†åœ°,ä»æ¨ªå‘æ‰«æ
+     * ±éÀú¶¥µãgrid[row][column]µÄËùÓĞÏàÁÚÂ½µØ,´ÓºáÏòÉ¨Ãè
      *
      * @param grid
      * @param visited
@@ -119,40 +119,40 @@ public class NumberOfIslandsSolution {
      * @param column
      */
     private void scanRow(char[][] grid, boolean[][] visited, int row, int column) {
-        // æ¨ªå‘æ‰«æï¼Œå³ä¸€è¡Œä¸€è¡Œæ‰«æ
+        // ºáÏòÉ¨Ãè£¬¼´Ò»ĞĞÒ»ĞĞÉ¨Ãè
         for (int i = column; i < grid[row].length; i++) {
-            if (grid[row][i] == '0') {// æ¨ªå‘é‡åˆ°æ°´å°±åœæ­¢éå†
+            if (grid[row][i] == '0') {// ºáÏòÓöµ½Ë®¾ÍÍ£Ö¹±éÀú
                 visited[row][i] = true;
                 break;
             }
 
-            if (!visited[row][i]) { // æ²¡æœ‰è®¿é—®è¿‡
+            if (!visited[row][i]) { // Ã»ÓĞ·ÃÎÊ¹ı
                 visited[row][i] = true;
-                if (grid[row][i] == '1') { // é‡è§é™†åœ°ï¼Œæ‰«æé™†åœ°åº•ä¸‹çš„æ‰€æœ‰é¡¶ç‚¹
+                if (grid[row][i] == '1') { // Óö¼ûÂ½µØ£¬É¨ÃèÂ½µØµ×ÏÂµÄËùÓĞ¶¥µã
                     scan(grid, visited, row, i);
-                } else // æ¨ªå‘é‡åˆ°æ°´å°±åœæ­¢éå†
+                } else // ºáÏòÓöµ½Ë®¾ÍÍ£Ö¹±éÀú
                     break;
             }
         }
-        // æ¨ªå‘æ‰«æï¼Œå³ä¸€åˆ—ä¸€åˆ—æ‰«æ
+        // ºáÏòÉ¨Ãè£¬¼´Ò»ÁĞÒ»ÁĞÉ¨Ãè
         for (int i = column - 1; i >= 0; i--) {
-            if (grid[row][i] == '0') {// æ¨ªå‘é‡åˆ°æ°´å°±åœæ­¢éå†
+            if (grid[row][i] == '0') {// ºáÏòÓöµ½Ë®¾ÍÍ£Ö¹±éÀú
                 visited[row][i] = true;
                 break;
             }
 
-            if (!visited[row][i]) { // æ²¡æœ‰è®¿é—®è¿‡
+            if (!visited[row][i]) { // Ã»ÓĞ·ÃÎÊ¹ı
                 visited[row][i] = true;
-                if (grid[row][i] == '1') { // é‡è§é™†åœ°ï¼Œæ‰«æé™†åœ°åº•ä¸‹çš„æ‰€æœ‰é¡¶ç‚¹
+                if (grid[row][i] == '1') { // Óö¼ûÂ½µØ£¬É¨ÃèÂ½µØµ×ÏÂµÄËùÓĞ¶¥µã
                     scan(grid, visited, row, i);
-                } else // æ¨ªå‘é‡åˆ°æ°´å°±åœæ­¢éå†
+                } else // ºáÏòÓöµ½Ë®¾ÍÍ£Ö¹±éÀú
                     break;
             }
         }
     }
 
     /**
-     * éå†é¡¶ç‚¹grid[row][column]çš„æ‰€æœ‰ç›¸é‚»é™†åœ°,ä»å’Œçºµå‘æ‰«æ
+     * ±éÀú¶¥µãgrid[row][column]µÄËùÓĞÏàÁÚÂ½µØ,´ÓºÍ×İÏòÉ¨Ãè
      *
      * @param grid
      * @param visited
@@ -160,34 +160,34 @@ public class NumberOfIslandsSolution {
      * @param column
      */
     private void scanColumn(char[][] grid, boolean[][] visited, int row, int column) {
-        // çºµå‘æ‰«æï¼Œå³ä¸€åˆ—ä¸€åˆ—æ‰«æ
+        // ×İÏòÉ¨Ãè£¬¼´Ò»ÁĞÒ»ÁĞÉ¨Ãè
         for (int i = row; i < grid.length; i++) {
-            if (grid[i][column] == '0') {// æ¨ªå‘é‡åˆ°æ°´å°±åœæ­¢éå†
+            if (grid[i][column] == '0') {// ºáÏòÓöµ½Ë®¾ÍÍ£Ö¹±éÀú
                 visited[i][column] = true;
                 break;
             }
 
-            if (!visited[i][column]) { // æ²¡æœ‰è®¿é—®è¿‡
+            if (!visited[i][column]) { // Ã»ÓĞ·ÃÎÊ¹ı
                 visited[i][column] = true;
-                if (grid[i][column] == '1') { // é‡è§é™†åœ°ï¼Œæ‰«æé™†åœ°åº•ä¸‹çš„æ‰€æœ‰é¡¶ç‚¹
+                if (grid[i][column] == '1') { // Óö¼ûÂ½µØ£¬É¨ÃèÂ½µØµ×ÏÂµÄËùÓĞ¶¥µã
                     scan(grid, visited, i, column);
-                } else // æ¨ªå‘é‡åˆ°æ°´å°±åœæ­¢éå†
+                } else // ºáÏòÓöµ½Ë®¾ÍÍ£Ö¹±éÀú
                     break;
             }
         }
 
-        // çºµå‘æ‰«æï¼Œå³ä¸€åˆ—ä¸€åˆ—æ‰«æ
+        // ×İÏòÉ¨Ãè£¬¼´Ò»ÁĞÒ»ÁĞÉ¨Ãè
         for (int i = row - 1; i >= 0; i--) {
-            if (grid[i][column] == '0') {// æ¨ªå‘é‡åˆ°æ°´å°±åœæ­¢éå†
+            if (grid[i][column] == '0') {// ºáÏòÓöµ½Ë®¾ÍÍ£Ö¹±éÀú
                 visited[i][column] = true;
                 break;
             }
 
-            if (!visited[i][column]) { // æ²¡æœ‰è®¿é—®è¿‡
+            if (!visited[i][column]) { // Ã»ÓĞ·ÃÎÊ¹ı
                 visited[i][column] = true;
-                if (grid[i][column] == '1') { // é‡è§é™†åœ°ï¼Œæ‰«æé™†åœ°åº•ä¸‹çš„æ‰€æœ‰é¡¶ç‚¹
+                if (grid[i][column] == '1') { // Óö¼ûÂ½µØ£¬É¨ÃèÂ½µØµ×ÏÂµÄËùÓĞ¶¥µã
                     scan(grid, visited, i, column);
-                } else // æ¨ªå‘é‡åˆ°æ°´å°±åœæ­¢éå†
+                } else // ºáÏòÓöµ½Ë®¾ÍÍ£Ö¹±éÀú
                     break;
             }
         }

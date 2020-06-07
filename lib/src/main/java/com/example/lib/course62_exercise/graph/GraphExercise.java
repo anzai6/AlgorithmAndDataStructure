@@ -1,13 +1,13 @@
 package com.example.lib.course62_exercise.graph;
 
 /**
- * æ— å‘æ— æƒå›¾ï¼šé¢†æ¥çŸ©é˜µè¡¨ç¤º
+ * ÎŞÏòÎŞÈ¨Í¼£ºÁì½Ó¾ØÕó±íÊ¾
  */
 
 public class GraphExercise {
 
-    int mTotalPoint; // é¡¶ç‚¹çš„ä¸ªæ•°
-    int[][] data; // é‚»æ¥çŸ©é˜µè¡¨ç¤ºå›¾
+    int mTotalPoint; // ¶¥µãµÄ¸öÊı
+    int[][] data; // ÁÚ½Ó¾ØÕó±íÊ¾Í¼
 
     public GraphExercise(int points) {
         mTotalPoint = points;
@@ -15,13 +15,13 @@ public class GraphExercise {
     }
 
     /**
-     * æ·»åŠ ä¸€æ¡è¾¹
+     * Ìí¼ÓÒ»Ìõ±ß
      *
      * @param startPoint
      * @param endPoint
      */
     public void addEde(int startPoint, int endPoint) {
-        data[startPoint][endPoint] = 1; // æ— æƒå›¾è¿™é‡Œç»Ÿä¸€èµ‹å€¼1ï¼Œå¦‚æœæ˜¯æœ‰æƒå›¾å¯ä»¥èµ‹å…·ä½“çš„æƒå€¼
-        data[endPoint][startPoint] = 1; // æ— å‘å›¾
+        data[startPoint][endPoint] = 1; // ÎŞÈ¨Í¼ÕâÀïÍ³Ò»¸³Öµ1£¬Èç¹ûÊÇÓĞÈ¨Í¼¿ÉÒÔ¸³¾ßÌåµÄÈ¨Öµ
+        data[endPoint][startPoint] = 1; // ÎŞÏòÍ¼
     }
 }

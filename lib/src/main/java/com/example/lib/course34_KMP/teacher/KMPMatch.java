@@ -1,25 +1,25 @@
 package com.example.lib.course34_KMP.teacher;
 
 public class KMPMatch {
-    // a, b åˆ†åˆ«æ˜¯ä¸»ä¸²å’Œæ¨¡å¼ä¸²ï¼›n, m åˆ†åˆ«æ˜¯ä¸»ä¸²å’Œæ¨¡å¼ä¸²çš„é•¿åº¦ã€‚
+    // a, b ·Ö±ğÊÇÖ÷´®ºÍÄ£Ê½´®£»n, m ·Ö±ğÊÇÖ÷´®ºÍÄ£Ê½´®µÄ³¤¶È¡£
     public static int kmp(char[] a, int n, char[] b, int m) {
         int[] next = getNexts(b, m);
         int j = 0;
         for (int i = 0; i < n; ++i) {
-            while (j > 0 && a[i] != b[j]) { // ä¸€ç›´æ‰¾åˆ° a[i] å’Œ b[j]
+            while (j > 0 && a[i] != b[j]) { // Ò»Ö±ÕÒµ½ a[i] ºÍ b[j]
                 j = next[j - 1] + 1;
             }
             if (a[i] == b[j]) {
                 ++j;
             }
-            if (j == m) { // æ‰¾åˆ°åŒ¹é…æ¨¡å¼ä¸²çš„äº†
+            if (j == m) { // ÕÒµ½Æ¥ÅäÄ£Ê½´®µÄÁË
                 return i - m + 1;
             }
         }
         return -1;
     }
 
-    // b è¡¨ç¤ºæ¨¡å¼ä¸²ï¼Œm è¡¨ç¤ºæ¨¡å¼ä¸²çš„é•¿åº¦
+    // b ±íÊ¾Ä£Ê½´®£¬m ±íÊ¾Ä£Ê½´®µÄ³¤¶È
     private static int[] getNexts(char[] b, int m) {
         int[] next = new int[m];
         next[0] = -1;

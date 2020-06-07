@@ -5,16 +5,16 @@ package com.example.lib.course12_sorts.teacher;
  */
 public class QuickSort {
 
-    // å¿«é€Ÿæ’åºï¼Œaæ˜¯æ•°ç»„ï¼Œnè¡¨ç¤ºæ•°ç»„çš„å¤§å°
+    // ¿ìËÙÅÅĞò£¬aÊÇÊı×é£¬n±íÊ¾Êı×éµÄ´óĞ¡
     public static void quickSort(int[] a, int n) {
         quickSortInternally(a, 0, n - 1);
     }
 
-    // å¿«é€Ÿæ’åºé€’å½’å‡½æ•°ï¼Œp,rä¸ºä¸‹æ ‡
+    // ¿ìËÙÅÅĞòµİ¹éº¯Êı£¬p,rÎªÏÂ±ê
     private static void quickSortInternally(int[] a, int p, int r) {
         if (p >= r) return;
 
-        int q = partition(a, p, r); // è·å–åˆ†åŒºç‚¹
+        int q = partition(a, p, r); // »ñÈ¡·ÖÇøµã
         quickSortInternally(a, p, q - 1);
         quickSortInternally(a, q + 1, r);
     }

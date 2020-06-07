@@ -1,17 +1,17 @@
 package com.example.lib.course7_linkedlist.teacher;
 
 /**
- * 1) å•é“¾è¡¨åè½¬
- * 2) é“¾è¡¨ä¸­ç¯çš„æ£€æµ‹
- * 3) ä¸¤ä¸ªæœ‰åºçš„é“¾è¡¨åˆå¹¶
- * 4) åˆ é™¤é“¾è¡¨å€’æ•°ç¬¬nä¸ªç»“ç‚¹
- * 5) æ±‚é“¾è¡¨çš„ä¸­é—´ç»“ç‚¹
+ * 1) µ¥Á´±í·´×ª
+ * 2) Á´±íÖĞ»·µÄ¼ì²â
+ * 3) Á½¸öÓĞĞòµÄÁ´±íºÏ²¢
+ * 4) É¾³ıÁ´±íµ¹ÊıµÚn¸ö½áµã
+ * 5) ÇóÁ´±íµÄÖĞ¼ä½áµã
  * <p>
  * Author: Zheng
  */
 public class LinkedListAlgo {
 
-    // å•é“¾è¡¨åè½¬
+    // µ¥Á´±í·´×ª
     public static Node reverse(Node list) {
         Node headNode = null;
 
@@ -30,7 +30,7 @@ public class LinkedListAlgo {
         return headNode;
     }
 
-    // æ£€æµ‹ç¯
+    // ¼ì²â»·
     public static boolean checkCircle(Node list) {
         if (list == null) return false;
 
@@ -47,7 +47,7 @@ public class LinkedListAlgo {
         return false;
     }
 
-    // æœ‰åºé“¾è¡¨åˆå¹¶
+    // ÓĞĞòÁ´±íºÏ²¢
     public static Node mergeSortedLists(Node la, Node lb) {
         if (la == null) return lb;
         if (lb == null) return la;
@@ -84,7 +84,7 @@ public class LinkedListAlgo {
         return head;
     }
 
-    // åˆ é™¤å€’æ•°ç¬¬Kä¸ªç»“ç‚¹
+    // É¾³ıµ¹ÊıµÚK¸ö½áµã
     public static Node deleteLastKth(Node list, int k) {
         Node fast = list;
         int i = 1;
@@ -111,7 +111,7 @@ public class LinkedListAlgo {
         return list;
     }
 
-    // æ±‚ä¸­é—´ç»“ç‚¹
+    // ÇóÖĞ¼ä½áµã
     public static Node findMiddleNode(Node list) {
         if (list == null) return null;
 

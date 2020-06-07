@@ -1,14 +1,14 @@
 package com.example.lib.course61_exercise.heap;
 
 /**
- * å¤§é¡¶å †:ä¸‹æ ‡ä»1å¼€å§‹ï¼Œå­èŠ‚ç‚¹ä¸‹æ ‡é™¤ä»¥2æ˜¯çˆ¶èŠ‚ç‚¹ï¼Œçˆ¶èŠ‚ç‚¹ä¹˜2å°±æ˜¯å­èŠ‚ç‚¹ï¼ˆè¿˜å¯ä»¥åŠ 1ï¼‰
+ * ´ó¶¥¶Ñ:ÏÂ±ê´Ó1¿ªÊ¼£¬×Ó½ÚµãÏÂ±ê³ıÒÔ2ÊÇ¸¸½Úµã£¬¸¸½Úµã³Ë2¾ÍÊÇ×Ó½Úµã£¨»¹¿ÉÒÔ¼Ó1£©
  */
 public class BigTopHeapExercise {
 
     private static final int DEFAULT_CAPACITY = 16;
-    private int[] data; // ä¸‹æ ‡ä»1å¼€å§‹ï¼Œå­èŠ‚ç‚¹
-    private int mCapacity; // å®¹é‡
-    private int size; // æ•°æ®é•¿åº¦
+    private int[] data; // ÏÂ±ê´Ó1¿ªÊ¼£¬×Ó½Úµã
+    private int mCapacity; // ÈİÁ¿
+    private int size; // Êı¾İ³¤¶È
 
     public BigTopHeapExercise() {
         this(DEFAULT_CAPACITY);
@@ -16,18 +16,18 @@ public class BigTopHeapExercise {
 
     public BigTopHeapExercise(int capacity) {
         mCapacity = capacity;
-        data = new int[mCapacity + 1]; // å› ä¸ºä»1å¼€å§‹è®¡ç®—ä¸‹æ ‡ï¼Œæ‰€ä»¥è¦åŠ 1
+        data = new int[mCapacity + 1]; // ÒòÎª´Ó1¿ªÊ¼¼ÆËãÏÂ±ê£¬ËùÒÔÒª¼Ó1
         size = 0;
     }
 
     /**
-     * æ’å…¥
+     * ²åÈë
      *
-     * @param value æ’å…¥çš„å€¼
-     * @return æ’å…¥çš„ä¸‹æ ‡, ä¸æˆåŠŸè¿”å›0
+     * @param value ²åÈëµÄÖµ
+     * @return ²åÈëµÄÏÂ±ê, ²»³É¹¦·µ»Ø0
      */
     public int insert(int value) {
-        if (mCapacity <= size) // æ•°ç»„å·²æ»¡
+        if (mCapacity <= size) // Êı×éÒÑÂú
             return 0;
         size++;
         data[size] = value;
@@ -36,16 +36,16 @@ public class BigTopHeapExercise {
     }
 
     /**
-     * åˆ é™¤
+     * É¾³ı
      *
-     * @param index åˆ é™¤çš„å€¼çš„ä¸‹æ ‡
-     * @return æˆåŠŸæ ‡è®°
+     * @param index É¾³ıµÄÖµµÄÏÂ±ê
+     * @return ³É¹¦±ê¼Ç
      */
     public boolean delete(int index) {
         if (size == 0 || index < 1 || index > size)
             return false;
 
-        // æŠŠåˆ é™¤èŠ‚ç‚¹è·Ÿæœ€åä¸€ä¸ªèŠ‚ç‚¹äº¤æ¢å†…å®¹
+        // °ÑÉ¾³ı½Úµã¸ú×îºóÒ»¸ö½Úµã½»»»ÄÚÈİ
         if (index != size) {
             data[index] = data[size];
             fromUpToDownHeapUp(index);
@@ -56,23 +56,23 @@ public class BigTopHeapExercise {
     }
 
     /**
-     * ä»ä¸Šåˆ°ä¸‹å †åŒ–:ä¾æ¬¡è·Ÿå­èŠ‚ç‚¹æ¯”è¾ƒäº¤æ¢ä½ç½®ï¼Œç›´åˆ°ç¬¦åˆå †ç»“æ„
+     * ´ÓÉÏµ½ÏÂ¶Ñ»¯:ÒÀ´Î¸ú×Ó½Úµã±È½Ï½»»»Î»ÖÃ£¬Ö±µ½·ûºÏ¶Ñ½á¹¹
      *
-     * @param index å¾…å †åŒ–çš„èŠ‚ç‚¹ä¸‹æ ‡
+     * @param index ´ı¶Ñ»¯µÄ½ÚµãÏÂ±ê
      */
     private void fromUpToDownHeapUp(int index) {
         if (index < 1)
             return;
         while (index <= size) {
-            int leftSup = index * 2; // å·¦å­èŠ‚ç‚¹
-            int rightSup = leftSup + 1; // å·¦å­èŠ‚ç‚¹
+            int leftSup = index * 2; // ×ó×Ó½Úµã
+            int rightSup = leftSup + 1; // ×ó×Ó½Úµã
             int maxIndex = index;
             if (leftSup <= size && data[leftSup] > data[maxIndex])
                 maxIndex = leftSup;
             if (leftSup <= size && data[rightSup] > data[maxIndex])
                 maxIndex = rightSup;
 
-            if (maxIndex == index) { // ä¸ç”¨å †åŒ–äº†
+            if (maxIndex == index) { // ²»ÓÃ¶Ñ»¯ÁË
                 return;
             } else {
                 swap(index, maxIndex);
@@ -82,15 +82,15 @@ public class BigTopHeapExercise {
     }
 
     /**
-     * ä»ä¸‹åˆ°ä¸Šå †åŒ–:ä¾æ¬¡è·Ÿçˆ¶èŠ‚ç‚¹æ¯”è¾ƒäº¤æ¢ä½ç½®ï¼Œç›´åˆ°ç¬¦åˆå †ç»“æ„
+     * ´ÓÏÂµ½ÉÏ¶Ñ»¯:ÒÀ´Î¸ú¸¸½Úµã±È½Ï½»»»Î»ÖÃ£¬Ö±µ½·ûºÏ¶Ñ½á¹¹
      *
-     * @param index å¾…å †åŒ–çš„èŠ‚ç‚¹ä¸‹æ ‡
+     * @param index ´ı¶Ñ»¯µÄ½ÚµãÏÂ±ê
      */
     private void fromDownToUpHeapUp(int index) {
         if (index > size)
             return;
         while (index > 1) {
-            int fIndex = index / 2; // çˆ¶èŠ‚ç‚¹
+            int fIndex = index / 2; // ¸¸½Úµã
             if (data[index] > data[fIndex])
                 swap(index, fIndex);
             index = fIndex;
@@ -98,7 +98,7 @@ public class BigTopHeapExercise {
     }
 
     /**
-     * äº¤æ¢ä¸¤ä¸ªä¸‹æ ‡çš„æ•°æ®
+     * ½»»»Á½¸öÏÂ±êµÄÊı¾İ
      *
      * @param index1
      * @param index2

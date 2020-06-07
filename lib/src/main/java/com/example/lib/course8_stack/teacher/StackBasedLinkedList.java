@@ -1,7 +1,7 @@
 package com.example.lib.course8_stack.teacher;
 
 /**
- * åŸºäºé“¾è¡¨å®ç°çš„æ ˆã€‚
+ * »ùÓÚÁ´±íÊµÏÖµÄÕ»¡£
  * <p>
  * Author: Zheng
  */
@@ -10,7 +10,7 @@ public class StackBasedLinkedList {
 
     public void push(int value) {
         Node newNode = new Node(value, null);
-        // åˆ¤æ–­æ˜¯å¦æ ˆç©º
+        // ÅĞ¶ÏÊÇ·ñÕ»¿Õ
         if (top == null) {
             top = newNode;
         } else {
@@ -20,7 +20,7 @@ public class StackBasedLinkedList {
     }
 
     /**
-     * æˆ‘ç”¨-1è¡¨ç¤ºæ ˆä¸­æ²¡æœ‰æ•°æ®ã€‚
+     * ÎÒÓÃ-1±íÊ¾Õ»ÖĞÃ»ÓĞÊı¾İ¡£
      */
     public int pop() {
         if (top == null) return -1;

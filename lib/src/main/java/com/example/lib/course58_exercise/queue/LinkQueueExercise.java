@@ -1,14 +1,14 @@
 package com.example.lib.course58_exercise.queue;
 
 /**
- * ç”¨é“¾è¡¨å®ç°ä¸€ä¸ªé“¾å¼é˜Ÿåˆ—
+ * ÓÃÁ´±íÊµÏÖÒ»¸öÁ´Ê½¶ÓÁĞ
  */
 public class LinkQueueExercise<T> {
 
-    private int size; // é“¾è¡¨é•¿åº¦
-    // headè¡¨ç¤ºé˜Ÿå¤´ä¸‹æ ‡ï¼Œtailè¡¨ç¤ºé˜Ÿå°¾ä¸‹æ ‡
-    private Node head; // å¤´èŠ‚ç‚¹
-    private Node tail; // å°¾èŠ‚ç‚¹
+    private int size; // Á´±í³¤¶È
+    // head±íÊ¾¶ÓÍ·ÏÂ±ê£¬tail±íÊ¾¶ÓÎ²ÏÂ±ê
+    private Node head; // Í·½Úµã
+    private Node tail; // Î²½Úµã
 
     public LinkQueueExercise() {
         size = 0;
@@ -16,7 +16,7 @@ public class LinkQueueExercise<T> {
 
 
     /**
-     * å…¥é˜Ÿ
+     * Èë¶Ó
      *
      * @param obj
      * @return
@@ -36,12 +36,12 @@ public class LinkQueueExercise<T> {
     }
 
     /**
-     * å‡ºé˜Ÿ
+     * ³ö¶Ó
      *
      * @return
      */
     public T deQueue() {
-        if (head == null) // é˜Ÿåˆ—ä¸ºç©º
+        if (head == null) // ¶ÓÁĞÎª¿Õ
             return null;
 
         T obj = head.data;

@@ -1,12 +1,12 @@
 package com.example.lib.course62_exercise.graph;
 
 /**
- * è¾¹
+ * ±ß
  */
 public class Edge {
-    int startPoint; // èµ·å§‹é¡¶ç‚¹
-    int endPoint; // è¾¹çš„ç»ˆç‚¹
-    int weight; // è¾¹çš„æƒé‡
+    int startPoint; // ÆğÊ¼¶¥µã
+    int endPoint; // ±ßµÄÖÕµã
+    int weight; // ±ßµÄÈ¨ÖØ
 
     public Edge(int startPoint, int endPoint) {
         this.startPoint = startPoint;

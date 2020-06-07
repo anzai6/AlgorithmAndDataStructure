@@ -1,35 +1,35 @@
 package com.example.lib.course9_queue.teacher;
 
 /**
- * ç¯å½¢é˜Ÿåˆ—
+ * »·ĞÎ¶ÓÁĞ
  * Created by wangzheng on 2018/10/9.
  */
 public class CircularQueue {
-    // æ•°ç»„ï¼šitemsï¼Œæ•°ç»„å¤§å°ï¼šn
+    // Êı×é£ºitems£¬Êı×é´óĞ¡£ºn
     private String[] items;
     private int n = 0;
-    // headè¡¨ç¤ºé˜Ÿå¤´ä¸‹æ ‡ï¼Œtailè¡¨ç¤ºé˜Ÿå°¾ä¸‹æ ‡
+    // head±íÊ¾¶ÓÍ·ÏÂ±ê£¬tail±íÊ¾¶ÓÎ²ÏÂ±ê
     private int head = 0;
     private int tail = 0;
 
-    // ç”³è¯·ä¸€ä¸ªå¤§å°ä¸ºcapacityçš„æ•°ç»„
+    // ÉêÇëÒ»¸ö´óĞ¡ÎªcapacityµÄÊı×é
     public CircularQueue(int capacity) {
         items = new String[capacity];
         n = capacity;
     }
 
-    // å…¥é˜Ÿ
+    // Èë¶Ó
     public boolean enqueue(String item) {
-        // é˜Ÿåˆ—æ»¡äº†
+        // ¶ÓÁĞÂúÁË
         if ((tail + 1) % n == head) return false;
         items[tail] = item;
         tail = (tail + 1) % n;
         return true;
     }
 
-    // å‡ºé˜Ÿ
+    // ³ö¶Ó
     public String dequeue() {
-        // å¦‚æœhead == tail è¡¨ç¤ºé˜Ÿåˆ—ä¸ºç©º
+        // Èç¹ûhead == tail ±íÊ¾¶ÓÁĞÎª¿Õ
         if (head == tail) return null;
         String ret = items[head];
         head = (head + 1) % n;

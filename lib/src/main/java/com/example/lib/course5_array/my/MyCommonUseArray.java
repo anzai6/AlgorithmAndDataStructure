@@ -2,14 +2,14 @@ package com.example.lib.course5_array.my;
 
 /**
  * Created by qinshunan on 2019/1/30.
- * é€šç”¨åŠ¨æ€æ‰©å®¹æ•°ç»„
+ * Í¨ÓÃ¶¯Ì¬À©ÈİÊı×é
  */
 public class MyCommonUseArray<T> {
     T[] mUseArray;
-    // é»˜è®¤é•¿åº¦
+    // Ä¬ÈÏ³¤¶È
     static int default_length = 10;
     /**
-     * æ•°ç»„å†…å®¹çš„é•¿åº¦
+     * Êı×éÄÚÈİµÄ³¤¶È
      */
     int count;
 
@@ -23,7 +23,7 @@ public class MyCommonUseArray<T> {
     }
 
     /**
-     * æ ¹æ®ä¸‹æ ‡æŸ¥è¯¢
+     * ¸ù¾İÏÂ±ê²éÑ¯
      *
      * @param index
      * @return
@@ -35,7 +35,7 @@ public class MyCommonUseArray<T> {
     }
 
     /**
-     * æœ«å°¾æ·»åŠ 
+     * Ä©Î²Ìí¼Ó
      *
      * @param value
      * @return
@@ -45,7 +45,7 @@ public class MyCommonUseArray<T> {
     }
 
     /**
-     * æ ¹æ®ä¸‹æ ‡æ·»åŠ 
+     * ¸ù¾İÏÂ±êÌí¼Ó
      *
      * @param index
      * @param value
@@ -54,7 +54,7 @@ public class MyCommonUseArray<T> {
     public boolean insert(int index, T value) {
         if (checkIndexNoEqual(index))
             return false;
-        if (count == mUseArray.length) // é•¿åº¦å·²æ»¡å°±æ‰©å®¹ä¸€å€
+        if (count == mUseArray.length) // ³¤¶ÈÒÑÂú¾ÍÀ©ÈİÒ»±¶
             resetSize(count * 2);
 
         for (int i = count; i > index; i--) {
@@ -73,7 +73,7 @@ public class MyCommonUseArray<T> {
         }
         --count;
 
-        if (count * 4 <= mUseArray.length)//4å€å‡å®¹åˆ°ä¸¤å€
+        if (count * 4 <= mUseArray.length)//4±¶¼õÈİµ½Á½±¶
             resetSize(count * 2);
         return true;
     }
@@ -89,7 +89,7 @@ public class MyCommonUseArray<T> {
 
     /**
      * @param index
-     * @return è¿”å›trueä¸å¯ç”¨
+     * @return ·µ»Øtrue²»¿ÉÓÃ
      */
     public boolean checkIndex(int index) {
         if (index < 0 || index >= count)
@@ -99,7 +99,7 @@ public class MyCommonUseArray<T> {
 
     /**
      * @param index
-     * @return è¿”å›trueä¸å¯ç”¨
+     * @return ·µ»Øtrue²»¿ÉÓÃ
      */
     public boolean checkIndexNoEqual(int index) {
         if (index < 0 || index > count)

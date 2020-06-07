@@ -8,43 +8,43 @@ public class Subject63 {
 
     /**
      *
-     å‡ ç§ç®—æ³•æ€æƒ³å¿…çŸ¥å¿…ä¼šçš„ä»£ç å®ç°
-     å›æº¯
-     åˆ©ç”¨å›æº¯ç®—æ³•æ±‚è§£å…«çš‡åé—®é¢˜
+     ¼¸ÖÖËã·¨Ë¼Ïë±ØÖª±Ø»áµÄ´úÂëÊµÏÖ
+     »ØËİ
+     ÀûÓÃ»ØËİËã·¨Çó½â°Ë»ÊºóÎÊÌâ
 
-     åˆ©ç”¨å›æº¯ç®—æ³•æ±‚è§£ 0-1 èƒŒåŒ…é—®é¢˜
+     ÀûÓÃ»ØËİËã·¨Çó½â 0-1 ±³°üÎÊÌâ
 
-     åˆ†æ²»
-     åˆ©ç”¨åˆ†æ²»ç®—æ³•æ±‚ä¸€ç»„æ•°æ®çš„é€†åºå¯¹ä¸ªæ•°
-     åŠ¨æ€è§„åˆ’
-     0-1 èƒŒåŒ…é—®é¢˜
+     ·ÖÖÎ
+     ÀûÓÃ·ÖÖÎËã·¨ÇóÒ»×éÊı¾İµÄÄæĞò¶Ô¸öÊı
+     ¶¯Ì¬¹æ»®
+     0-1 ±³°üÎÊÌâ
 
-     æœ€å°è·¯å¾„å’Œï¼ˆè¯¦ç»†å¯çœ‹ @Smallfly æ•´ç†çš„ Minimum Path Sumï¼‰
+     ×îĞ¡Â·¾¶ºÍ£¨ÏêÏ¸¿É¿´ @Smallfly ÕûÀíµÄ Minimum Path Sum£©
 
-     ç¼–ç¨‹å®ç°è±æ–‡æ–¯å¦æœ€çŸ­ç¼–è¾‘è·ç¦»
+     ±à³ÌÊµÏÖÀ³ÎÄË¹Ì¹×î¶Ì±à¼­¾àÀë
 
-     ç¼–ç¨‹å®ç°æŸ¥æ‰¾ä¸¤ä¸ªå­—ç¬¦ä¸²çš„æœ€é•¿å…¬å…±å­åºåˆ—
+     ±à³ÌÊµÏÖ²éÕÒÁ½¸ö×Ö·û´®µÄ×î³¤¹«¹²×ÓĞòÁĞ
 
-     ç¼–ç¨‹å®ç°ä¸€ä¸ªæ•°æ®åºåˆ—çš„æœ€é•¿é€’å¢å­åºåˆ—
+     ±à³ÌÊµÏÖÒ»¸öÊı¾İĞòÁĞµÄ×î³¤µİÔö×ÓĞòÁĞ
 
-     å¯¹åº”çš„ LeetCode ç»ƒä¹ é¢˜ï¼ˆ@Smallfly æ•´ç†ï¼‰
-     Regular Expression Matchingï¼ˆæ­£åˆ™è¡¨è¾¾å¼åŒ¹é…ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/regular-expression-matching/
+     ¶ÔÓ¦µÄ LeetCode Á·Ï°Ìâ£¨@Smallfly ÕûÀí£©
+     Regular Expression Matching£¨ÕıÔò±í´ïÊ½Æ¥Åä£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/regular-expression-matching/
 
-     Minimum Path Sumï¼ˆæœ€å°è·¯å¾„å’Œï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/minimum-path-sum/
+     Minimum Path Sum£¨×îĞ¡Â·¾¶ºÍ£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/minimum-path-sum/
 
-     Coin Change ï¼ˆé›¶é’±å…‘æ¢ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/coin-change/
+     Coin Change £¨ÁãÇ®¶Ò»»£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/coin-change/
 
-     Best Time to Buy and Sell Stockï¼ˆä¹°å–è‚¡ç¥¨çš„æœ€ä½³æ—¶æœºï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
+     Best Time to Buy and Sell Stock£¨ÂòÂô¹ÉÆ±µÄ×î¼ÑÊ±»ú£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
 
-     Maximum Product Subarrayï¼ˆä¹˜ç§¯æœ€å¤§å­åºåˆ—ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/maximum-product-subarray/
+     Maximum Product Subarray£¨³Ë»ı×î´ó×ÓĞòÁĞ£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/maximum-product-subarray/
 
-     Triangleï¼ˆä¸‰è§’å½¢æœ€å°è·¯å¾„å’Œï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/triangle/
+     Triangle£¨Èı½ÇĞÎ×îĞ¡Â·¾¶ºÍ£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/triangle/
 
      *
      */

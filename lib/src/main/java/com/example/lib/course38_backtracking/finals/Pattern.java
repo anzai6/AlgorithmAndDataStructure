@@ -1,10 +1,10 @@
 package com.example.lib.course38_backtracking.finals;
 
 /**
- * ç®€å•çš„æ­£åˆ™è¡¨è¾¾å¼å›æº¯ç®—æ³•
- * è¿™é‡Œç®€åŒ–æ­£åˆ™è¡¨è¾¾å¼ï¼Œåªæœ‰ä¸¤ä¸ª"?"å’Œ"*"
- * ? æŒ‡æ‹¥æœ‰ä¸€ä¸ªæˆ–é›¶ä¸ªä»»æ„å­—ç¬¦
- * * æŒ‡æ‹¥æœ‰ä¸€ä¸ªæˆ–ä»»æ„ä¸ªå­—ç¬¦
+ * ¼òµ¥µÄÕıÔò±í´ïÊ½»ØËİËã·¨
+ * ÕâÀï¼ò»¯ÕıÔò±í´ïÊ½£¬Ö»ÓĞÁ½¸ö"?"ºÍ"*"
+ * ? Ö¸ÓµÓĞÒ»¸ö»òÁã¸öÈÎÒâ×Ö·û
+ * * Ö¸ÓµÓĞÒ»¸ö»òÈÎÒâ¸ö×Ö·û
  * Created by qinshunan on 2019/5/7.
  */
 public class Pattern {
@@ -12,7 +12,7 @@ public class Pattern {
     private char[] patternList;
     private int patternLen;
     private int textLen;
-    private boolean isMatch = false; // æ˜¯å¦åŒ¹é…
+    private boolean isMatch = false; // ÊÇ·ñÆ¥Åä
 
     public Pattern(String pattern) {
     }
@@ -22,9 +22,9 @@ public class Pattern {
     }
 
     /**
-     * @param textList        æ–‡æœ¬å­—ç¬¦æ•°ç»„
-     * @param textMatchLen    æ–‡æœ¬å­—ç¬¦æ•°ç»„ä¸­è¦åŒ¹é…çš„å­—ç¬¦ä½ç½®
-     * @param patternMatchLen æ­£åˆ™è¡¨è¾¾å¼å­—ç¬¦æ•°ç»„ä¸­è¦åŒ¹é…çš„å­—ç¬¦ä½ç½®
+     * @param textList        ÎÄ±¾×Ö·ûÊı×é
+     * @param textMatchLen    ÎÄ±¾×Ö·ûÊı×éÖĞÒªÆ¥ÅäµÄ×Ö·ûÎ»ÖÃ
+     * @param patternMatchLen ÕıÔò±í´ïÊ½×Ö·ûÊı×éÖĞÒªÆ¥ÅäµÄ×Ö·ûÎ»ÖÃ
      */
     public void match(char[] textList, int textMatchLen, int patternMatchLen) {
     }

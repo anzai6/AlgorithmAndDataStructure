@@ -1,7 +1,7 @@
 package com.example.lib.course61_exercise.solution;
 
 /**
- * éªŒè¯äºŒå‰æŸ¥æ‰¾æ ‘
+ * ÑéÖ¤¶ş²æ²éÕÒÊ÷
  * https://leetcode-cn.com/problems/validate-binary-search-tree/
  */
 
@@ -9,50 +9,50 @@ public class ValidateBinarySearchTreeSolution {
 
     /**
      *
-     ç»™å®šä¸€ä¸ªäºŒå‰æ ‘ï¼Œåˆ¤æ–­å…¶æ˜¯å¦æ˜¯ä¸€ä¸ªæœ‰æ•ˆçš„äºŒå‰æœç´¢æ ‘ã€‚
+     ¸ø¶¨Ò»¸ö¶ş²æÊ÷£¬ÅĞ¶ÏÆäÊÇ·ñÊÇÒ»¸öÓĞĞ§µÄ¶ş²æËÑË÷Ê÷¡£
 
-     å‡è®¾ä¸€ä¸ªäºŒå‰æœç´¢æ ‘å…·æœ‰å¦‚ä¸‹ç‰¹å¾ï¼š
+     ¼ÙÉèÒ»¸ö¶ş²æËÑË÷Ê÷¾ßÓĞÈçÏÂÌØÕ÷£º
 
-     èŠ‚ç‚¹çš„å·¦å­æ ‘åªåŒ…å«å°äºå½“å‰èŠ‚ç‚¹çš„æ•°ã€‚
-     èŠ‚ç‚¹çš„å³å­æ ‘åªåŒ…å«å¤§äºå½“å‰èŠ‚ç‚¹çš„æ•°ã€‚
-     æ‰€æœ‰å·¦å­æ ‘å’Œå³å­æ ‘è‡ªèº«å¿…é¡»ä¹Ÿæ˜¯äºŒå‰æœç´¢æ ‘ã€‚
-     ç¤ºä¾‹Â 1:
+     ½ÚµãµÄ×ó×ÓÊ÷Ö»°üº¬Ğ¡ÓÚµ±Ç°½ÚµãµÄÊı¡£
+     ½ÚµãµÄÓÒ×ÓÊ÷Ö»°üº¬´óÓÚµ±Ç°½ÚµãµÄÊı¡£
+     ËùÓĞ×ó×ÓÊ÷ºÍÓÒ×ÓÊ÷×ÔÉí±ØĞëÒ²ÊÇ¶ş²æËÑË÷Ê÷¡£
+     Ê¾Àı?1:
 
-     è¾“å…¥:
+     ÊäÈë:
        2
       / \
      1   3
-     è¾“å‡º: true
-     ç¤ºä¾‹Â 2:
+     Êä³ö: true
+     Ê¾Àı?2:
 
-     è¾“å…¥:
+     ÊäÈë:
        5
       / \
      1   4
-     Â   / \
-     Â  3   6
+     ?  / \
+     ? 3   6
 
              3
           /    \
          1     5
-           Â   / \
-           Â  2   6
-     è¾“å‡º: false
-     è§£é‡Š: è¾“å…¥ä¸º: [5,1,4,null,null,3,6]ã€‚
-     Â     æ ¹èŠ‚ç‚¹çš„å€¼ä¸º 5 ï¼Œä½†æ˜¯å…¶å³å­èŠ‚ç‚¹å€¼ä¸º 4 ã€‚
+           ?  / \
+           ? 2   6
+     Êä³ö: false
+     ½âÊÍ: ÊäÈëÎª: [5,1,4,null,null,3,6]¡£
+     ?    ¸ù½ÚµãµÄÖµÎª 5 £¬µ«ÊÇÆäÓÒ×Ó½ÚµãÖµÎª 4 ¡£
 
      *
      */
 
     double last = -Double.MAX_VALUE;
     /**
-     * å¤§ç¥è§£æ³•ï¼šä¸­åºéå†ï¼Œæœ‰ç‚¹éš¾ç†è§£å’Œç»•è„‘,
-     * ç®€å•ç†è§£ä¸ºä¸­åºéå†å¯ä»¥å°†äºŒå‰æŸ¥æ‰¾æ ‘æŒ‰æ’åºè¾“å‡ºï¼Œè¿™æ ·æƒ³ï¼šæŠŠlastå½“ä½œæ˜¯å½“å‰éå†åˆ°çš„æ•°å­—ï¼Œæ‰€ä»¥æ¯ä¸€ä¸ªåé¢çš„æ•°å­—éƒ½å¿…é¡»æ¯”å®ƒå¤§
+     * ´óÉñ½â·¨£ºÖĞĞò±éÀú£¬ÓĞµãÄÑÀí½âºÍÈÆÄÔ,
+     * ¼òµ¥Àí½âÎªÖĞĞò±éÀú¿ÉÒÔ½«¶ş²æ²éÕÒÊ÷°´ÅÅĞòÊä³ö£¬ÕâÑùÏë£º°Ñlastµ±×÷ÊÇµ±Ç°±éÀúµ½µÄÊı×Ö£¬ËùÒÔÃ¿Ò»¸öºóÃæµÄÊı×Ö¶¼±ØĞë±ÈËü´ó
      * @param root
      * @return
      */
     public boolean isValidBST(TreeNode root) {
-        if (!isValidBST) // å½“å‡ºç°æ— æ•ˆåï¼Œæ‹¦æˆªæ‰€æœ‰é€’å½’,è¿™æ˜¯æˆ‘åŠ çš„ä¼˜åŒ–
+        if (!isValidBST) // µ±³öÏÖÎŞĞ§ºó£¬À¹½ØËùÓĞµİ¹é,ÕâÊÇÎÒ¼ÓµÄÓÅ»¯
             return false;
         if (root == null) {
             return true;
@@ -79,23 +79,23 @@ public class ValidateBinarySearchTreeSolution {
     boolean isValidBST = true;
 
     /**
-     * æˆ‘çš„å¸¸è§„è§£æ³•
+     * ÎÒµÄ³£¹æ½â·¨
      * @param treeNode
-     * @param parentMax å½“å‰èŠ‚ç‚¹å¿…é¡»å¤§äºçˆ¶èŠ‚ç‚¹ä¸Šçš„æŸä¸ªå€¼
-     * @param parentMin å½“å‰èŠ‚ç‚¹å¿…é¡»å°äºçˆ¶èŠ‚ç‚¹ä¸Šçš„æŸä¸ªå€¼
+     * @param parentMax µ±Ç°½Úµã±ØĞë´óÓÚ¸¸½ÚµãÉÏµÄÄ³¸öÖµ
+     * @param parentMin µ±Ç°½Úµã±ØĞëĞ¡ÓÚ¸¸½ÚµãÉÏµÄÄ³¸öÖµ
      * @return
      */
     public boolean isValidBSTIn(TreeNode treeNode, long parentMax, long parentMin) {
-        if (!isValidBST) // å½“å‡ºç°æ— æ•ˆåï¼Œæ‹¦æˆªæ‰€æœ‰é€’å½’
+        if (!isValidBST) // µ±³öÏÖÎŞĞ§ºó£¬À¹½ØËùÓĞµİ¹é
             return false;
         if (treeNode == null)
             return true;
         boolean isLeftValidBST = true;
         boolean isRightValidBST = true;
-        int val; // å­èŠ‚ç‚¹çš„å€¼
+        int val; // ×Ó½ÚµãµÄÖµ
         int valF = treeNode.val;
 
-        // å·¦å­èŠ‚ç‚¹
+        // ×ó×Ó½Úµã
         if (treeNode.left != null) {
             val = treeNode.left.val;
             if (val >= valF || val >= parentMin || val <= parentMax) {
@@ -106,7 +106,7 @@ public class ValidateBinarySearchTreeSolution {
             }
         }
 
-        // å³å­èŠ‚ç‚¹
+        // ÓÒ×Ó½Úµã
         if (treeNode.right != null) {
             val = treeNode.right.val;
             if (val <= valF || val >= parentMin || val <= parentMax) {

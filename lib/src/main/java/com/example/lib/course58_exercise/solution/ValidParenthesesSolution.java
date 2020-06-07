@@ -4,27 +4,27 @@ import java.util.HashMap;
 import java.util.Stack;
 
 /**
- * æœ‰æ•ˆçš„æ‹¬å·
+ * ÓĞĞ§µÄÀ¨ºÅ
  * https://leetcode-cn.com/problems/valid-parentheses/
  */
 
 public class ValidParenthesesSolution {
 
-//    ç»™å®šä¸€ä¸ªåªåŒ…æ‹¬ '('ï¼Œ')'ï¼Œ'{'ï¼Œ'}'ï¼Œ'['ï¼Œ']' çš„å­—ç¬¦ä¸²ï¼Œåˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦æœ‰æ•ˆã€‚
+//    ¸ø¶¨Ò»¸öÖ»°üÀ¨ '('£¬')'£¬'{'£¬'}'£¬'['£¬']' µÄ×Ö·û´®£¬ÅĞ¶Ï×Ö·û´®ÊÇ·ñÓĞĞ§¡£
 //
-//    æœ‰æ•ˆå­—ç¬¦ä¸²éœ€æ»¡è¶³ï¼š
+//    ÓĞĞ§×Ö·û´®ĞèÂú×ã£º
 //
-//    å·¦æ‹¬å·å¿…é¡»ç”¨ç›¸åŒç±»å‹çš„å³æ‹¬å·é—­åˆã€‚
-//    å·¦æ‹¬å·å¿…é¡»ä»¥æ­£ç¡®çš„é¡ºåºé—­åˆã€‚
-//    æ³¨æ„ç©ºå­—ç¬¦ä¸²å¯è¢«è®¤ä¸ºæ˜¯æœ‰æ•ˆå­—ç¬¦ä¸²ã€‚
+//    ×óÀ¨ºÅ±ØĞëÓÃÏàÍ¬ÀàĞÍµÄÓÒÀ¨ºÅ±ÕºÏ¡£
+//    ×óÀ¨ºÅ±ØĞëÒÔÕıÈ·µÄË³Ğò±ÕºÏ¡£
+//    ×¢Òâ¿Õ×Ö·û´®¿É±»ÈÏÎªÊÇÓĞĞ§×Ö·û´®¡£
 
     /**
-     * ç½‘å‹æ”¹è¿›ç‰ˆ
+     * ÍøÓÑ¸Ä½ø°æ
      * @param s
      * @return
      */
     public boolean isValid(String s) {
-        // å¥‡æ•°ä»¥åŠå³æ‹¬å·å¼€å¤´çš„è‚¯å®šä¸ç¬¦åˆæ ‡å‡†ï¼Œå…ˆæ’é™¤
+        // ÆæÊıÒÔ¼°ÓÒÀ¨ºÅ¿ªÍ·µÄ¿Ï¶¨²»·ûºÏ±ê×¼£¬ÏÈÅÅ³ı
         if (s.length() % 2 == 1 || s.startsWith(")") || s.startsWith("}") || s.startsWith("]")) {
             return false;
         }
@@ -60,7 +60,7 @@ public class ValidParenthesesSolution {
 
         for (int i = 0; i < charList.length; i++) {
             String str = charList[i] + "";
-            if (mHashMap.containsKey(str)) { // å·¦æ‹¬å·
+            if (mHashMap.containsKey(str)) { // ×óÀ¨ºÅ
                 stack.push(str);
             } else {
                 if(stack.isEmpty())

@@ -5,13 +5,13 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 
 /**
- * æœ€çŸ­è·¯å¾„ç®—æ³•
+ * ×î¶ÌÂ·¾¶Ëã·¨
  */
 
 public class DijkstraExercise {
 
-    private int mTotalPoint; // é¡¶ç‚¹çš„ä¸ªæ•°
-    private LinkedList<Edge>[] adj; // é‚»æ¥è¡¨,è¡¨ç¤ºå›¾
+    private int mTotalPoint; // ¶¥µãµÄ¸öÊı
+    private LinkedList<Edge>[] adj; // ÁÚ½Ó±í,±íÊ¾Í¼
 
     public DijkstraExercise(int points) {
         mTotalPoint = points;
@@ -22,11 +22,11 @@ public class DijkstraExercise {
     }
 
     /**
-     * æ·»åŠ ä¸€æ¡è¾¹(å¸¦æƒé‡)
+     * Ìí¼ÓÒ»Ìõ±ß(´øÈ¨ÖØ)
      *
-     * @param startPoint èµ·ç‚¹
-     * @param endPoint   ç»ˆç‚¹
-     * @param weight     æƒé‡
+     * @param startPoint Æğµã
+     * @param endPoint   ÖÕµã
+     * @param weight     È¨ÖØ
      */
     public void addEdge(int startPoint, int endPoint, int weight) {
         Edge edge = new Edge(startPoint, endPoint, weight);
@@ -34,7 +34,7 @@ public class DijkstraExercise {
     }
 
     /**
-     * æœ€çŸ­è·¯å¾„ç®—æ³•ï¼šä»såˆ°t
+     * ×î¶ÌÂ·¾¶Ëã·¨£º´Ósµ½t
      *
      * @param s
      * @param t
@@ -42,11 +42,11 @@ public class DijkstraExercise {
     public void dijkstra(int s, int t) {
         if (s == t)
             return;
-        Vertex[] vertexList = new Vertex[mTotalPoint]; // å­˜å‚¨sé¡¶ç‚¹åˆ°è¾¾æ‰€æœ‰é¡¶ç‚¹çš„è·ç¦»
+        Vertex[] vertexList = new Vertex[mTotalPoint]; // ´æ´¢s¶¥µãµ½´ïËùÓĞ¶¥µãµÄ¾àÀë
         for (int i = 0; i < mTotalPoint; i++) {
             vertexList[i] = new Vertex(i);
         }
-        boolean[] inQueue = new boolean[mTotalPoint]; // trueè¡¨ç¤ºé¡¶ç‚¹ï¼ˆä¸‹æ ‡ç¼–å·ï¼‰å·²ç»åŠ å…¥é˜Ÿåˆ—ï¼Œé˜²æ­¢é‡å¤åŠ å…¥é˜Ÿåˆ—
+        boolean[] inQueue = new boolean[mTotalPoint]; // true±íÊ¾¶¥µã£¨ÏÂ±ê±àºÅ£©ÒÑ¾­¼ÓÈë¶ÓÁĞ£¬·ÀÖ¹ÖØ¸´¼ÓÈë¶ÓÁĞ
         PriorityQueue<Vertex> queue = new PriorityQueue<>(new Comparator<Vertex>() {
             @Override
             public int compare(Vertex o1, Vertex o2) {
@@ -61,8 +61,8 @@ public class DijkstraExercise {
         inQueue[s] = true;
 
         while (!queue.isEmpty()) {
-            Vertex w = queue.poll(); // å–å‡ºå½“å‰åˆ°è¾¾æ‰€æœ‰é¡¶ç‚¹çš„æœ€çŸ­è·¯å¾„
-            if (w.p == t) {// ç»ˆæ­¢
+            Vertex w = queue.poll(); // È¡³öµ±Ç°µ½´ïËùÓĞ¶¥µãµÄ×î¶ÌÂ·¾¶
+            if (w.p == t) {// ÖÕÖ¹
                 printRoute(vertexList, s, t);
                 System.out.print("" + s);
                 return;
@@ -72,7 +72,7 @@ public class DijkstraExercise {
                 int distance = w.distance + edge.weight;
                 Vertex nextVertex = vertexList[edge.endPoint];
 
-                if (inQueue[edge.endPoint]) { // å·²ç»åœ¨é˜Ÿåˆ—
+                if (inQueue[edge.endPoint]) { // ÒÑ¾­ÔÚ¶ÓÁĞ
                     if (distance < nextVertex.distance) {
                         nextVertex.pre = edge.startPoint;
                         nextVertex.distance = distance;
@@ -108,7 +108,7 @@ public class DijkstraExercise {
         myShortestPath.addEdge(3, 2, 1);
         myShortestPath.addEdge(3, 5, 12);
         myShortestPath.addEdge(4, 5, 10);
-        // æ±‚æœ€çŸ­è·ç¦»(0->1->3->2->5)
+        // Çó×î¶Ì¾àÀë(0->1->3->2->5)
         myShortestPath.dijkstra(0, 5);
     }
 

@@ -3,13 +3,13 @@ package com.example.lib.course60_exercise.hashmap;
 import java.util.HashMap;
 
 /**
- * å®ç°ä¸€ä¸ª LRU ç¼“å­˜æ·˜æ±°ç®—æ³•
+ * ÊµÏÖÒ»¸ö LRU »º´æÌÔÌ­Ëã·¨
  */
 public class LRUCacheExercice<T> {
 
-    private final static int DEFAUL_CAPACITY = 8; // æ•°ç»„çš„é»˜è®¤å®¹é‡
-    private int mCapacity; // æ•°ç»„çš„å®¹é‡
-    private int size; // æ•£åˆ—è¡¨çš„å†…å®¹ä¸ªæ•°
+    private final static int DEFAUL_CAPACITY = 8; // Êı×éµÄÄ¬ÈÏÈİÁ¿
+    private int mCapacity; // Êı×éµÄÈİÁ¿
+    private int size; // É¢ÁĞ±íµÄÄÚÈİ¸öÊı
     private T[] cacheList;
     private HashMap<T, Integer> hashMap;
 
@@ -24,7 +24,7 @@ public class LRUCacheExercice<T> {
     }
 
     /**
-     * å¾€å³è¿ç§»
+     * ÍùÓÒÇ¨ÒÆ
      *
      * @param end
      */
@@ -38,7 +38,7 @@ public class LRUCacheExercice<T> {
     }
 
     /**
-     * ç¼“å­˜
+     * »º´æ
      *
      * @param object
      */
@@ -50,7 +50,7 @@ public class LRUCacheExercice<T> {
     }
 
     /**
-     * åˆ°è¾¾æœ€å¤§å®¹é‡ç§»é™¤ä¸€ä½å†ç¼“å­˜
+     * µ½´ï×î´óÈİÁ¿ÒÆ³ıÒ»Î»ÔÙ»º´æ
      *
      * @param object
      */
@@ -63,7 +63,7 @@ public class LRUCacheExercice<T> {
     }
 
     /**
-     * è‹¥ç¼“å­˜ä¸­æœ‰æŒ‡å®šçš„å€¼ï¼Œåˆ™æ›´æ–°ä½ç½®
+     * Èô»º´æÖĞÓĞÖ¸¶¨µÄÖµ£¬Ôò¸üĞÂÎ»ÖÃ
      *
      * @param object
      */
@@ -77,13 +77,13 @@ public class LRUCacheExercice<T> {
     }
 
     /**
-     * è®¿é—®æ—¶ç¼“å­˜
+     * ·ÃÎÊÊ±»º´æ
      *
      * @param object
      */
     public void offer(T object) {
         if (object == null)
-            throw new IllegalArgumentException("è¯¥ç¼“å­˜å®¹å™¨ä¸æ”¯æŒnull!");
+            throw new IllegalArgumentException("¸Ã»º´æÈİÆ÷²»Ö§³Önull!");
 
         Integer targetIndex = hashMap.get(object);
         if (targetIndex == null) {

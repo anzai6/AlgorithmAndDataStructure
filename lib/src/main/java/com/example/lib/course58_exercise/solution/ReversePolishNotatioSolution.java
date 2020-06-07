@@ -3,7 +3,7 @@ package com.example.lib.course58_exercise.solution;
 import java.util.Stack;
 
 /**
- * é€†æ³¢å…°è¡¨è¾¾å¼æ±‚å€¼
+ * Äæ²¨À¼±í´ïÊ½ÇóÖµ
  * https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/
  */
 
@@ -12,29 +12,29 @@ public class ReversePolishNotatioSolution {
     /**
      *
 
-     æ ¹æ®é€†æ³¢å…°è¡¨ç¤ºæ³•ï¼Œæ±‚è¡¨è¾¾å¼çš„å€¼ã€‚
+     ¸ù¾ÝÄæ²¨À¼±íÊ¾·¨£¬Çó±í´ïÊ½µÄÖµ¡£
 
-     æœ‰æ•ˆçš„è¿ç®—ç¬¦åŒ…æ‹¬ +, -, *, / ã€‚æ¯ä¸ªè¿ç®—å¯¹è±¡å¯ä»¥æ˜¯æ•´æ•°ï¼Œä¹Ÿå¯ä»¥æ˜¯å¦ä¸€ä¸ªé€†æ³¢å…°è¡¨è¾¾å¼ã€‚
+     ÓÐÐ§µÄÔËËã·û°üÀ¨ +, -, *, / ¡£Ã¿¸öÔËËã¶ÔÏó¿ÉÒÔÊÇÕûÊý£¬Ò²¿ÉÒÔÊÇÁíÒ»¸öÄæ²¨À¼±í´ïÊ½¡£
 
-     è¯´æ˜Žï¼š
+     ËµÃ÷£º
 
-     æ•´æ•°é™¤æ³•åªä¿ç•™æ•´æ•°éƒ¨åˆ†ã€‚
-     ç»™å®šé€†æ³¢å…°è¡¨è¾¾å¼æ€»æ˜¯æœ‰æ•ˆçš„ã€‚æ¢å¥è¯è¯´ï¼Œè¡¨è¾¾å¼æ€»ä¼šå¾—å‡ºæœ‰æ•ˆæ•°å€¼ä¸”ä¸å­˜åœ¨é™¤æ•°ä¸º 0 çš„æƒ…å†µã€‚
-     ç¤ºä¾‹ 1ï¼š
+     ÕûÊý³ý·¨Ö»±£ÁôÕûÊý²¿·Ö¡£
+     ¸ø¶¨Äæ²¨À¼±í´ïÊ½×ÜÊÇÓÐÐ§µÄ¡£»»¾ä»°Ëµ£¬±í´ïÊ½×Ü»áµÃ³öÓÐÐ§ÊýÖµÇÒ²»´æÔÚ³ýÊýÎª 0 µÄÇé¿ö¡£
+     Ê¾Àý 1£º
 
-     è¾“å…¥: ["2", "1", "+", "3", "*"]
-     è¾“å‡º: 9
-     è§£é‡Š: ((2 + 1) * 3) = 9
-     ç¤ºä¾‹ 2ï¼š
+     ÊäÈë: ["2", "1", "+", "3", "*"]
+     Êä³ö: 9
+     ½âÊÍ: ((2 + 1) * 3) = 9
+     Ê¾Àý 2£º
 
-     è¾“å…¥: ["4", "13", "5", "/", "+"]
-     è¾“å‡º: 6
-     è§£é‡Š: (4 + (13 / 5)) = 6
-     ç¤ºä¾‹ 3ï¼š
+     ÊäÈë: ["4", "13", "5", "/", "+"]
+     Êä³ö: 6
+     ½âÊÍ: (4 + (13 / 5)) = 6
+     Ê¾Àý 3£º
 
-     è¾“å…¥: ["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]
-     è¾“å‡º: 22
-     è§£é‡Š:
+     ÊäÈë: ["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"]
+     Êä³ö: 22
+     ½âÊÍ:
      ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
      = ((10 * (6 / (12 * -11))) + 17) + 5
      = ((10 * (6 / -132)) + 17) + 5
@@ -58,7 +58,7 @@ public class ReversePolishNotatioSolution {
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < tokens.length; i++) {
             String str = tokens[i];
-            if (isOperationStr(str)) { // è¿ç®—ç¬¦
+            if (isOperationStr(str)) { // ÔËËã·û
                 Integer strNum2 = stack.pop();
                 Integer strNum1 = stack.pop();
                 stack.push(numOperation(strNum1, strNum2, str));

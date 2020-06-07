@@ -1,38 +1,38 @@
 package com.example.lib.course39_dynamicplanning1.finals;
 
 /**
- * åŠ¨æ€è§„åˆ’
+ * ¶¯Ì¬¹æ»®
  * Created by qinshunan on 2019/5/8.
  */
 
 public class DynamicPlanning1 {
 
-    // 0-1èƒŒåŒ…ï¼šnä¸ªç‰©ä½“ï¼ŒèƒŒåŒ…æœ€å¤§æ‰¿é‡wï¼Œæ±‚èƒŒåŒ…è£…é‡æœ€å¤§å€¼
+    // 0-1±³°ü£ºn¸öÎïÌå£¬±³°ü×î´ó³ĞÖØw£¬Çó±³°ü×°ÖØ×î´óÖµ
 
-    private int maxW = Integer.MIN_VALUE; // ç»“æœæ”¾åˆ° maxW ä¸­
-    private int[] weight = {2, 2, 4, 6, 3};  // ç‰©å“é‡é‡
-    private int n = 5; // ç‰©å“ä¸ªæ•°
-    private int w = 16; // èƒŒåŒ…æ‰¿å—çš„æœ€å¤§é‡é‡
+    private int maxW = Integer.MIN_VALUE; // ½á¹û·Åµ½ maxW ÖĞ
+    private int[] weight = {2, 2, 4, 6, 3};  // ÎïÆ·ÖØÁ¿
+    private int n = 5; // ÎïÆ·¸öÊı
+    private int w = 16; // ±³°ü³ĞÊÜµÄ×î´óÖØÁ¿
 
-    // å…ˆç”¨å›æº¯å®ç°
+    // ÏÈÓÃ»ØËİÊµÏÖ
 
     /**
-     * æ™®é€šç‰ˆå›æº¯ç®—æ³•å®ç°
-     * ä½¿ç”¨findPackWeight1(0, 0);
+     * ÆÕÍ¨°æ»ØËİËã·¨ÊµÏÖ
+     * Ê¹ÓÃfindPackWeight1(0, 0);
      *
-     * @param i  ç¬¬iä¸ªç‰©ä½“
-     * @param cw å½“å‰èƒŒåŒ…è£…è½½çš„é‡é‡
+     * @param i  µÚi¸öÎïÌå
+     * @param cw µ±Ç°±³°ü×°ÔØµÄÖØÁ¿
      */
     public void findPackWeight1(int i, int cw) {
 
     }
 
     /**
-     * å‡çº§ç‰ˆå›æº¯ç®—æ³•å®ç°
-     * ä½¿ç”¨findPackWeight2(0, 0);
+     * Éı¼¶°æ»ØËİËã·¨ÊµÏÖ
+     * Ê¹ÓÃfindPackWeight2(0, 0);
      *
-     * @param i  ç¬¬iä¸ªç‰©ä½“
-     * @param cw å½“å‰èƒŒåŒ…è£…è½½çš„é‡é‡
+     * @param i  µÚi¸öÎïÌå
+     * @param cw µ±Ç°±³°ü×°ÔØµÄÖØÁ¿
      */
     public void findPackWeight2(int i, int cw) {
     }
@@ -41,7 +41,7 @@ public class DynamicPlanning1 {
     }
 
     /**
-     * åŠ¨æ€è§„åˆ’-æœ€æ— è„‘ç‰ˆ
+     * ¶¯Ì¬¹æ»®-×îÎŞÄÔ°æ
      *
      * @param weight
      * @param n
@@ -51,7 +51,7 @@ public class DynamicPlanning1 {
     }
 
     /**
-     * åŠ¨æ€è§„åˆ’-èŠ‚çœç©ºé—´ç‰ˆåŠ å¼ºç‰ˆ
+     * ¶¯Ì¬¹æ»®-½ÚÊ¡¿Õ¼ä°æ¼ÓÇ¿°æ
      *
      * @param weight
      * @param n

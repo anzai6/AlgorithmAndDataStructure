@@ -1,16 +1,16 @@
 package com.example.lib.course35_Trie.my;
 
 /**
- * Trieæ ‘ï¼šé€‚åˆé€šè¿‡å‰ç¼€æœç´ åŒ¹é…å­—ç¬¦ä¸²ï¼Œç±»ä¼¼äºæœç´¢å¼•æ“çš„è‡ªåŠ¨æç¤ºåŠŸèƒ½ï¼Œæ¯”å¦‚ï¼šè¾“å…¥he æç¤º hello
- * è¿˜æœ‰è¾“å…¥æ³•çš„è‡ªåŠ¨è¡¥å…¨ï¼Œç¼–è¾‘å™¨çš„è‡ªåŠ¨è¡¥å…¨ç­‰ç­‰ï¼Œä¸å¤ªé€‚åˆå®Œå…¨åŒ¹é…çš„å­—ç¬¦ä¸²æŸ¥æ‰¾ï¼Œè€—è´¹å†…å­˜è¿‡å¤šï¼Œè¿™ä¸ªç”¨çº¢é»‘æ ‘æˆ–è€…æ•£åˆ—è¡¨æ›´åˆé€‚
+ * TrieÊ÷£ºÊÊºÏÍ¨¹ıÇ°×ºËÑËØÆ¥Åä×Ö·û´®£¬ÀàËÆÓÚËÑË÷ÒıÇæµÄ×Ô¶¯ÌáÊ¾¹¦ÄÜ£¬±ÈÈç£ºÊäÈëhe ÌáÊ¾ hello
+ * »¹ÓĞÊäÈë·¨µÄ×Ô¶¯²¹È«£¬±à¼­Æ÷µÄ×Ô¶¯²¹È«µÈµÈ£¬²»Ì«ÊÊºÏÍêÈ«Æ¥ÅäµÄ×Ö·û´®²éÕÒ£¬ºÄ·ÑÄÚ´æ¹ı¶à£¬Õâ¸öÓÃºìºÚÊ÷»òÕßÉ¢ÁĞ±í¸üºÏÊÊ
  * Created by qinshunan on 2019/4/19.
  */
 
 public class MyTrie {
-    private TrieNode headNode = new TrieNode('/'); // å­˜å‚¨æ— æ„ä¹‰å­—ç¬¦
+    private TrieNode headNode = new TrieNode('/'); // ´æ´¢ÎŞÒâÒå×Ö·û
 
     /**
-     * å¾€ ACAutomata æ ‘ä¸­æ’å…¥ä¸€ä¸ªå­—ç¬¦ä¸²
+     * Íù ACAutomata Ê÷ÖĞ²åÈëÒ»¸ö×Ö·û´®
      *
      * @param list
      * @param len
@@ -32,7 +32,7 @@ public class MyTrie {
     }
 
     /**
-     * åœ¨ ACAutomata æ ‘ä¸­æŸ¥æ‰¾ä¸€ä¸ªå­—ç¬¦ä¸²
+     * ÔÚ ACAutomata Ê÷ÖĞ²éÕÒÒ»¸ö×Ö·û´®
      *
      * @param list
      * @param len
@@ -43,16 +43,16 @@ public class MyTrie {
             char item = list[i];
             int index = item - 'a';
             TrieNode trieNode = root.subTrieList[index];
-            if (trieNode != null && trieNode.item == item) { // åŒ¹é…åˆ°ç›¸åŒå­—ç¬¦
+            if (trieNode != null && trieNode.item == item) { // Æ¥Åäµ½ÏàÍ¬×Ö·û
                 root = trieNode;
                 continue;
             } else {
-                return false; // ä¸åŒ¹é…
+                return false; // ²»Æ¥Åä
             }
         }
-        if (root.isEndingChar) { // å®Œå…¨åŒ¹é…
+        if (root.isEndingChar) { // ÍêÈ«Æ¥Åä
             return true;
-        } else { // éƒ¨åˆ†åŒ¹é…,æ¯”å¦‚å‰ç¼€åŒ¹é…
+        } else { // ²¿·ÖÆ¥Åä,±ÈÈçÇ°×ºÆ¥Åä
             return false;
         }
     }
@@ -60,7 +60,7 @@ public class MyTrie {
 
     class TrieNode {
         char item;
-        TrieNode[] subTrieList = new TrieNode[26]; // è¿™é‡Œåªå®šä¹‰çš„æ˜¯26å°å†™å­—æ¯çš„æ•°ç»„ï¼Œä¸è€ƒè™‘åŒ…å«æ•°ç»„ä¸­æ–‡ä¹‹ç±»çš„
+        TrieNode[] subTrieList = new TrieNode[26]; // ÕâÀïÖ»¶¨ÒåµÄÊÇ26Ğ¡Ğ´×ÖÄ¸µÄÊı×é£¬²»¿¼ÂÇ°üº¬Êı×éÖĞÎÄÖ®ÀàµÄ
         boolean isEndingChar = false;
 
         public TrieNode() {

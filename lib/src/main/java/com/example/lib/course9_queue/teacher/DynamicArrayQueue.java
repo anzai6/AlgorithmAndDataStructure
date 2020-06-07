@@ -1,34 +1,34 @@
 package com.example.lib.course9_queue.teacher;
 
 /**
- * åŠ¨æ€æ•°ç»„é˜Ÿåˆ—(ä¸å«æ‰©å®¹)
+ * ¶¯Ì¬Êı×é¶ÓÁĞ(²»º¬À©Èİ)
  * Created by wangzheng on 2018/10/9.
  */
 public class DynamicArrayQueue {
-    // æ•°ç»„ï¼šitemsï¼Œæ•°ç»„å¤§å°ï¼šn
+    // Êı×é£ºitems£¬Êı×é´óĞ¡£ºn
     private String[] items;
     private int n = 0;
-    // headè¡¨ç¤ºé˜Ÿå¤´ä¸‹æ ‡ï¼Œtailè¡¨ç¤ºé˜Ÿå°¾ä¸‹æ ‡
+    // head±íÊ¾¶ÓÍ·ÏÂ±ê£¬tail±íÊ¾¶ÓÎ²ÏÂ±ê
     private int head = 0;
     private int tail = 0;
 
-    // ç”³è¯·ä¸€ä¸ªå¤§å°ä¸ºcapacityçš„æ•°ç»„
+    // ÉêÇëÒ»¸ö´óĞ¡ÎªcapacityµÄÊı×é
     public DynamicArrayQueue(int capacity) {
         items = new String[capacity];
         n = capacity;
     }
 
-    // å…¥é˜Ÿæ“ä½œï¼Œå°†itemæ”¾å…¥é˜Ÿå°¾
+    // Èë¶Ó²Ù×÷£¬½«item·ÅÈë¶ÓÎ²
     public boolean enqueue(String item) {
-        // tail == nè¡¨ç¤ºé˜Ÿåˆ—æœ«å°¾æ²¡æœ‰ç©ºé—´äº†
+        // tail == n±íÊ¾¶ÓÁĞÄ©Î²Ã»ÓĞ¿Õ¼äÁË
         if (tail == n) {
-            // tail ==n && head==0ï¼Œè¡¨ç¤ºæ•´ä¸ªé˜Ÿåˆ—éƒ½å æ»¡äº†
+            // tail ==n && head==0£¬±íÊ¾Õû¸ö¶ÓÁĞ¶¼Õ¼ÂúÁË
             if (head == 0) return false;
-            // æ•°æ®æ¬ç§»
+            // Êı¾İ°áÒÆ
             for (int i = head; i < tail; ++i) {
                 items[i - head] = items[i];
             }
-            // æ¬ç§»å®Œä¹‹åé‡æ–°æ›´æ–°headå’Œtail
+            // °áÒÆÍêÖ®ºóÖØĞÂ¸üĞÂheadºÍtail
             tail -= head;
             head = 0;
         }
@@ -38,11 +38,11 @@ public class DynamicArrayQueue {
         return true;
     }
 
-    // å‡ºé˜Ÿ
+    // ³ö¶Ó
     public String dequeue() {
-        // å¦‚æœhead == tail è¡¨ç¤ºé˜Ÿåˆ—ä¸ºç©º
+        // Èç¹ûhead == tail ±íÊ¾¶ÓÁĞÎª¿Õ
         if (head == tail) return null;
-        // ä¸ºäº†è®©å…¶ä»–è¯­è¨€çš„åŒå­¦çœ‹çš„æ›´åŠ æ˜ç¡®ï¼ŒæŠŠ--æ“ä½œæ”¾åˆ°å•ç‹¬ä¸€è¡Œæ¥å†™äº†
+        // ÎªÁËÈÃÆäËûÓïÑÔµÄÍ¬Ñ§¿´µÄ¸ü¼ÓÃ÷È·£¬°Ñ--²Ù×÷·Åµ½µ¥¶ÀÒ»ĞĞÀ´Ğ´ÁË
         String ret = items[head];
         ++head;
         return ret;

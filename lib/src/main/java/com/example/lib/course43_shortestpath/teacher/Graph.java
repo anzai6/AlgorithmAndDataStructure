@@ -5,11 +5,11 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 
 /**
- * ShortestPath-æœ€çŸ­è·¯å¾„-å…ˆæŠŠæ•°æ®ç»“æ„è½¬åŒ–æˆæœ‰å‘æœ‰æƒå›¾
+ * ShortestPath-×î¶ÌÂ·¾¶-ÏÈ°ÑÊı¾İ½á¹¹×ª»¯³ÉÓĞÏòÓĞÈ¨Í¼
  */
-public class Graph { // æœ‰å‘æœ‰æƒå›¾çš„é‚»æ¥è¡¨è¡¨ç¤ºï¼Œ
-    private LinkedList<Edge> adj[]; // é‚»æ¥è¡¨
-    private int v; // é¡¶ç‚¹ä¸ªæ•°
+public class Graph { // ÓĞÏòÓĞÈ¨Í¼µÄÁÚ½Ó±í±íÊ¾£¬
+    private LinkedList<Edge> adj[]; // ÁÚ½Ó±í
+    private int v; // ¶¥µã¸öÊı
 
     public Graph(int v) {
         this.v = v;
@@ -19,14 +19,14 @@ public class Graph { // æœ‰å‘æœ‰æƒå›¾çš„é‚»æ¥è¡¨è¡¨ç¤ºï¼Œ
         }
     }
 
-    public void addEdge(int s, int t, int w) { // æ·»åŠ ä¸€æ¡è¾¹,s -> t
+    public void addEdge(int s, int t, int w) { // Ìí¼ÓÒ»Ìõ±ß,s -> t
         this.adj[s].add(new Edge(s, t, w));
     }
 
     private class Edge {
-        public int sid; // è¾¹çš„èµ·å§‹é¡¶ç‚¹ç¼–å·
-        public int tid; // è¾¹çš„ç»ˆæ­¢é¡¶ç‚¹ç¼–å·
-        public int w; // æƒé‡
+        public int sid; // ±ßµÄÆğÊ¼¶¥µã±àºÅ
+        public int tid; // ±ßµÄÖÕÖ¹¶¥µã±àºÅ
+        public int w; // È¨ÖØ
 
         public Edge(int sid, int tid, int w) {
             this.sid = sid;
@@ -35,10 +35,10 @@ public class Graph { // æœ‰å‘æœ‰æƒå›¾çš„é‚»æ¥è¡¨è¡¨ç¤ºï¼Œ
         }
     }
 
-    // ä¸‹é¢è¿™ä¸ªç±»æ˜¯ä¸ºäº† dijkstra å®ç°ç”¨çš„
+    // ÏÂÃæÕâ¸öÀàÊÇÎªÁË dijkstra ÊµÏÖÓÃµÄ
     private class Vertex {
-        public int id; // é¡¶ç‚¹ç¼–å· ID
-        public int dist; // ä»èµ·å§‹é¡¶ç‚¹åˆ°è¿™ä¸ªé¡¶ç‚¹çš„è·ç¦»
+        public int id; // ¶¥µã±àºÅ ID
+        public int dist; // ´ÓÆğÊ¼¶¥µãµ½Õâ¸ö¶¥µãµÄ¾àÀë
 
         public Vertex(int id, int dist) {
             this.id = id;
@@ -46,13 +46,13 @@ public class Graph { // æœ‰å‘æœ‰æƒå›¾çš„é‚»æ¥è¡¨è¡¨ç¤ºï¼Œ
         }
     }
 
-    public void dijkstra(int s, int t) { // ä»é¡¶ç‚¹ s åˆ°é¡¶ç‚¹ t çš„æœ€çŸ­è·¯å¾„
-        int[] predecessor = new int[this.v]; // ç”¨æ¥è¿˜åŸæœ€çŸ­è·¯å¾„
-        Vertex[] vertexes = new Vertex[this.v]; // èµ·å§‹é¡¶ç‚¹åˆ°è¾¾æ¯ä¸€ä¸ªé¡¶ç‚¹çš„æœ€çŸ­è·¯å¾„
+    public void dijkstra(int s, int t) { // ´Ó¶¥µã s µ½¶¥µã t µÄ×î¶ÌÂ·¾¶
+        int[] predecessor = new int[this.v]; // ÓÃÀ´»¹Ô­×î¶ÌÂ·¾¶
+        Vertex[] vertexes = new Vertex[this.v]; // ÆğÊ¼¶¥µãµ½´ïÃ¿Ò»¸ö¶¥µãµÄ×î¶ÌÂ·¾¶
         for (int i = 0; i < this.v; ++i) {
             vertexes[i] = new Vertex(i, Integer.MAX_VALUE);
         }
-        // å°é¡¶å †é˜Ÿåˆ—
+        // Ğ¡¶¥¶Ñ¶ÓÁĞ
         PriorityQueue<Vertex> queue = new PriorityQueue(this.v, new Comparator() {
             @Override
             public int compare(Object o1, Object o2) {
@@ -64,22 +64,22 @@ public class Graph { // æœ‰å‘æœ‰æƒå›¾çš„é‚»æ¥è¡¨è¡¨ç¤ºï¼Œ
                     return 1;
             }
         });
-        boolean[] inEueue = new boolean[this.v]; // æ ‡è®°æ˜¯å¦è¿›å…¥è¿‡é˜Ÿåˆ—
+        boolean[] inEueue = new boolean[this.v]; // ±ê¼ÇÊÇ·ñ½øÈë¹ı¶ÓÁĞ
         vertexes[s].dist = 0;
         queue.add(vertexes[s]);
         inEueue[s] = true;
 
         while (!queue.isEmpty()) {
-            Vertex minVertex = queue.poll(); // å–å †é¡¶å…ƒç´ å¹¶åˆ é™¤
-            if (minVertex.id == t) break; // æœ€çŸ­è·¯å¾„äº§ç”Ÿäº†
+            Vertex minVertex = queue.poll(); // È¡¶Ñ¶¥ÔªËØ²¢É¾³ı
+            if (minVertex.id == t) break; // ×î¶ÌÂ·¾¶²úÉúÁË
             for (int i = 0; i < adj[minVertex.id].size(); ++i) {
-                Edge e = adj[minVertex.id].get(i); // å–å‡ºä¸€æ¡ minVetex ç›¸è¿çš„è¾¹
+                Edge e = adj[minVertex.id].get(i); // È¡³öÒ»Ìõ minVetex ÏàÁ¬µÄ±ß
                 Vertex nextVertex = vertexes[e.tid]; // minVertex-->nextVertex
-                if (minVertex.dist + e.w < nextVertex.dist) { // æ›´æ–° next çš„ dist
+                if (minVertex.dist + e.w < nextVertex.dist) { // ¸üĞÂ next µÄ dist
                     nextVertex.dist = minVertex.dist + e.w;
                     predecessor[nextVertex.id] = minVertex.id;
                     if (inEueue[nextVertex.id] == true) {
-                        // æ›´æ–°é˜Ÿåˆ—ä¸­çš„ dist å€¼
+                        // ¸üĞÂ¶ÓÁĞÖĞµÄ dist Öµ
                         queue.remove(nextVertex);
                         queue.add(nextVertex);
                     } else {
@@ -89,7 +89,7 @@ public class Graph { // æœ‰å‘æœ‰æƒå›¾çš„é‚»æ¥è¡¨è¡¨ç¤ºï¼Œ
                 }
             }
         }
-        // è¾“å‡ºæœ€çŸ­è·¯å¾„
+        // Êä³ö×î¶ÌÂ·¾¶
         System.out.print(s);
         print(s, t, predecessor);
     }

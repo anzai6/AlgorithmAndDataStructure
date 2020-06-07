@@ -3,10 +3,10 @@ package com.example.lib.course17_skiplist.finals;
 import java.util.Random;
 
 /**
- * è·³è¡¨çš„ä¸€ç§å®ç°æ–¹æ³•ã€‚
- * è·³è¡¨ä¸­å­˜å‚¨çš„æ˜¯æ­£æ•´æ•°ï¼Œå¹¶ä¸”å­˜å‚¨çš„æ˜¯ä¸é‡å¤çš„ã€‚
+ * Ìø±íµÄÒ»ÖÖÊµÏÖ·½·¨¡£
+ * Ìø±íÖĞ´æ´¢µÄÊÇÕıÕûÊı£¬²¢ÇÒ´æ´¢µÄÊÇ²»ÖØ¸´µÄ¡£
  * <p>
- * Authorï¼šZHENG
+ * Author£ºZHENG
  */
 public class SkipList {
 
@@ -14,7 +14,7 @@ public class SkipList {
 
     private int levelCount = 1;
 
-    private Node head = new Node();  // å¸¦å¤´é“¾è¡¨
+    private Node head = new Node();  // ´øÍ·Á´±í
 
     private Random r = new Random();
 
@@ -28,7 +28,7 @@ public class SkipList {
     public void delete(int value) {
     }
 
-    // éšæœº level æ¬¡ï¼Œå¦‚æœæ˜¯å¥‡æ•°å±‚æ•° +1ï¼Œé˜²æ­¢ä¼ªéšæœº
+    // Ëæ»ú level ´Î£¬Èç¹ûÊÇÆæÊı²ãÊı +1£¬·ÀÖ¹Î±Ëæ»ú
     private int randomLevel() {
 
         return 1;

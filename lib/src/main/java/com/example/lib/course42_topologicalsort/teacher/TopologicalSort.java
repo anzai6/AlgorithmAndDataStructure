@@ -3,14 +3,14 @@ package com.example.lib.course42_topologicalsort.teacher;
 import java.util.LinkedList;
 
 /**
- * æ‹“æ‰‘æ’åºï¼šå­˜åœ¨ä¸¤ä¸¤ä¾èµ–å…³ç³»ï¼Œç„¶åæ±‚æ’åºï¼Œæ¯”å¦‚ï¼šæ–‡ä»¶Aä¾èµ–æ–‡ä»¶Bï¼Œæ–‡ä»¶Bä¾èµ–æ–‡ä»¶Cï¼Œæ±‚ä»–ä»¬çš„ç¼–è¯‘é¡ºåºï¼Œå³æ‹“æ‰‘æ’åº
- * å‡¡æ˜¯éœ€è¦é€šè¿‡å±€éƒ¨é¡ºåºæ¥æ¨å¯¼å…¨å±€é¡ºåºçš„ï¼Œä¸€èˆ¬éƒ½ç”¨æ‹“æ‰‘æ’åºæ¥è§£å†³
+ * ÍØÆËÅÅĞò£º´æÔÚÁ½Á½ÒÀÀµ¹ØÏµ£¬È»ºóÇóÅÅĞò£¬±ÈÈç£ºÎÄ¼şAÒÀÀµÎÄ¼şB£¬ÎÄ¼şBÒÀÀµÎÄ¼şC£¬ÇóËûÃÇµÄ±àÒëË³Ğò£¬¼´ÍØÆËÅÅĞò
+ * ·²ÊÇĞèÒªÍ¨¹ı¾Ö²¿Ë³ĞòÀ´ÍÆµ¼È«¾ÖË³ĞòµÄ£¬Ò»°ã¶¼ÓÃÍØÆËÅÅĞòÀ´½â¾ö
  */
 public class TopologicalSort {
 
-    // æ‹“æ‰‘æ’åºçš„æ•°æ®ç»“æ„
-    private int v; // é¡¶ç‚¹çš„ä¸ªæ•°
-    private LinkedList<Integer> adj[]; // é‚»æ¥è¡¨
+    // ÍØÆËÅÅĞòµÄÊı¾İ½á¹¹
+    private int v; // ¶¥µãµÄ¸öÊı
+    private LinkedList<Integer> adj[]; // ÁÚ½Ó±í
 
     public TopologicalSort(int v) {
         this.v = v;
@@ -20,23 +20,23 @@ public class TopologicalSort {
         }
     }
 
-    // æ·»åŠ ä»¥æ¥å…³ç³»
-    public void addEdge(int s, int t) { // s å…ˆäº tï¼Œè¾¹ s->t
+    // Ìí¼ÓÒÔÀ´¹ØÏµ
+    public void addEdge(int s, int t) { // s ÏÈÓÚ t£¬±ß s->t
         adj[s].add(t);
     }
 
     /**
-     * Kahnç®—æ³•å®ç°æ‹“æ‰‘æ’åº
+     * KahnËã·¨ÊµÏÖÍØÆËÅÅĞò
      */
     public void topoSortByKahn() {
-        int[] inDegree = new int[v]; // ç»Ÿè®¡æ¯ä¸ªé¡¶ç‚¹çš„å…¥åº¦,ä¹Ÿå°±æ˜¯ä¾èµ–æ•°ï¼Œä¸º0åˆ™è¯æ˜è‡ªèº«æ²¡æœ‰ä¾èµ–å…¶å®ƒä»»ä½•èŠ‚ç‚¹
+        int[] inDegree = new int[v]; // Í³¼ÆÃ¿¸ö¶¥µãµÄÈë¶È,Ò²¾ÍÊÇÒÀÀµÊı£¬Îª0ÔòÖ¤Ã÷×ÔÉíÃ»ÓĞÒÀÀµÆäËüÈÎºÎ½Úµã
         for (int i = 0; i < v; ++i) {
             for (int j = 0; j < adj[i].size(); ++j) {
                 int w = adj[i].get(j); // i->w
                 inDegree[w]++;
             }
         }
-        LinkedList<Integer> queue = new LinkedList<>(); // å­˜æ”¾å½“å‰ä¸ä¾èµ–ä»»ä½•èŠ‚ç‚¹çš„èŠ‚ç‚¹ï¼Œå³å…¥åº¦ä¸º0çš„èŠ‚ç‚¹
+        LinkedList<Integer> queue = new LinkedList<>(); // ´æ·Åµ±Ç°²»ÒÀÀµÈÎºÎ½ÚµãµÄ½Úµã£¬¼´Èë¶ÈÎª0µÄ½Úµã
         for (int i = 0; i < v; ++i) {
             if (inDegree[i] == 0) queue.add(i);
         }
@@ -53,22 +53,22 @@ public class TopologicalSort {
 
 
     /**
-     * æ·±åº¦ä¼˜å…ˆéå† -> DFSç®—æ³•å®ç°æ‹“æ‰‘æ’åº
+     * Éî¶ÈÓÅÏÈ±éÀú -> DFSËã·¨ÊµÏÖÍØÆËÅÅĞò
      */
     public void topoSortByDFS() {
-        // å…ˆæ„å»ºé€†é‚»æ¥è¡¨ï¼Œè¾¹ s->t è¡¨ç¤ºï¼Œs ä¾èµ–äº tï¼Œt å…ˆäº s
+        // ÏÈ¹¹½¨ÄæÁÚ½Ó±í£¬±ß s->t ±íÊ¾£¬s ÒÀÀµÓÚ t£¬t ÏÈÓÚ s
         LinkedList<Integer> inverseAdj[] = new LinkedList[v];
-        for (int i = 0; i < v; ++i) { // ç”³è¯·ç©ºé—´
+        for (int i = 0; i < v; ++i) { // ÉêÇë¿Õ¼ä
             inverseAdj[i] = new LinkedList<>();
         }
-        for (int i = 0; i < v; ++i) { // é€šè¿‡é‚»æ¥è¡¨ç”Ÿæˆé€†é‚»æ¥è¡¨
+        for (int i = 0; i < v; ++i) { // Í¨¹ıÁÚ½Ó±íÉú³ÉÄæÁÚ½Ó±í
             for (int j = 0; j < adj[i].size(); ++j) {
                 int w = adj[i].get(j); // i->w
                 inverseAdj[w].add(i); // w->i
             }
         }
         boolean[] visited = new boolean[v];
-        for (int i = 0; i < v; ++i) { // æ·±åº¦ä¼˜å…ˆéå†å›¾
+        for (int i = 0; i < v; ++i) { // Éî¶ÈÓÅÏÈ±éÀúÍ¼
             if (visited[i] == false) {
                 visited[i] = true;
                 dfs(i, inverseAdj, visited);
@@ -82,7 +82,7 @@ public class TopologicalSort {
             if (visited[w] == true) continue;
             visited[w] = true;
             dfs(w, inverseAdj, visited);
-        } // å…ˆæŠŠ vertex è¿™ä¸ªé¡¶ç‚¹å¯è¾¾çš„æ‰€æœ‰é¡¶ç‚¹éƒ½æ‰“å°å‡ºæ¥ä¹‹åï¼Œå†æ‰“å°å®ƒè‡ªå·±
+        } // ÏÈ°Ñ vertex Õâ¸ö¶¥µã¿É´ïµÄËùÓĞ¶¥µã¶¼´òÓ¡³öÀ´Ö®ºó£¬ÔÙ´òÓ¡Ëü×Ô¼º
         System.out.print("->" + vertex);
     }
 

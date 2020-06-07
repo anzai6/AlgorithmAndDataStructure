@@ -4,52 +4,52 @@ public class Subject58 {
     /**
      *
 
-     å…³äºæ ˆã€é˜Ÿåˆ—å’Œé€’å½’çš„å‡ ä¸ªå¿…çŸ¥å¿…ä¼šçš„ä»£ç å®ç°
+     ¹ØÓÚÕ»¡¢¶ÓÁĞºÍµİ¹éµÄ¼¸¸ö±ØÖª±Ø»áµÄ´úÂëÊµÏÖ
 
-     æ ˆ
-     ç”¨æ•°ç»„å®ç°ä¸€ä¸ªé¡ºåºæ ˆ
+     Õ»
+     ÓÃÊı×éÊµÏÖÒ»¸öË³ĞòÕ»
 
-     ç”¨é“¾è¡¨å®ç°ä¸€ä¸ªé“¾å¼æ ˆ
+     ÓÃÁ´±íÊµÏÖÒ»¸öÁ´Ê½Õ»
 
-     ç¼–ç¨‹æ¨¡æ‹Ÿå®ç°ä¸€ä¸ªæµè§ˆå™¨çš„å‰è¿›ã€åé€€åŠŸèƒ½
+     ±à³ÌÄ£ÄâÊµÏÖÒ»¸öä¯ÀÀÆ÷µÄÇ°½ø¡¢ºóÍË¹¦ÄÜ
 
-     é˜Ÿåˆ—
-     ç”¨æ•°ç»„å®ç°ä¸€ä¸ªé¡ºåºé˜Ÿåˆ—
+     ¶ÓÁĞ
+     ÓÃÊı×éÊµÏÖÒ»¸öË³Ğò¶ÓÁĞ
 
-     ç”¨é“¾è¡¨å®ç°ä¸€ä¸ªé“¾å¼é˜Ÿåˆ—
+     ÓÃÁ´±íÊµÏÖÒ»¸öÁ´Ê½¶ÓÁĞ
 
-     å®ç°ä¸€ä¸ªå¾ªç¯é˜Ÿåˆ—
+     ÊµÏÖÒ»¸öÑ­»·¶ÓÁĞ
 
-     é€’å½’
-     ç¼–ç¨‹å®ç°æ–æ³¢é‚£å¥‘æ•°åˆ—æ±‚å€¼ f(n)=f(n-1)+f(n-2)
+     µİ¹é
+     ±à³ÌÊµÏÖì³²¨ÄÇÆõÊıÁĞÇóÖµ f(n)=f(n-1)+f(n-2)
 
-     ç¼–ç¨‹å®ç°æ±‚é˜¶ä¹˜ n!
+     ±à³ÌÊµÏÖÇó½×³Ë n!
 
-     ç¼–ç¨‹å®ç°ä¸€ç»„æ•°æ®é›†åˆçš„å…¨æ’åˆ—
+     ±à³ÌÊµÏÖÒ»×éÊı¾İ¼¯ºÏµÄÈ«ÅÅÁĞ
 
 
 
-     å¯¹åº”çš„ LeetCode ç»ƒä¹ é¢˜ï¼ˆ@Smallfly æ•´ç†ï¼‰
-     æ ˆ
-     Valid Parenthesesï¼ˆæœ‰æ•ˆçš„æ‹¬å·ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/valid-parentheses/
+     ¶ÔÓ¦µÄ LeetCode Á·Ï°Ìâ£¨@Smallfly ÕûÀí£©
+     Õ»
+     Valid Parentheses£¨ÓĞĞ§µÄÀ¨ºÅ£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/valid-parentheses/
 
-     Longest Valid Parenthesesï¼ˆæœ€é•¿æœ‰æ•ˆçš„æ‹¬å·ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/longest-valid-parentheses/
+     Longest Valid Parentheses£¨×î³¤ÓĞĞ§µÄÀ¨ºÅ£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/longest-valid-parentheses/
 
-     Evaluate Reverse Polish Notatioï¼ˆé€†æ³¢å…°è¡¨è¾¾å¼æ±‚å€¼ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/evaluate-reverse-polish-notation/
+     Evaluate Reverse Polish Notatio£¨Äæ²¨À¼±í´ïÊ½ÇóÖµ£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/evaluate-reverse-polish-notation/
 
-     é˜Ÿåˆ—
-     Design Circular Dequeï¼ˆè®¾è®¡ä¸€ä¸ªåŒç«¯é˜Ÿåˆ—ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/design-circular-deque/
+     ¶ÓÁĞ
+     Design Circular Deque£¨Éè¼ÆÒ»¸öË«¶Ë¶ÓÁĞ£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/design-circular-deque/
 
-     Sliding Window Maximumï¼ˆæ»‘åŠ¨çª—å£æœ€å¤§å€¼ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/sliding-window-maximum/
+     Sliding Window Maximum£¨»¬¶¯´°¿Ú×î´óÖµ£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/sliding-window-maximum/
 
-     é€’å½’
-     Climbing Stairsï¼ˆçˆ¬æ¥¼æ¢¯ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/climbing-stairs/
+     µİ¹é
+     Climbing Stairs£¨ÅÀÂ¥Ìİ£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/climbing-stairs/
 
 
 

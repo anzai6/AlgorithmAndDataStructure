@@ -1,8 +1,8 @@
 package com.example.lib.course23_tree.teacher;
 
 /**
- * äºŒå‰æŸ¥æ‰¾æ ‘ï¼šå·¦å­èŠ‚ç‚¹å°äºçˆ¶èŠ‚ç‚¹ï¼Œå³å­èŠ‚ç‚¹å¤§äºçˆ¶èŠ‚ç‚¹ï¼Œå‡è®¾èŠ‚ç‚¹ä¸åŒ
- * æ’å…¥ï¼ŒæŸ¥æ‰¾ï¼Œåˆ é™¤ï¼ŒæŸ¥æœ€å¤§ï¼ŒæŸ¥æœ€å°
+ * ¶ş²æ²éÕÒÊ÷£º×ó×Ó½ÚµãĞ¡ÓÚ¸¸½Úµã£¬ÓÒ×Ó½Úµã´óÓÚ¸¸½Úµã£¬¼ÙÉè½Úµã²»Í¬
+ * ²åÈë£¬²éÕÒ£¬É¾³ı£¬²é×î´ó£¬²é×îĞ¡
  */
 public class BinarySearchTree {
     private Node tree;
@@ -42,35 +42,35 @@ public class BinarySearchTree {
     }
 
     public void delete(int data) {
-        Node p = tree; // pæŒ‡å‘è¦åˆ é™¤çš„èŠ‚ç‚¹ï¼Œåˆå§‹åŒ–æŒ‡å‘æ ¹èŠ‚ç‚¹
-        Node pp = null; // ppè®°å½•çš„æ˜¯pçš„çˆ¶èŠ‚ç‚¹
+        Node p = tree; // pÖ¸ÏòÒªÉ¾³ıµÄ½Úµã£¬³õÊ¼»¯Ö¸Ïò¸ù½Úµã
+        Node pp = null; // pp¼ÇÂ¼µÄÊÇpµÄ¸¸½Úµã
         while (p != null && p.data != data) {
             pp = p;
             if (data > p.data) p = p.right;
             else p = p.left;
         }
-        if (p == null) return; // æ²¡æœ‰æ‰¾åˆ°
+        if (p == null) return; // Ã»ÓĞÕÒµ½
 
-        // è¦åˆ é™¤çš„èŠ‚ç‚¹æœ‰ä¸¤ä¸ªå­èŠ‚ç‚¹
-        if (p.left != null && p.right != null) { // æŸ¥æ‰¾å³å­æ ‘ä¸­æœ€å°èŠ‚ç‚¹
+        // ÒªÉ¾³ıµÄ½ÚµãÓĞÁ½¸ö×Ó½Úµã
+        if (p.left != null && p.right != null) { // ²éÕÒÓÒ×ÓÊ÷ÖĞ×îĞ¡½Úµã
             Node minP = p.right;
-            Node minPP = p; // minPPè¡¨ç¤ºminPçš„çˆ¶èŠ‚ç‚¹
+            Node minPP = p; // minPP±íÊ¾minPµÄ¸¸½Úµã
             while (minP.left != null) {
                 minPP = minP;
                 minP = minP.left;
             }
-            p.data = minP.data; // å°†minPçš„æ•°æ®æ›¿æ¢åˆ°pä¸­
-            p = minP; // ä¸‹é¢å°±å˜æˆäº†åˆ é™¤minPäº†
+            p.data = minP.data; // ½«minPµÄÊı¾İÌæ»»µ½pÖĞ
+            p = minP; // ÏÂÃæ¾Í±ä³ÉÁËÉ¾³ıminPÁË
             pp = minPP;
         }
 
-        // åˆ é™¤èŠ‚ç‚¹æ˜¯å¶å­èŠ‚ç‚¹æˆ–è€…ä»…æœ‰ä¸€ä¸ªå­èŠ‚ç‚¹
-        Node child; // pçš„å­èŠ‚ç‚¹
+        // É¾³ı½ÚµãÊÇÒ¶×Ó½Úµã»òÕß½öÓĞÒ»¸ö×Ó½Úµã
+        Node child; // pµÄ×Ó½Úµã
         if (p.left != null) child = p.left;
         else if (p.right != null) child = p.right;
         else child = null;
 
-        if (pp == null) tree = child; // åˆ é™¤çš„æ˜¯æ ¹èŠ‚ç‚¹
+        if (pp == null) tree = child; // É¾³ıµÄÊÇ¸ù½Úµã
         else if (pp.left == p) pp.left = child;
         else pp.right = child;
     }

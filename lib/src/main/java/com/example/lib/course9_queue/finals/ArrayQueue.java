@@ -3,22 +3,22 @@ package com.example.lib.course9_queue.finals;
 /**
  * Created by wangzheng on 2018/10/9.
  */
-// ç”¨æ•°ç»„å®ç°çš„é˜Ÿåˆ—
+// ÓÃÊı×éÊµÏÖµÄ¶ÓÁĞ
 public class ArrayQueue {
-    // æ•°ç»„ï¼šitemsï¼Œæ•°ç»„å¤§å°ï¼šn
+    // Êı×é£ºitems£¬Êı×é´óĞ¡£ºn
     private String[] items;
     private int n = 0;
 
-    // ç”³è¯·ä¸€ä¸ªå¤§å°ä¸ºcapacityçš„æ•°ç»„
+    // ÉêÇëÒ»¸ö´óĞ¡ÎªcapacityµÄÊı×é
     public ArrayQueue(int capacity) {
     }
 
-    // å…¥é˜Ÿ
+    // Èë¶Ó
     public boolean enqueue(String item) {
         return true;
     }
 
-    // å‡ºé˜Ÿ
+    // ³ö¶Ó
     public String dequeue() {
         return "";
     }

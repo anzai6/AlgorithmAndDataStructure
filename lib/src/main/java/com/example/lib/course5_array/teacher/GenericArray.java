@@ -7,45 +7,45 @@ public class GenericArray<T> {
     private T[] data;
     private int size;
 
-    // æ ¹æ®ä¼ å…¥å®¹é‡ï¼Œæ„é€ Array
+    // ¸ù¾İ´«ÈëÈİÁ¿£¬¹¹ÔìArray
     public GenericArray(int capacity) {
         data = (T[]) new Object[capacity];
         size = 0;
     }
 
-    // æ— å‚æ„é€ æ–¹æ³•ï¼Œé»˜è®¤æ•°ç»„å®¹é‡ä¸º10
+    // ÎŞ²Î¹¹Ôì·½·¨£¬Ä¬ÈÏÊı×éÈİÁ¿Îª10
     public GenericArray() {
         this(10);
     }
 
-    // è·å–æ•°ç»„å®¹é‡
+    // »ñÈ¡Êı×éÈİÁ¿
     public int getCapacity() {
         return data.length;
     }
 
-    // è·å–å½“å‰å…ƒç´ ä¸ªæ•°
+    // »ñÈ¡µ±Ç°ÔªËØ¸öÊı
     public int count() {
         return size;
     }
 
-    // åˆ¤æ–­æ•°ç»„æ˜¯å¦ä¸ºç©º
+    // ÅĞ¶ÏÊı×éÊÇ·ñÎª¿Õ
     public boolean isEmpty() {
         return size == 0;
     }
 
-    // ä¿®æ”¹ index ä½ç½®çš„å…ƒç´ 
+    // ĞŞ¸Ä index Î»ÖÃµÄÔªËØ
     public void set(int index, T e) {
         checkIndex(index);
         data[index] = e;
     }
 
-    // è·å–å¯¹åº” index ä½ç½®çš„å…ƒç´ 
+    // »ñÈ¡¶ÔÓ¦ index Î»ÖÃµÄÔªËØ
     public T get(int index) {
         checkIndex(index);
         return data[index];
     }
 
-    // æŸ¥çœ‹æ•°ç»„æ˜¯å¦åŒ…å«å…ƒç´ e
+    // ²é¿´Êı×éÊÇ·ñ°üº¬ÔªËØe
     public boolean contains(T e) {
         for (int i = 0; i < size; i++) {
             if (data[i].equals(e)) {
@@ -55,7 +55,7 @@ public class GenericArray<T> {
         return false;
     }
 
-    // è·å–å¯¹åº”å…ƒç´ çš„ä¸‹æ ‡, æœªæ‰¾åˆ°ï¼Œè¿”å› -1
+    // »ñÈ¡¶ÔÓ¦ÔªËØµÄÏÂ±ê, Î´ÕÒµ½£¬·µ»Ø -1
     public int find(T e) {
         for (int i = 0; i < size; i++) {
             if (data[i].equals(e)) {
@@ -66,10 +66,10 @@ public class GenericArray<T> {
     }
 
 
-    // åœ¨ index ä½ç½®ï¼Œæ’å…¥å…ƒç´ e, æ—¶é—´å¤æ‚åº¦ O(m+n)
+    // ÔÚ index Î»ÖÃ£¬²åÈëÔªËØe, Ê±¼ä¸´ÔÓ¶È O(m+n)
     public void add(int index, T e) {
         checkIndex(index);
-        // å¦‚æœå½“å‰å…ƒç´ ä¸ªæ•°ç­‰äºæ•°ç»„å®¹é‡ï¼Œåˆ™å°†æ•°ç»„æ‰©å®¹ä¸ºåŸæ¥çš„2å€
+        // Èç¹ûµ±Ç°ÔªËØ¸öÊıµÈÓÚÊı×éÈİÁ¿£¬Ôò½«Êı×éÀ©ÈİÎªÔ­À´µÄ2±¶
         if (size == data.length) {
             resize(2 * data.length);
         }
@@ -81,17 +81,17 @@ public class GenericArray<T> {
         size++;
     }
 
-    // å‘æ•°ç»„å¤´æ’å…¥å…ƒç´ 
+    // ÏòÊı×éÍ·²åÈëÔªËØ
     public void addFirst(T e) {
         add(0, e);
     }
 
-    // å‘æ•°ç»„å°¾æ’å…¥å…ƒç´ 
+    // ÏòÊı×éÎ²²åÈëÔªËØ
     public void addLast(T e) {
         add(size, e);
     }
 
-    // åˆ é™¤ index ä½ç½®çš„å…ƒç´ ï¼Œå¹¶è¿”å›
+    // É¾³ı index Î»ÖÃµÄÔªËØ£¬²¢·µ»Ø
     public T remove(int index) {
         checkIndexForRemove(index);
 
@@ -102,7 +102,7 @@ public class GenericArray<T> {
         size--;
         data[size] = null;
 
-        // ç¼©å®¹
+        // ËõÈİ
         if (size == data.length / 4 && data.length / 2 != 0) {
             resize(data.length / 2);
         }
@@ -110,17 +110,17 @@ public class GenericArray<T> {
         return ret;
     }
 
-    // åˆ é™¤ç¬¬ä¸€ä¸ªå…ƒç´ 
+    // É¾³ıµÚÒ»¸öÔªËØ
     public T removeFirst() {
         return remove(0);
     }
 
-    // åˆ é™¤æœ«å°¾å…ƒç´ 
+    // É¾³ıÄ©Î²ÔªËØ
     public T removeLast() {
         return remove(size - 1);
     }
 
-    // ä»æ•°ç»„ä¸­åˆ é™¤æŒ‡å®šå…ƒç´ 
+    // ´ÓÊı×éÖĞÉ¾³ıÖ¸¶¨ÔªËØ
     public void removeElement(T e) {
         int index = find(e);
         if (index != -1) {
@@ -144,7 +144,7 @@ public class GenericArray<T> {
     }
 
 
-    // æ‰©å®¹æ–¹æ³•ï¼Œæ—¶é—´å¤æ‚åº¦ O(n)
+    // À©Èİ·½·¨£¬Ê±¼ä¸´ÔÓ¶È O(n)
     private void resize(int capacity) {
         T[] newData = (T[]) new Object[capacity];
 

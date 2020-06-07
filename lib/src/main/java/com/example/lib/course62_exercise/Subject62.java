@@ -8,22 +8,22 @@ public class Subject62 {
 
     /**
      *
-     å…³äºå›¾çš„å‡ ä¸ªå¿…çŸ¥å¿…ä¼šçš„ä»£ç å®ç°
-     å›¾
-     å®ç°æœ‰å‘å›¾ã€æ— å‘å›¾ã€æœ‰æƒå›¾ã€æ— æƒå›¾çš„é‚»æ¥çŸ©é˜µå’Œé‚»æ¥è¡¨è¡¨ç¤ºæ–¹æ³•
+     ¹ØÓÚÍ¼µÄ¼¸¸ö±ØÖª±Ø»áµÄ´úÂëÊµÏÖ
+     Í¼
+     ÊµÏÖÓĞÏòÍ¼¡¢ÎŞÏòÍ¼¡¢ÓĞÈ¨Í¼¡¢ÎŞÈ¨Í¼µÄÁÚ½Ó¾ØÕóºÍÁÚ½Ó±í±íÊ¾·½·¨
 
-     å®ç°å›¾çš„æ·±åº¦ä¼˜å…ˆæœç´¢ã€å¹¿åº¦ä¼˜å…ˆæœç´¢
+     ÊµÏÖÍ¼µÄÉî¶ÈÓÅÏÈËÑË÷¡¢¹ã¶ÈÓÅÏÈËÑË÷
 
-     å®ç° dijkstra ç®—æ³•ã€A* ç®—æ³•
+     ÊµÏÖ dijkstra Ëã·¨¡¢A* Ëã·¨
 
-     å®ç°æ‹“æ‰‘æ’åºçš„ Kahn ç®—æ³•ã€DFS ç®—æ³•
+     ÊµÏÖÍØÆËÅÅĞòµÄ Kahn Ëã·¨¡¢DFS Ëã·¨
 
-     å¯¹åº”çš„ LeetCode ç»ƒä¹ é¢˜ï¼ˆ@Smallfly æ•´ç†ï¼‰
-     Number of Islandsï¼ˆå²›å±¿çš„ä¸ªæ•°ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/number-of-islands/description/
+     ¶ÔÓ¦µÄ LeetCode Á·Ï°Ìâ£¨@Smallfly ÕûÀí£©
+     Number of Islands£¨µºÓìµÄ¸öÊı£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/number-of-islands/description/
 
-     Valid Sudokuï¼ˆæœ‰æ•ˆçš„æ•°ç‹¬ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/valid-sudoku/
+     Valid Sudoku£¨ÓĞĞ§µÄÊı¶À£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/valid-sudoku/
 
      *
      */

@@ -1,12 +1,12 @@
 package com.example.lib.course58_exercise.stack;
 
 /**
- * ç¼–ç¨‹æ¨¡æ‹Ÿå®ç°ä¸€ä¸ªæµè§ˆå™¨çš„å‰è¿›ã€åé€€åŠŸèƒ½
+ * ±à³ÌÄ£ÄâÊµÏÖÒ»¸öä¯ÀÀÆ÷µÄÇ°½ø¡¢ºóÍË¹¦ÄÜ
  */
 public class BrowserExercise<T> {
 
-    LinkStackExercise<String> backStack; // å­˜å‚¨å½“å‰å·²æ‰“å¼€çš„æ‰€æœ‰é“¾æ¥
-    LinkStackExercise<String> closeStack; // å­˜åœ¨å·²å…³é—­çš„é“¾æ¥
+    LinkStackExercise<String> backStack; // ´æ´¢µ±Ç°ÒÑ´ò¿ªµÄËùÓĞÁ´½Ó
+    LinkStackExercise<String> closeStack; // ´æÔÚÒÑ¹Ø±ÕµÄÁ´½Ó
     private String mCurrentPage;
 
     public BrowserExercise() {
@@ -15,7 +15,7 @@ public class BrowserExercise<T> {
     }
 
     /**
-     * å…³é—­æµè§ˆå™¨
+     * ¹Ø±Õä¯ÀÀÆ÷
      */
     public void closeBrower() {
         mCurrentPage = null;
@@ -24,7 +24,7 @@ public class BrowserExercise<T> {
     }
 
     /**
-     * æ‰“å¼€ç½‘é¡µï¼Œç›¸å½“äºæ–°å¢
+     * ´ò¿ªÍøÒ³£¬Ïàµ±ÓÚĞÂÔö
      *
      * @param url
      * @return
@@ -40,7 +40,7 @@ public class BrowserExercise<T> {
     }
 
     /**
-     * å‰è¿›ï¼šå³æ‰“å¼€åˆšåˆšæµè§ˆè¿‡å¹¶å…³é—­çš„ç½‘é¡µ
+     * Ç°½ø£º¼´´ò¿ª¸Õ¸Õä¯ÀÀ¹ı²¢¹Ø±ÕµÄÍøÒ³
      *
      * @return
      */
@@ -56,7 +56,7 @@ public class BrowserExercise<T> {
     }
 
     /**
-     * åé€€
+     * ºóÍË
      *
      * @return
      */

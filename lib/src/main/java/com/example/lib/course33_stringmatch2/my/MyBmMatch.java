@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * BMå­—ç¬¦ä¸²æŸ¥æ‰¾æ–¹æ³•ï¼šä»æ¨¡å¼ä¸²åé¢å­—ç¬¦å¾€å‰åŒ¹é…ï¼Œåˆ©ç”¨åå­—ç¬¦è§„åˆ™å’Œå¥½å­—ç¬¦è§„åˆ™æå‡æŸ¥æ‰¾æ•ˆç‡
- * ï¼ˆåå­—ç¬¦è§„åˆ™éœ€è¦é¢å¤–çš„hashè¡¨å†…å­˜ï¼Œå¦‚æœå†…å­˜è¦æ±‚ä¸¥æ ¼å¯ä»¥åªä½¿ç”¨å¥½å­—ç¬¦è§„åˆ™ï¼‰
+ * BM×Ö·û´®²éÕÒ·½·¨£º´ÓÄ£Ê½´®ºóÃæ×Ö·ûÍùÇ°Æ¥Åä£¬ÀûÓÃ»µ×Ö·û¹æÔòºÍºÃ×Ö·û¹æÔòÌáÉı²éÕÒĞ§ÂÊ
+ * £¨»µ×Ö·û¹æÔòĞèÒª¶îÍâµÄhash±íÄÚ´æ£¬Èç¹ûÄÚ´æÒªÇóÑÏ¸ñ¿ÉÒÔÖ»Ê¹ÓÃºÃ×Ö·û¹æÔò£©
  * Created by qinshunan on 2019/4/16.
  */
 
@@ -15,11 +15,11 @@ public class MyBmMatch {
 
 
     /**
-     * BMæŸ¥æ‰¾
+     * BM²éÕÒ
      *
-     * @param mainStr  ä¸»ä¸²
-     * @param matchStr æ¨¡å¼ä¸²
-     * @return æŸ¥æ‰¾åˆ°å¯¹åº”å­—ç¬¦ä¸²çš„é¦–å­—ç¬¦åœ¨mainStrçš„ä¸‹æ ‡, æ¯”å¦‚ï¼šbcda ä¸­æŸ¥æ‰¾ da è¿”å› 2
+     * @param mainStr  Ö÷´®
+     * @param matchStr Ä£Ê½´®
+     * @return ²éÕÒµ½¶ÔÓ¦×Ö·û´®µÄÊ××Ö·ûÔÚmainStrµÄÏÂ±ê, ±ÈÈç£ºbcda ÖĞ²éÕÒ da ·µ»Ø 2
      */
     public int bmSearch(String mainStr, String matchStr) {
 
@@ -35,45 +35,45 @@ public class MyBmMatch {
         if (matchStr.length() == mainStr.length())
             return mainStr.equals(matchStr) ? 0 : -1;
 
-        if (matchStr.length() <= 2) // é•¿åº¦2ä»¥å†…ç”¨BFæš´åŠ›æœç´¢ç®—æ³•å¯èƒ½æ›´å¿«ï¼ˆåŠ ä¸Šåè§„åˆ™è¿˜ä¼šæ›´å¿«ï¼Œè¿™é‡Œä¸è€ƒè™‘äº†ï¼‰
+        if (matchStr.length() <= 2) // ³¤¶È2ÒÔÄÚÓÃBF±©Á¦ËÑË÷Ëã·¨¿ÉÄÜ¸ü¿ì£¨¼ÓÉÏ»µ¹æÔò»¹»á¸ü¿ì£¬ÕâÀï²»¿¼ÂÇÁË£©
             return new MyStringMatch().BF(mainStr, matchStr);
 
         int mainLen = mainStr.length();
         int matchLen = matchStr.length();
 
-        // -- æ•°æ®é¢„å¤„ç†å¼€å§‹ --
-        // åå­—ç¬¦è§„åˆ™æ•°æ®é¢„å¤„ç†
-        // åˆ©ç”¨æ•£åˆ—è¡¨å­˜å‚¨matchSträ¸­æ¯ä¸ªå­—ç¬¦å¯¹åº”çš„ä¸‹æ ‡ï¼Œæ–¹ä¾¿åé¢æŸ¥æ‰¾åŒ¹é…
+        // -- Êı¾İÔ¤´¦Àí¿ªÊ¼ --
+        // »µ×Ö·û¹æÔòÊı¾İÔ¤´¦Àí
+        // ÀûÓÃÉ¢ÁĞ±í´æ´¢matchStrÖĞÃ¿¸ö×Ö·û¶ÔÓ¦µÄÏÂ±ê£¬·½±ãºóÃæ²éÕÒÆ¥Åä
         Map<Character, Integer> matchCharMap = new HashMap<>();
         char[] matchChars = matchStr.toCharArray();
         for (int i = 0; i < matchChars.length; i++) {
             matchCharMap.put(matchChars[i], i);
         }
 
-        // å¥½å­—ç¬¦è§„åˆ™æ•°æ®é¢„å¤„ç†
-        // å€¼å­˜å‚¨æ¨¡å¼ä¸²ä¸­ä¸åç¼€å­ä¸²åŒ¹é…çš„å­ä¸²åœ¨æ¨¡å¼ä¸²ä¸­çš„èµ·å§‹èµ·å§‹å­—ç¬¦åæ ‡ï¼Œä¸‹æ ‡æ˜¯è¿™ä¸ªåŒ¹é…çš„åç¼€å­ä¸²çš„é•¿åº¦ï¼Œä¾‹å¦‚
-        // æ¨¡å¼ä¸²ï¼šdcdc
-        // åˆ™å…¶åç¼€å­ä¸²æœ‰ï¼š  c              dc            cdc
-        // å¯¹åº”   sufix[1] == 1; sufix[2] == 0; sufix[3] == -1
+        // ºÃ×Ö·û¹æÔòÊı¾İÔ¤´¦Àí
+        // Öµ´æ´¢Ä£Ê½´®ÖĞÓëºó×º×Ó´®Æ¥ÅäµÄ×Ó´®ÔÚÄ£Ê½´®ÖĞµÄÆğÊ¼ÆğÊ¼×Ö·û×ø±ê£¬ÏÂ±êÊÇÕâ¸öÆ¥ÅäµÄºó×º×Ó´®µÄ³¤¶È£¬ÀıÈç
+        // Ä£Ê½´®£ºdcdc
+        // ÔòÆäºó×º×Ó´®ÓĞ£º  c              dc            cdc
+        // ¶ÔÓ¦   sufix[1] == 1; sufix[2] == 0; sufix[3] == -1
         int[] sufix = new int[matchLen];
-        // åˆå§‹åŒ–
+        // ³õÊ¼»¯
         for (int i = 0; i < matchLen; i++) {
             sufix[i] = -1;
         }
 
-        // æ¨¡å¼ä¸²ä¸­æœ‰ä¸åç¼€å­ä¸²åŒ¹é…çš„å‰ç¼€å­ä¸²ï¼Œä»¥å…¶é•¿åº¦ä¸ºä¸‹æ ‡ï¼Œè®°å½•å€¼ä¸ºtrue,æ ¹æ®ä¸Šé¢çš„ä¾‹å­åˆ™ï¼šprefix[2] == true;
+        // Ä£Ê½´®ÖĞÓĞÓëºó×º×Ó´®Æ¥ÅäµÄÇ°×º×Ó´®£¬ÒÔÆä³¤¶ÈÎªÏÂ±ê£¬¼ÇÂ¼ÖµÎªtrue,¸ù¾İÉÏÃæµÄÀı×ÓÔò£ºprefix[2] == true;
         boolean[] prefix = new boolean[matchLen];
 
-        // å–æ¨¡å¼ä¸²ä¸­0~kçš„å­ä¸²ä¸æ¨¡å¼ä¸²æ±‚å…¬å…±åç¼€å­ä¸²ï¼Œé€šè¿‡å…¬å…±åç¼€å­ä¸²é•¿åº¦èµ‹å€¼sufixå’Œprefix
-        // kçš„å–å€¼èŒƒå›´æ˜¯0~matchLen - 2
+        // È¡Ä£Ê½´®ÖĞ0~kµÄ×Ó´®ÓëÄ£Ê½´®Çó¹«¹²ºó×º×Ó´®£¬Í¨¹ı¹«¹²ºó×º×Ó´®³¤¶È¸³ÖµsufixºÍprefix
+        // kµÄÈ¡Öµ·¶Î§ÊÇ0~matchLen - 2
         for (int k = 0; k < matchLen - 1; k++) {
             int m = matchLen - 1;
-            // æ±‚å…¬å…±åç¼€å­ä¸²
+            // Çó¹«¹²ºó×º×Ó´®
             for (int i = k; i >= 0; --i, --m) {
                 char suMatchChar = matchStr.charAt(k);
                 char matchChar = matchStr.charAt(m);
                 if (suMatchChar == matchChar) {
-                    int j = k - i + 1; // å·²ç»åŒ¹é…çš„å…¬å…±åç¼€å­ä¸²çš„é•¿åº¦
+                    int j = k - i + 1; // ÒÑ¾­Æ¥ÅäµÄ¹«¹²ºó×º×Ó´®µÄ³¤¶È
                     sufix[j] = i;
                     if (i == 0)
                         prefix[k] = true;
@@ -82,29 +82,29 @@ public class MyBmMatch {
                 }
             }
         }
-        // -- æ•°æ®é¢„å¤„ç†ç»“æŸ --
+        // -- Êı¾İÔ¤´¦Àí½áÊø --
 
-        // å¼€å§‹åŒ¹é…
-        int s = matchLen - 1; // æ¯æ¬¡å¼€å§‹åŒ¹é…çš„ä¸‹æ ‡ï¼Œç”±äºæ˜¯ä»åå¾€å‰åŒ¹é…çš„ï¼Œæ‰€ä»¥èµ·å§‹ä¸‹æ ‡å°±æ˜¯æ¨¡å¼ä¸²çš„é•¿åº¦å‡ä¸€
-        // å¾ªç¯åŒ¹é…
+        // ¿ªÊ¼Æ¥Åä
+        int s = matchLen - 1; // Ã¿´Î¿ªÊ¼Æ¥ÅäµÄÏÂ±ê£¬ÓÉÓÚÊÇ´ÓºóÍùÇ°Æ¥ÅäµÄ£¬ËùÒÔÆğÊ¼ÏÂ±ê¾ÍÊÇÄ£Ê½´®µÄ³¤¶È¼õÒ»
+        // Ñ­»·Æ¥Åä
         while (s < mainLen) {
 
-            // å…ˆä½¿ç”¨åå­—ç¬¦è§„åˆ™åŒ¹é…
+            // ÏÈÊ¹ÓÃ»µ×Ö·û¹æÔòÆ¥Åä
             int badMoveLen = badCharRuleMatch(mainStr, matchStr, s, matchCharMap);
-            if (badMoveLen == 0) // åŒ¹é…æˆåŠŸ
+            if (badMoveLen == 0) // Æ¥Åä³É¹¦
                 return s - matchLen + 1;
-            else if (badMoveLen < 0) { // åå­—ç¬¦è§„åˆ™åŒ¹é…å¤±æ•ˆ
+            else if (badMoveLen < 0) { // »µ×Ö·û¹æÔòÆ¥ÅäÊ§Ğ§
 
             }
 
-            // -- ä½¿ç”¨å¥½å­—ç¬¦è§„åˆ™åŒ¹é… --
+            // -- Ê¹ÓÃºÃ×Ö·û¹æÔòÆ¥Åä --
 
-            // ä¸Šé¢å–å¾—sufixå’Œprefixçš„å€¼åå°±å¯ä»¥å¼€å§‹å¥½å­—ç¬¦è§„åˆ™åŒ¹é…äº†
+            // ÉÏÃæÈ¡µÃsufixºÍprefixµÄÖµºó¾Í¿ÉÒÔ¿ªÊ¼ºÃ×Ö·û¹æÔòÆ¥ÅäÁË
             int goodMoveLen = goodCharRuleMatch(mainStr, matchStr, s, sufix, prefix);
-            if (goodMoveLen == 0) // åŒ¹é…æˆåŠŸ
+            if (goodMoveLen == 0) // Æ¥Åä³É¹¦
                 return s - matchLen + 1;
 
-            // å–åå­—ç¬¦è§„åˆ™å’Œå¥½å­—ç¬¦è§„åˆ™ä¸­ç§»åŠ¨æœ€å¤§çš„ä½æ•°
+            // È¡»µ×Ö·û¹æÔòºÍºÃ×Ö·û¹æÔòÖĞÒÆ¶¯×î´óµÄÎ»Êı
 //            s = s + Math.max(badMoveLen, goodMoveLen);
             s = s + goodMoveLen;
         }
@@ -113,17 +113,17 @@ public class MyBmMatch {
     }
 
     /**
-     * åå­—ç¬¦è§„åˆ™
+     * »µ×Ö·û¹æÔò
      *
-     * @param mainStr      ä¸»ä¸²
-     * @param matchStr     æ¨¡å¼ä¸²
-     * @param s            ä»è¿™ä¸ªä¸‹æ ‡å¼€å§‹å¾€å‰åŒ¹é…æ¨¡å¼ä¸²
-     * @param matchCharMap å­˜å‚¨æ¨¡å¼ä¸²æ¯ä¸ªå­—ç¬¦å¯¹åº”çš„ä¸‹æ ‡çš„æ•£åˆ—è¡¨
-     * @return è¿”å›åå­—ç¬¦è§„åˆ™ä¸‹ç§»åŠ¨çš„é•¿åº¦ï¼Œè¿”å›0è¯æ˜åŒ¹é…æˆåŠŸ
+     * @param mainStr      Ö÷´®
+     * @param matchStr     Ä£Ê½´®
+     * @param s            ´ÓÕâ¸öÏÂ±ê¿ªÊ¼ÍùÇ°Æ¥ÅäÄ£Ê½´®
+     * @param matchCharMap ´æ´¢Ä£Ê½´®Ã¿¸ö×Ö·û¶ÔÓ¦µÄÏÂ±êµÄÉ¢ÁĞ±í
+     * @return ·µ»Ø»µ×Ö·û¹æÔòÏÂÒÆ¶¯µÄ³¤¶È£¬·µ»Ø0Ö¤Ã÷Æ¥Åä³É¹¦
      */
     private int badCharRuleMatch(String mainStr, String matchStr, int s, Map<Character, Integer> matchCharMap) {
         int matchLen = matchStr.length();
-        // ä»åå¾€å‰åŒ¹é…
+        // ´ÓºóÍùÇ°Æ¥Åä
         for (int i = matchLen - 1; i >= 0; --i, --s) {
             char mainChar = mainStr.charAt(s);
             char matchChar = matchStr.charAt(i);
@@ -139,36 +139,36 @@ public class MyBmMatch {
     }
 
     /**
-     * åå­—ç¬¦è§„åˆ™
+     * »µ×Ö·û¹æÔò
      *
-     * @param mainStr  ä¸»ä¸²
-     * @param matchStr æ¨¡å¼ä¸²
-     * @param s        ä»è¿™ä¸ªä¸‹æ ‡å¼€å§‹å¾€å‰åŒ¹é…æ¨¡å¼ä¸²
-     * @param sufix    å€¼å­˜å‚¨æ¨¡å¼ä¸²ä¸­ä¸åç¼€å­ä¸²åŒ¹é…çš„å­ä¸²åœ¨æ¨¡å¼ä¸²ä¸­çš„èµ·å§‹èµ·å§‹å­—ç¬¦åæ ‡ï¼Œä¸‹æ ‡æ˜¯è¿™ä¸ªåŒ¹é…çš„åç¼€å­ä¸²çš„é•¿åº¦
-     * @param prefix   æ¨¡å¼ä¸²ä¸­æœ‰ä¸åç¼€å­ä¸²åŒ¹é…çš„å‰ç¼€å­ä¸²ï¼Œä»¥å…¶é•¿åº¦ä¸ºä¸‹æ ‡ï¼Œè®°å½•å€¼ä¸ºtrue
-     * @return è¿”å›åå­—ç¬¦è§„åˆ™ä¸‹ç§»åŠ¨çš„é•¿åº¦ï¼Œè¿”å›0è¯æ˜åŒ¹é…æˆåŠŸ
+     * @param mainStr  Ö÷´®
+     * @param matchStr Ä£Ê½´®
+     * @param s        ´ÓÕâ¸öÏÂ±ê¿ªÊ¼ÍùÇ°Æ¥ÅäÄ£Ê½´®
+     * @param sufix    Öµ´æ´¢Ä£Ê½´®ÖĞÓëºó×º×Ó´®Æ¥ÅäµÄ×Ó´®ÔÚÄ£Ê½´®ÖĞµÄÆğÊ¼ÆğÊ¼×Ö·û×ø±ê£¬ÏÂ±êÊÇÕâ¸öÆ¥ÅäµÄºó×º×Ó´®µÄ³¤¶È
+     * @param prefix   Ä£Ê½´®ÖĞÓĞÓëºó×º×Ó´®Æ¥ÅäµÄÇ°×º×Ó´®£¬ÒÔÆä³¤¶ÈÎªÏÂ±ê£¬¼ÇÂ¼ÖµÎªtrue
+     * @return ·µ»Ø»µ×Ö·û¹æÔòÏÂÒÆ¶¯µÄ³¤¶È£¬·µ»Ø0Ö¤Ã÷Æ¥Åä³É¹¦
      */
     private int goodCharRuleMatch(String mainStr, String matchStr, int s, int[] sufix, boolean[] prefix) {
         int matchLen = matchStr.length();
-        // ä»åå¾€å‰åŒ¹é…
+        // ´ÓºóÍùÇ°Æ¥Åä
         for (int i = matchLen - 1; i >= 0; --i, --s) {
             char mainChar = mainStr.charAt(s);
             char matchChar = matchStr.charAt(i);
             if (mainChar != matchChar) {
-                int j = matchLen - i - 1; // å¥½å­—ç¬¦ä¸²é•¿åº¦
-                if (j == 0) { // æ²¡æœ‰å¥½å­—ç¬¦ï¼Œç§»åŠ¨ä¸€ä½
+                int j = matchLen - i - 1; // ºÃ×Ö·û´®³¤¶È
+                if (j == 0) { // Ã»ÓĞºÃ×Ö·û£¬ÒÆ¶¯Ò»Î»
                     return 1;
                 } else {
-                    int h = sufix[j]; // å¥½å­—ç¬¦ä¸²åœ¨æ¨¡å¼ä¸²ä¸­çš„æœ€è¿‘å­ä¸²çš„ä¸‹æ ‡ï¼Œä¾‹å¦‚æ¨¡å¼ä¸²æ˜¯ï¼šcbcabc,å¥½å­—ç¬¦ä¸²æ˜¯bc,åˆ™h=1;
-                    if (h >= 0) { // æœ‰å€¼
+                    int h = sufix[j]; // ºÃ×Ö·û´®ÔÚÄ£Ê½´®ÖĞµÄ×î½ü×Ó´®µÄÏÂ±ê£¬ÀıÈçÄ£Ê½´®ÊÇ£ºcbcabc,ºÃ×Ö·û´®ÊÇbc,Ôòh=1;
+                    if (h >= 0) { // ÓĞÖµ
                         return i - h + 1;
-                    } else { // æ²¡æœ‰å€¼ï¼Œå¯»æ‰¾åŒ¹é…çš„å‰ç¼€å­ä¸²
+                    } else { // Ã»ÓĞÖµ£¬Ñ°ÕÒÆ¥ÅäµÄÇ°×º×Ó´®
                         for (int k = j; k >= 1; --k) {
                             if (prefix[k]) {
                                 return matchLen - k;
                             }
                         }
-                        // æ²¡æœ‰æ‰¾åˆ°åŒ¹é…çš„å‰ç¼€å­ä¸²,æ•´ä¸ªæ¨¡å¼ä¸²åç§»
+                        // Ã»ÓĞÕÒµ½Æ¥ÅäµÄÇ°×º×Ó´®,Õû¸öÄ£Ê½´®ºóÒÆ
                         return matchLen;
                     }
                 }

@@ -1,36 +1,36 @@
 package com.example.lib.course5_array.finals;
 
 /**
- * 1) æ•°ç»„çš„æ’å…¥ã€åˆ é™¤ã€æŒ‰ç…§ä¸‹æ ‡éšæœºè®¿é—®æ“ä½œï¼›
- * 2ï¼‰æ•°ç»„ä¸­çš„æ•°æ®æ˜¯intç±»å‹çš„ï¼›
+ * 1) Êı×éµÄ²åÈë¡¢É¾³ı¡¢°´ÕÕÏÂ±êËæ»ú·ÃÎÊ²Ù×÷£»
+ * 2£©Êı×éÖĞµÄÊı¾İÊÇintÀàĞÍµÄ£»
  * <p>
  * Author: Zheng
  * modify: xing
  */
 public class Array {
-    //å®šä¹‰æ•´å‹æ•°æ®dataä¿å­˜æ•°æ®
+    //¶¨ÒåÕûĞÍÊı¾İdata±£´æÊı¾İ
     public int data[];
-    //å®šä¹‰æ•°ç»„é•¿åº¦
+    //¶¨ÒåÊı×é³¤¶È
     private int n;
-    //å®šä¹‰ä¸­å®é™…ä¸ªæ•°
+    //¶¨ÒåÖĞÊµ¼Ê¸öÊı
     private int count;
 
-    //æ„é€ æ–¹æ³•ï¼Œå®šä¹‰æ•°ç»„å¤§å°
+    //¹¹Ôì·½·¨£¬¶¨ÒåÊı×é´óĞ¡
     public Array(int capacity) {
         this.data = new int[capacity];
         this.n = capacity;
-        this.count = 0;//ä¸€å¼€å§‹ä¸€ä¸ªæ•°éƒ½æ²¡æœ‰å­˜æ‰€ä»¥ä¸º0
+        this.count = 0;//Ò»¿ªÊ¼Ò»¸öÊı¶¼Ã»ÓĞ´æËùÒÔÎª0
     }
 
-    //æ ¹æ®ç´¢å¼•ï¼Œæ‰¾åˆ°æ•°æ®ä¸­çš„å…ƒç´ å¹¶è¿”å›
+    //¸ù¾İË÷Òı£¬ÕÒµ½Êı¾İÖĞµÄÔªËØ²¢·µ»Ø
     public int find(int index) {
         if (index < 0 || index >= count) return -1;
         return data[index];
     }
 
-    //æ’å…¥å…ƒç´ :å¤´éƒ¨æ’å…¥ï¼Œå°¾éƒ¨æ’å…¥
+    //²åÈëÔªËØ:Í·²¿²åÈë£¬Î²²¿²åÈë
     public boolean insert(int index, int value) {
-        //æ•°ç»„ä¸­æ— å…ƒç´ 
+        //Êı×éÖĞÎŞÔªËØ
 
         //if (index == count && count == 0) {
         //    data[index] = value;
@@ -38,18 +38,18 @@ public class Array {
         //    return true;
         //}
 
-        // æ•°ç»„ç©ºé—´å·²æ»¡
+        // Êı×é¿Õ¼äÒÑÂú
         if (count == n) {
-            System.out.println("æ²¡æœ‰å¯æ’å…¥çš„ä½ç½®");
+            System.out.println("Ã»ÓĞ¿É²åÈëµÄÎ»ÖÃ");
             return false;
         }
-        // å¦‚æœcountè¿˜æ²¡æ»¡ï¼Œé‚£ä¹ˆå°±å¯ä»¥æ’å…¥æ•°æ®åˆ°æ•°ç»„ä¸­
-        // ä½ç½®ä¸åˆæ³•
+        // Èç¹ûcount»¹Ã»Âú£¬ÄÇÃ´¾Í¿ÉÒÔ²åÈëÊı¾İµ½Êı×éÖĞ
+        // Î»ÖÃ²»ºÏ·¨
         if (index < 0 || index > count) {
-            System.out.println("ä½ç½®ä¸åˆæ³•");
+            System.out.println("Î»ÖÃ²»ºÏ·¨");
             return false;
         }
-        // ä½ç½®åˆæ³•
+        // Î»ÖÃºÏ·¨
         for (int i = count; i > index; --i) {
             data[i] = data[i - 1];
         }
@@ -58,14 +58,14 @@ public class Array {
         return true;
     }
 
-    //æ ¹æ®ç´¢å¼•ï¼Œåˆ é™¤æ•°ç»„ä¸­å…ƒç´ 
+    //¸ù¾İË÷Òı£¬É¾³ıÊı×éÖĞÔªËØ
     public boolean delete(int index) {
         if (index < 0 || index >= count) return false;
-        //ä»åˆ é™¤ä½ç½®å¼€å§‹ï¼Œå°†åé¢çš„å…ƒç´ å‘å‰ç§»åŠ¨ä¸€ä½
+        //´ÓÉ¾³ıÎ»ÖÃ¿ªÊ¼£¬½«ºóÃæµÄÔªËØÏòÇ°ÒÆ¶¯Ò»Î»
         for (int i = index + 1; i < count; ++i) {
             data[i - 1] = data[i];
         }
-        //åˆ é™¤æ•°ç»„æœ«å°¾å…ƒç´   è¿™æ®µä»£ç ä¸éœ€è¦ä¹Ÿå¯ä»¥
+        //É¾³ıÊı×éÄ©Î²ÔªËØ  Õâ¶Î´úÂë²»ĞèÒªÒ²¿ÉÒÔ
         /*int[] arr = new int[count-1];
         for (int i=0; i<count-1;i++){
             arr[i] = data[i];

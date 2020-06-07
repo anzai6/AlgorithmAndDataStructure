@@ -1,23 +1,23 @@
 package com.example.lib.course9_queue.finals;
 
 /**
- * ç¯å½¢é˜Ÿåˆ—
+ * »·ĞÎ¶ÓÁĞ
  * Created by wangzheng on 2018/10/9.
  */
 public class CircularQueue {
-    // æ•°ç»„ï¼šitemsï¼Œæ•°ç»„å¤§å°ï¼šn
+    // Êı×é£ºitems£¬Êı×é´óĞ¡£ºn
     private String[] items;
 
-    // ç”³è¯·ä¸€ä¸ªå¤§å°ä¸ºcapacityçš„æ•°ç»„
+    // ÉêÇëÒ»¸ö´óĞ¡ÎªcapacityµÄÊı×é
     public CircularQueue(int capacity) {
     }
 
-    // å…¥é˜Ÿ
+    // Èë¶Ó
     public boolean enqueue(String item) {
         return true;
     }
 
-    // å‡ºé˜Ÿ
+    // ³ö¶Ó
     public String dequeue() {
         return null;
     }

@@ -1,18 +1,18 @@
 package com.example.lib.course60_exercise.string;
 
 /**
- * å®ç°ä¸€ä¸ªå­—ç¬¦é›†ï¼ŒåªåŒ…å« aï½z è¿™ 26 ä¸ªè‹±æ–‡å­—æ¯çš„ Trie æ ‘
+ * ÊµÏÖÒ»¸ö×Ö·û¼¯£¬Ö»°üº¬ a¡«z Õâ 26 ¸öÓ¢ÎÄ×ÖÄ¸µÄ Trie Ê÷
  */
 public class TrieExercise {
 
     private Node head;
 
     public TrieExercise() {
-        head = new Node('#'); // æ ¹èŠ‚ç‚¹å­˜å‚¨æ— æ„ä¹‰å­—ç¬¦
+        head = new Node('#'); // ¸ù½Úµã´æ´¢ÎŞÒâÒå×Ö·û
     }
 
     /**
-     * æ’å…¥Trieæ ‘
+     * ²åÈëTrieÊ÷
      *
      * @param data
      */
@@ -23,20 +23,20 @@ public class TrieExercise {
         Node p = head;
         for (int i = 0; i < chars.length; i++) {
             char value = chars[i];
-            int index = value - 'a'; // æ±‚å‡ºä¸‹æ ‡
+            int index = value - 'a'; // Çó³öÏÂ±ê
             Node[] list = p.list;
             Node node = list[index];
-            if (node == null) { // ä¸å­˜åœ¨å°±æ’å…¥
+            if (node == null) { // ²»´æÔÚ¾Í²åÈë
                 node = new Node(value);
                 list[index] = node;
             }
             p = node;
         }
-        p.isEnd = true; // ç»“æŸ
+        p.isEnd = true; // ½áÊø
     }
 
     /**
-     * Trieæ ‘æŸ¥æ‰¾
+     * TrieÊ÷²éÕÒ
      *
      * @param data
      * @return
@@ -48,21 +48,21 @@ public class TrieExercise {
         Node p = head;
         for (int i = 0; i < chars.length; i++) {
             char value = chars[i];
-            int index = value - 'a'; // æ±‚å‡ºä¸‹æ ‡
+            int index = value - 'a'; // Çó³öÏÂ±ê
             Node[] list = p.list;
             Node node = list[index];
-            if (node != null && node.value == value) { // å­˜åœ¨åŒ¹é…å­—ç¬¦
+            if (node != null && node.value == value) { // ´æÔÚÆ¥Åä×Ö·û
                 p = node;
-            } else { // ä¸èƒ½å­˜åœ¨
+            } else { // ²»ÄÜ´æÔÚ
                 return false;
             }
 
         }
-        return p.isEnd; // ç»“æŸ
+        return p.isEnd; // ½áÊø
     }
 
     static class Node {
-        Node[] list = new Node[26]; // 26ä¸ªå­—æ¯
+        Node[] list = new Node[26]; // 26¸ö×ÖÄ¸
         char value;
         boolean isEnd;
 

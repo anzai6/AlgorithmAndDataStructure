@@ -5,40 +5,40 @@ package com.example.lib.course12_sorts.teacher;
  */
 public class MergeSort {
 
-    // å½’å¹¶æ’åºç®—æ³•, aæ˜¯æ•°ç»„ï¼Œnè¡¨ç¤ºæ•°ç»„å¤§å°
+    // ¹é²¢ÅÅĞòËã·¨, aÊÇÊı×é£¬n±íÊ¾Êı×é´óĞ¡
     public static void mergeSort(int[] a, int n) {
         mergeSortInternally(a, 0, n - 1);
     }
 
-    // é€’å½’è°ƒç”¨å‡½æ•°
+    // µİ¹éµ÷ÓÃº¯Êı
     private static void mergeSortInternally(int[] a, int p, int r) {
-        // é€’å½’ç»ˆæ­¢æ¡ä»¶
+        // µİ¹éÖÕÖ¹Ìõ¼ş
         if (p >= r) return;
 
-        // å–påˆ°rä¹‹é—´çš„ä¸­é—´ä½ç½®q,é˜²æ­¢ï¼ˆp+rï¼‰çš„å’Œè¶…è¿‡intç±»å‹æœ€å¤§å€¼
+        // È¡pµ½rÖ®¼äµÄÖĞ¼äÎ»ÖÃq,·ÀÖ¹£¨p+r£©µÄºÍ³¬¹ıintÀàĞÍ×î´óÖµ
         int q = p + (r - p) / 2;
-        // åˆ†æ²»é€’å½’
+        // ·ÖÖÎµİ¹é
         mergeSortInternally(a, p, q);
         mergeSortInternally(a, q + 1, r);
 
-        // å°†A[p...q]å’ŒA[q+1...r]åˆå¹¶ä¸ºA[p...r]
+        // ½«A[p...q]ºÍA[q+1...r]ºÏ²¢ÎªA[p...r]
         merge(a, p, q, r);
     }
 
     private static void merge(int[] a, int p, int q, int r) {
         int i = p;
         int j = q + 1;
-        int k = 0; // åˆå§‹åŒ–å˜é‡i, j, k
-        int[] tmp = new int[r - p + 1]; // ç”³è¯·ä¸€ä¸ªå¤§å°è·Ÿa[p...r]ä¸€æ ·çš„ä¸´æ—¶æ•°ç»„
+        int k = 0; // ³õÊ¼»¯±äÁ¿i, j, k
+        int[] tmp = new int[r - p + 1]; // ÉêÇëÒ»¸ö´óĞ¡¸úa[p...r]Ò»ÑùµÄÁÙÊ±Êı×é
         while (i <= q && j <= r) {
             if (a[i] <= a[j]) {
-                tmp[k++] = a[i++]; // i++ç­‰äºi:=i+1
+                tmp[k++] = a[i++]; // i++µÈÓÚi:=i+1
             } else {
                 tmp[k++] = a[j++];
             }
         }
 
-        // åˆ¤æ–­å“ªä¸ªå­æ•°ç»„ä¸­æœ‰å‰©ä½™çš„æ•°æ®
+        // ÅĞ¶ÏÄÄ¸ö×ÓÊı×éÖĞÓĞÊ£ÓàµÄÊı¾İ
         int start = i;
         int end = q;
         if (j <= r) {
@@ -46,12 +46,12 @@ public class MergeSort {
             end = r;
         }
 
-        // å°†å‰©ä½™çš„æ•°æ®æ‹·è´åˆ°ä¸´æ—¶æ•°ç»„tmp
+        // ½«Ê£ÓàµÄÊı¾İ¿½±´µ½ÁÙÊ±Êı×étmp
         while (start <= end) {
             tmp[k++] = a[start++];
         }
 
-        // å°†tmpä¸­çš„æ•°ç»„æ‹·è´å›a[p...r]
+        // ½«tmpÖĞµÄÊı×é¿½±´»Øa[p...r]
         for (i = 0; i <= r - p; ++i) {
             a[p + i] = tmp[i];
         }

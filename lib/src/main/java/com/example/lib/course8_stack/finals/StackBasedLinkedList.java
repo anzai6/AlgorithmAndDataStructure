@@ -3,7 +3,7 @@ package com.example.lib.course8_stack.finals;
 import com.example.lib.Node;
 
 /**
- * åŸºäºé“¾è¡¨å®ç°çš„æ ˆã€‚
+ * »ùÓÚÁ´±íÊµÏÖµÄÕ»¡£
  * <p>
  * Author: Zheng
  */
@@ -14,7 +14,7 @@ public class StackBasedLinkedList {
     }
 
     /**
-     * æˆ‘ç”¨-1è¡¨ç¤ºæ ˆä¸­æ²¡æœ‰æ•°æ®ã€‚
+     * ÎÒÓÃ-1±íÊ¾Õ»ÖĞÃ»ÓĞÊı¾İ¡£
      */
     public int pop() {
         return 0;

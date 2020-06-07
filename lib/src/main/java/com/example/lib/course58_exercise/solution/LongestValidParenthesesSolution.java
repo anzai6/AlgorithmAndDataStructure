@@ -3,35 +3,35 @@ package com.example.lib.course58_exercise.solution;
 import java.util.Stack;
 
 /**
- * æœ€é•¿æœ‰æ•ˆçš„æ‹¬å·
+ * ×î³¤ÓÐÐ§µÄÀ¨ºÅ
  * https://leetcode-cn.com/problems/longest-valid-parentheses/
  */
 
 public class LongestValidParenthesesSolution {
 //
-//    ç»™å®šä¸€ä¸ªåªåŒ…å« '(' å’Œ ')' çš„å­—ç¬¦ä¸²ï¼Œæ‰¾å‡ºæœ€é•¿çš„åŒ…å«æœ‰æ•ˆæ‹¬å·çš„å­ä¸²çš„é•¿åº¦ã€‚
+//    ¸ø¶¨Ò»¸öÖ»°üº¬ '(' ºÍ ')' µÄ×Ö·û´®£¬ÕÒ³ö×î³¤µÄ°üº¬ÓÐÐ§À¨ºÅµÄ×Ó´®µÄ³¤¶È¡£
 //
-//    ç¤ºä¾‹ 1:
+//    Ê¾Àý 1:
 //
-//    è¾“å…¥: "(()"
-//    è¾“å‡º: 2
-//    è§£é‡Š: æœ€é•¿æœ‰æ•ˆæ‹¬å·å­ä¸²ä¸º "()"
-//    ç¤ºä¾‹ 2:
+//    ÊäÈë: "(()"
+//    Êä³ö: 2
+//    ½âÊÍ: ×î³¤ÓÐÐ§À¨ºÅ×Ó´®Îª "()"
+//    Ê¾Àý 2:
 //
-//    è¾“å…¥: ")()())"
-//    è¾“å‡º: 4
-//    è§£é‡Š: æœ€é•¿æœ‰æ•ˆæ‹¬å·å­ä¸²ä¸º "()()"
+//    ÊäÈë: ")()())"
+//    Êä³ö: 4
+//    ½âÊÍ: ×î³¤ÓÐÐ§À¨ºÅ×Ó´®Îª "()()"
 //
-//    è¾“å…¥: "(()())"
-//    è¾“å‡º: 6
-//    è§£é‡Š: æœ€é•¿æœ‰æ•ˆæ‹¬å·å­ä¸²ä¸º "(()())"
+//    ÊäÈë: "(()())"
+//    Êä³ö: 6
+//    ½âÊÍ: ×î³¤ÓÐÐ§À¨ºÅ×Ó´®Îª "(()())"
 
     /**
-     * å®˜æ–¹è§£ç­”ï¼š
-     * åœ¨è¿™ç§æ–¹æ³•ä¸­ï¼Œæˆ‘ä»¬åˆ©ç”¨ä¸¤ä¸ªè®¡æ•°å™¨ leftleft å’Œ rightright ã€‚é¦–å…ˆï¼Œæˆ‘ä»¬ä»Žå·¦åˆ°å³éåŽ†å­—ç¬¦ä¸²ï¼Œå¯¹äºŽé‡åˆ°çš„æ¯ä¸ª â€˜(â€™ï¼Œæˆ‘ä»¬å¢žåŠ  leftleft è®¡ç®—å™¨ï¼Œ
-     * å¯¹äºŽé‡åˆ°çš„æ¯ä¸ª â€˜)â€™ ï¼Œæˆ‘ä»¬å¢žåŠ  rightright è®¡æ•°å™¨ã€‚æ¯å½“ leftleft è®¡æ•°å™¨ä¸Ž rightright è®¡æ•°å™¨ç›¸ç­‰æ—¶ï¼Œæˆ‘ä»¬è®¡ç®—å½“å‰æœ‰æ•ˆå­—ç¬¦ä¸²çš„é•¿åº¦ï¼Œ
-     * å¹¶ä¸”è®°å½•ç›®å‰ä¸ºæ­¢æ‰¾åˆ°çš„æœ€é•¿å­å­—ç¬¦ä¸²ã€‚å¦‚æžœ rightright è®¡æ•°å™¨æ¯” leftleft è®¡æ•°å™¨å¤§æ—¶ï¼Œæˆ‘ä»¬å°† leftleft å’Œ rightright è®¡æ•°å™¨åŒæ—¶å˜å›ž 0 ã€‚
-     * æŽ¥ä¸‹æ¥ï¼Œæˆ‘ä»¬ä»Žå³åˆ°å·¦åšä¸€éç±»ä¼¼çš„å·¥ä½œã€‚ä¸¤éä¸‹æ¥å³å¯è®¡ç®—å‡ºæœ€é•¿æœ‰æ•ˆæ‹¬å·çš„é•¿åº¦
+     * ¹Ù·½½â´ð£º
+     * ÔÚÕâÖÖ·½·¨ÖÐ£¬ÎÒÃÇÀûÓÃÁ½¸ö¼ÆÊýÆ÷ leftleft ºÍ rightright ¡£Ê×ÏÈ£¬ÎÒÃÇ´Ó×óµ½ÓÒ±éÀú×Ö·û´®£¬¶ÔÓÚÓöµ½µÄÃ¿¸ö ¡®(¡¯£¬ÎÒÃÇÔö¼Ó leftleft ¼ÆËãÆ÷£¬
+     * ¶ÔÓÚÓöµ½µÄÃ¿¸ö ¡®)¡¯ £¬ÎÒÃÇÔö¼Ó rightright ¼ÆÊýÆ÷¡£Ã¿µ± leftleft ¼ÆÊýÆ÷Óë rightright ¼ÆÊýÆ÷ÏàµÈÊ±£¬ÎÒÃÇ¼ÆËãµ±Ç°ÓÐÐ§×Ö·û´®µÄ³¤¶È£¬
+     * ²¢ÇÒ¼ÇÂ¼Ä¿Ç°ÎªÖ¹ÕÒµ½µÄ×î³¤×Ó×Ö·û´®¡£Èç¹û rightright ¼ÆÊýÆ÷±È leftleft ¼ÆÊýÆ÷´óÊ±£¬ÎÒÃÇ½« leftleft ºÍ rightright ¼ÆÊýÆ÷Í¬Ê±±ä»Ø 0 ¡£
+     * ½ÓÏÂÀ´£¬ÎÒÃÇ´ÓÓÒµ½×ó×öÒ»±éÀàËÆµÄ¹¤×÷¡£Á½±éÏÂÀ´¼´¿É¼ÆËã³ö×î³¤ÓÐÐ§À¨ºÅµÄ³¤¶È
      *
      * @param s
      * @return
@@ -67,7 +67,7 @@ public class LongestValidParenthesesSolution {
     }
 
     /**
-     * æŠŠé…å¯¹çš„å…¨éƒ¨æ¶ˆæŽ‰ï¼Œå‰©ä¸‹çš„æ±‚å‡ºä¸­é—´é—´éš”å³å¯
+     * °ÑÅä¶ÔµÄÈ«²¿Ïûµô£¬Ê£ÏÂµÄÇó³öÖÐ¼ä¼ä¸ô¼´¿É
      *
      * @param s
      * @return
@@ -76,21 +76,21 @@ public class LongestValidParenthesesSolution {
         if (s == null || "".equals(s))
             return 0;
 
-        Stack<Character> stack = new Stack<>(); // è®°å½•æ‹¬å·
-        Stack<Integer> leftIndex = new Stack<>(); // è®°å½•æ‹¬å·çš„ä¸‹æ ‡
+        Stack<Character> stack = new Stack<>(); // ¼ÇÂ¼À¨ºÅ
+        Stack<Integer> leftIndex = new Stack<>(); // ¼ÇÂ¼À¨ºÅµÄÏÂ±ê
         char[] charList = s.toCharArray();
         int maxCount = 0;
 
         for (int i = 0; i < charList.length; i++) {
             char str = charList[i];
-            if (')' == str) { // å³æ‹¬å·
+            if (')' == str) { // ÓÒÀ¨ºÅ
                 if (!stack.isEmpty()) {
 
                     char pre = stack.pop();
-                    if (pre == '(') { // æ¶ˆæŽ‰ä¸€ç»„
+                    if (pre == '(') { // ÏûµôÒ»×é
                         leftIndex.pop();
                     } else {
-                        stack.push(pre); // åŠ å›žåŽ»
+                        stack.push(pre); // ¼Ó»ØÈ¥
                         stack.push(str);
                         leftIndex.push(i);
                     }
@@ -99,14 +99,14 @@ public class LongestValidParenthesesSolution {
                     leftIndex.push(i);
                 }
 
-            } else { // å·¦æ‹¬å·
+            } else { // ×óÀ¨ºÅ
                 stack.push(str);
                 leftIndex.push(i);
             }
         }
 
-        // ç›¸å½“äºŽæ¶ˆæ¶ˆä¹ä¸€æ ·ï¼Œæ¶ˆæŽ‰ä¹‹åŽå‰©ä¸‹çš„é€šè¿‡å‡æ³•æ±‚å‡ºä¸­é—´æ®µçš„è·ç¦»ï¼Œæ¯”å¦‚".)..(..(."3 6 13 14
-        int nextIndex = charList.length; // é«˜ä½
+        // Ïàµ±ÓÚÏûÏûÀÖÒ»Ñù£¬ÏûµôÖ®ºóÊ£ÏÂµÄÍ¨¹ý¼õ·¨Çó³öÖÐ¼ä¶ÎµÄ¾àÀë£¬±ÈÈç".)..(..(."3 6 13 14
+        int nextIndex = charList.length; // ¸ßÎ»
         while (!leftIndex.isEmpty()) {
             int currentIndex = leftIndex.pop();
             int count = nextIndex - currentIndex;
@@ -115,9 +115,9 @@ public class LongestValidParenthesesSolution {
             nextIndex = currentIndex;
         }
 
-        if (nextIndex > maxCount) // æœ€åŽä¸€ä¸ªï¼Œç‰¹æ®Šå¤„ç†ï¼Œéœ€è¦åŠ ä¸€ï¼Œä¸ºäº†ä¸‹é¢çš„å‡ä¸€
+        if (nextIndex > maxCount) // ×îºóÒ»¸ö£¬ÌØÊâ´¦Àí£¬ÐèÒª¼ÓÒ»£¬ÎªÁËÏÂÃæµÄ¼õÒ»
             maxCount = nextIndex + 1;
-        return maxCount - 1;  // è¿™é‡Œéœ€è¦å‡ä¸€ï¼Œæ¯”å¦‚5å’Œ2ä¹‹é—´é—´éš”ä¸¤ä½ï¼Œä½†æ˜¯5-2=3
+        return maxCount - 1;  // ÕâÀïÐèÒª¼õÒ»£¬±ÈÈç5ºÍ2Ö®¼ä¼ä¸ôÁ½Î»£¬µ«ÊÇ5-2=3
 
     }
 

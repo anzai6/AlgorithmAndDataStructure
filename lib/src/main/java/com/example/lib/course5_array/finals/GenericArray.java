@@ -7,79 +7,79 @@ public class GenericArray<T> {
     private T[] data;
     private int size;
 
-    // æ ¹æ®ä¼ å…¥å®¹é‡ï¼Œæ„é€ Array
+    // ¸ù¾İ´«ÈëÈİÁ¿£¬¹¹ÔìArray
     public GenericArray(int capacity) {
     }
 
-    // æ— å‚æ„é€ æ–¹æ³•ï¼Œé»˜è®¤æ•°ç»„å®¹é‡ä¸º10
+    // ÎŞ²Î¹¹Ôì·½·¨£¬Ä¬ÈÏÊı×éÈİÁ¿Îª10
     public GenericArray() {
     }
 
-    // è·å–æ•°ç»„å®¹é‡
+    // »ñÈ¡Êı×éÈİÁ¿
     public int getCapacity() {
         return 0;
     }
 
-    // è·å–å½“å‰å…ƒç´ ä¸ªæ•°
+    // »ñÈ¡µ±Ç°ÔªËØ¸öÊı
     public int count() {
         return size;
     }
 
-    // åˆ¤æ–­æ•°ç»„æ˜¯å¦ä¸ºç©º
+    // ÅĞ¶ÏÊı×éÊÇ·ñÎª¿Õ
     public boolean isEmpty() {
         return false;
     }
 
-    // ä¿®æ”¹ index ä½ç½®çš„å…ƒç´ 
+    // ĞŞ¸Ä index Î»ÖÃµÄÔªËØ
     public void set(int index, T e) {
     }
 
-    // è·å–å¯¹åº” index ä½ç½®çš„å…ƒç´ 
+    // »ñÈ¡¶ÔÓ¦ index Î»ÖÃµÄÔªËØ
     public T get(int index) {
         return null;
     }
 
-    // æŸ¥çœ‹æ•°ç»„æ˜¯å¦åŒ…å«å…ƒç´ e
+    // ²é¿´Êı×éÊÇ·ñ°üº¬ÔªËØe
     public boolean contains(T e) {
         return false;
     }
 
-    // è·å–å¯¹åº”å…ƒç´ çš„ä¸‹æ ‡, æœªæ‰¾åˆ°ï¼Œè¿”å› -1
+    // »ñÈ¡¶ÔÓ¦ÔªËØµÄÏÂ±ê, Î´ÕÒµ½£¬·µ»Ø -1
     public int find(T e) {
         return -1;
     }
 
 
-    // åœ¨ index ä½ç½®ï¼Œæ’å…¥å…ƒç´ e, æ—¶é—´å¤æ‚åº¦ O(m+n)
+    // ÔÚ index Î»ÖÃ£¬²åÈëÔªËØe, Ê±¼ä¸´ÔÓ¶È O(m+n)
     public void add(int index, T e) {
     }
 
-    // å‘æ•°ç»„å¤´æ’å…¥å…ƒç´ 
+    // ÏòÊı×éÍ·²åÈëÔªËØ
     public void addFirst(T e) {
 
     }
 
-    // å‘æ•°ç»„å°¾æ’å…¥å…ƒç´ 
+    // ÏòÊı×éÎ²²åÈëÔªËØ
     public void addLast(T e){
     }
 
-    // åˆ é™¤ index ä½ç½®çš„å…ƒç´ ï¼Œå¹¶è¿”å›
+    // É¾³ı index Î»ÖÃµÄÔªËØ£¬²¢·µ»Ø
     public T remove(int index) {
 
         return null;
     }
 
-    // åˆ é™¤ç¬¬ä¸€ä¸ªå…ƒç´ 
+    // É¾³ıµÚÒ»¸öÔªËØ
     public T removeFirst() {
         return null;
     }
 
-    // åˆ é™¤æœ«å°¾å…ƒç´ 
+    // É¾³ıÄ©Î²ÔªËØ
     public T removeLast() {
         return null;
     }
 
-    // ä»æ•°ç»„ä¸­åˆ é™¤æŒ‡å®šå…ƒç´ 
+    // ´ÓÊı×éÖĞÉ¾³ıÖ¸¶¨ÔªËØ
     public void removeElement(T e) {
     }
 
@@ -99,7 +99,7 @@ public class GenericArray<T> {
     }
 
 
-    // æ‰©å®¹æ–¹æ³•ï¼Œæ—¶é—´å¤æ‚åº¦ O(n)
+    // À©Èİ·½·¨£¬Ê±¼ä¸´ÔÓ¶È O(n)
     private void resize(int capacity) {
     }
 

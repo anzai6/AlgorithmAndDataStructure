@@ -1,13 +1,13 @@
 package com.example.lib.course8_stack.my;
 
 /**
- * åŸºäºæ•°ç»„å®ç°çš„æ ˆï¼šé¡ºåºæ ˆ
+ * »ùÓÚÊı×éÊµÏÖµÄÕ»£ºË³ĞòÕ»
  */
 public class MyStackBasedArrayList<T> {
 
-    private T[] data; // å­˜å‚¨æ ˆä¸­å…ƒç´ çš„æ•°ç»„
-    private int mDataSize; // æ ˆä¸­å·²æœ‰æ•°æ®ä¸ªæ•°
-    private int mCapacity;// æ ˆçš„å®¹é‡;
+    private T[] data; // ´æ´¢Õ»ÖĞÔªËØµÄÊı×é
+    private int mDataSize; // Õ»ÖĞÒÑÓĞÊı¾İ¸öÊı
+    private int mCapacity;// Õ»µÄÈİÁ¿;
 
     public MyStackBasedArrayList(int size) {
         data = (T[]) new Object[size];
@@ -16,12 +16,12 @@ public class MyStackBasedArrayList<T> {
     }
 
     /**
-     * å…¥æ ˆ
+     * ÈëÕ»
      *
      * @param t
      */
     public boolean push(T t) {
-        if (mDataSize == mCapacity) // æ ˆæ»¡
+        if (mDataSize == mCapacity) // Õ»Âú
             return false;
         data[mDataSize] = t;
         ++mDataSize;
@@ -29,7 +29,7 @@ public class MyStackBasedArrayList<T> {
     }
 
     /**
-     * å‡ºæ ˆ
+     * ³öÕ»
      *
      * @return
      */

@@ -1,42 +1,42 @@
 package com.example.lib.course39_dynamicplanning1.teacher;
 
 /**
- * åŠ¨æ€è§„åˆ’
+ * ¶¯Ì¬¹æ»®
  */
 public class DynamicPlanning2 {
 
-    // 0-1èƒŒåŒ…å‡çº§ç‰ˆæœ¬,å¤„ç†é‡é‡,æ¯ä¸ªç‰©ä½“è¿˜æœ‰ä»·å€¼,æ±‚æœ€å¤§ä»·å€¼
-    private int maxV = Integer.MIN_VALUE; // ç»“æœæ”¾åˆ° maxV ä¸­
-    private int[] items = {2, 2, 4, 6, 3};  // ç‰©å“çš„é‡é‡
-    private int[] value = {3, 4, 8, 9, 6}; // ç‰©å“çš„ä»·å€¼
-    private int n = 5; // ç‰©å“ä¸ªæ•°
-    private int w = 9; // èƒŒåŒ…æ‰¿å—çš„æœ€å¤§é‡é‡
+    // 0-1±³°üÉı¼¶°æ±¾,´¦ÀíÖØÁ¿,Ã¿¸öÎïÌå»¹ÓĞ¼ÛÖµ,Çó×î´ó¼ÛÖµ
+    private int maxV = Integer.MIN_VALUE; // ½á¹û·Åµ½ maxV ÖĞ
+    private int[] items = {2, 2, 4, 6, 3};  // ÎïÆ·µÄÖØÁ¿
+    private int[] value = {3, 4, 8, 9, 6}; // ÎïÆ·µÄ¼ÛÖµ
+    private int n = 5; // ÎïÆ·¸öÊı
+    private int w = 9; // ±³°ü³ĞÊÜµÄ×î´óÖØÁ¿
 
-    public void f(int i, int cw, int cv) { // è°ƒç”¨ f(0, 0, 0)
-        if (cw == w || i == n) { // cw==w è¡¨ç¤ºè£…æ»¡äº†,i==n è¡¨ç¤ºç‰©å“éƒ½è€ƒå¯Ÿå®Œäº†
+    public void f(int i, int cw, int cv) { // µ÷ÓÃ f(0, 0, 0)
+        if (cw == w || i == n) { // cw==w ±íÊ¾×°ÂúÁË,i==n ±íÊ¾ÎïÆ·¶¼¿¼²ìÍêÁË
             if (cv > maxV) maxV = cv;
             return;
         }
-        f(i + 1, cw, cv); // é€‰æ‹©ä¸è£…ç¬¬ i ä¸ªç‰©å“
+        f(i + 1, cw, cv); // Ñ¡Ôñ²»×°µÚ i ¸öÎïÆ·
         if (cw + items[i] <= w) {
-            f(i + 1, cw + items[i], cv + value[i]); // é€‰æ‹©è£…ç¬¬ i ä¸ªç‰©å“
+            f(i + 1, cw + items[i], cv + value[i]); // Ñ¡Ôñ×°µÚ i ¸öÎïÆ·
         }
     }
 
     public static int knapsack3(int[] weight, int[] value, int n, int w) {
         int[][] states = new int[n][w + 1];
-        for (int i = 0; i < n; ++i) { // åˆå§‹åŒ– states
+        for (int i = 0; i < n; ++i) { // ³õÊ¼»¯ states
             for (int j = 0; j < w + 1; ++j) {
                 states[i][j] = -1;
             }
         }
         states[0][0] = 0;
         states[0][weight[0]] = value[0];
-        for (int i = 1; i < n; ++i) { // åŠ¨æ€è§„åˆ’ï¼ŒçŠ¶æ€è½¬ç§»
-            for (int j = 0; j <= w; ++j) { // ä¸é€‰æ‹©ç¬¬ i ä¸ªç‰©å“
+        for (int i = 1; i < n; ++i) { // ¶¯Ì¬¹æ»®£¬×´Ì¬×ªÒÆ
+            for (int j = 0; j <= w; ++j) { // ²»Ñ¡ÔñµÚ i ¸öÎïÆ·
                 if (states[i - 1][j] >= 0) states[i][j] = states[i - 1][j];
             }
-            for (int j = 0; j <= w - weight[i]; ++j) { // é€‰æ‹©ç¬¬ i ä¸ªç‰©å“
+            for (int j = 0; j <= w - weight[i]; ++j) { // Ñ¡ÔñµÚ i ¸öÎïÆ·
                 if (states[i - 1][j] >= 0) {
                     int v = states[i - 1][j] + value[i];
                     if (v > states[i][j + weight[i]]) {
@@ -45,7 +45,7 @@ public class DynamicPlanning2 {
                 }
             }
         }
-        // æ‰¾å‡ºæœ€å¤§å€¼
+        // ÕÒ³ö×î´óÖµ
         int maxvalue = -1;
         for (int j = 0; j <= w; ++j) {
             if (states[n - 1][j] > maxvalue) maxvalue = states[n - 1][j];

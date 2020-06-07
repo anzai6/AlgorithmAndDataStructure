@@ -1,36 +1,36 @@
 package com.example.lib.course38_backtracking.teacher;
 
 /**
- * å›æº¯ç®—æ³•ï¼šå…«çš‡åï¼Œ0-1èƒŒåŒ…ï¼Œæ­£åˆ™è¡¨è¾¾å¼
+ * »ØËİËã·¨£º°Ë»Êºó£¬0-1±³°ü£¬ÕıÔò±í´ïÊ½
  */
 public class BacktrackingAlgorithm {
 
 
-    // å…«çš‡åçš„å›æº¯ç®—æ³•å¦‚ä¸‹ï¼š
+    // °Ë»ÊºóµÄ»ØËİËã·¨ÈçÏÂ£º
 
-    int[] result = new int[8];// å…¨å±€æˆ–æˆå‘˜å˜é‡, ä¸‹æ ‡è¡¨ç¤ºè¡Œ, å€¼è¡¨ç¤º queen å­˜å‚¨åœ¨å“ªä¸€åˆ—
+    int[] result = new int[8];// È«¾Ö»ò³ÉÔ±±äÁ¿, ÏÂ±ê±íÊ¾ĞĞ, Öµ±íÊ¾ queen ´æ´¢ÔÚÄÄÒ»ÁĞ
 
-    public void cal8queens(int row) { // è°ƒç”¨æ–¹å¼ï¼šcal8queens(0);
-        if (row == 8) { // 8 ä¸ªæ£‹å­éƒ½æ”¾ç½®å¥½äº†ï¼Œæ‰“å°ç»“æœ
+    public void cal8queens(int row) { // µ÷ÓÃ·½Ê½£ºcal8queens(0);
+        if (row == 8) { // 8 ¸öÆå×Ó¶¼·ÅÖÃºÃÁË£¬´òÓ¡½á¹û
             printQueens(result);
-            return; // 8 è¡Œæ£‹å­éƒ½æ”¾å¥½äº†ï¼Œå·²ç»æ²¡æ³•å†å¾€ä¸‹é€’å½’äº†ï¼Œæ‰€ä»¥å°± return
+            return; // 8 ĞĞÆå×Ó¶¼·ÅºÃÁË£¬ÒÑ¾­Ã»·¨ÔÙÍùÏÂµİ¹éÁË£¬ËùÒÔ¾Í return
         }
-        for (int column = 0; column < 8; ++column) { // æ¯ä¸€è¡Œéƒ½æœ‰ 8 ä¸­æ”¾æ³•
-            if (isOk(row, column)) { // æœ‰äº›æ”¾æ³•ä¸æ»¡è¶³è¦æ±‚
-                result[row] = column; // ç¬¬ row è¡Œçš„æ£‹å­æ”¾åˆ°äº† column åˆ—
-                cal8queens(row + 1); // è€ƒå¯Ÿä¸‹ä¸€è¡Œ
+        for (int column = 0; column < 8; ++column) { // Ã¿Ò»ĞĞ¶¼ÓĞ 8 ÖĞ·Å·¨
+            if (isOk(row, column)) { // ÓĞĞ©·Å·¨²»Âú×ãÒªÇó
+                result[row] = column; // µÚ row ĞĞµÄÆå×Ó·Åµ½ÁË column ÁĞ
+                cal8queens(row + 1); // ¿¼²ìÏÂÒ»ĞĞ
             }
         }
     }
 
-    private boolean isOk(int row, int column) {// åˆ¤æ–­ row è¡Œ column åˆ—æ”¾ç½®æ˜¯å¦åˆé€‚
+    private boolean isOk(int row, int column) {// ÅĞ¶Ï row ĞĞ column ÁĞ·ÅÖÃÊÇ·ñºÏÊÊ
         int leftup = column - 1, rightup = column + 1;
-        for (int i = row - 1; i >= 0; --i) { // é€è¡Œå¾€ä¸Šè€ƒå¯Ÿæ¯ä¸€è¡Œ
-            if (result[i] == column) return false; // ç¬¬ i è¡Œçš„ column åˆ—æœ‰æ£‹å­å—ï¼Ÿ
-            if (leftup >= 0) { // è€ƒå¯Ÿå·¦ä¸Šå¯¹è§’çº¿ï¼šç¬¬ i è¡Œ leftup åˆ—æœ‰æ£‹å­å—ï¼Ÿ
+        for (int i = row - 1; i >= 0; --i) { // ÖğĞĞÍùÉÏ¿¼²ìÃ¿Ò»ĞĞ
+            if (result[i] == column) return false; // µÚ i ĞĞµÄ column ÁĞÓĞÆå×ÓÂğ£¿
+            if (leftup >= 0) { // ¿¼²ì×óÉÏ¶Ô½ÇÏß£ºµÚ i ĞĞ leftup ÁĞÓĞÆå×ÓÂğ£¿
                 if (result[i] == leftup) return false;
             }
-            if (rightup < 8) { // è€ƒå¯Ÿå³ä¸Šå¯¹è§’çº¿ï¼šç¬¬ i è¡Œ rightup åˆ—æœ‰æ£‹å­å—ï¼Ÿ
+            if (rightup < 8) { // ¿¼²ìÓÒÉÏ¶Ô½ÇÏß£ºµÚ i ĞĞ rightup ÁĞÓĞÆå×ÓÂğ£¿
                 if (result[i] == rightup) return false;
             }
             --leftup;
@@ -39,7 +39,7 @@ public class BacktrackingAlgorithm {
         return true;
     }
 
-    private void printQueens(int[] result) { // æ‰“å°å‡ºä¸€ä¸ªäºŒç»´çŸ©é˜µ
+    private void printQueens(int[] result) { // ´òÓ¡³öÒ»¸ö¶şÎ¬¾ØÕó
         for (int row = 0; row < 8; ++row) {
             for (int column = 0; column < 8; ++column) {
                 if (result[row] == column) System.out.print("Q ");
@@ -51,20 +51,20 @@ public class BacktrackingAlgorithm {
     }
 
 
-    // 0-1èƒŒåŒ…ï¼šä»nä¸ªç‰©ä½“ä¸­é€‰æ‹©ç‰©ä½“è£…å…¥èƒŒåŒ…ï¼ŒèƒŒåŒ…æœ€å¤§æ‰¿é‡Wï¼Œç‰©ä½“ä¸å¯åˆ†å‰²ï¼Œæ±‚èƒ½è£…å…¥ç‰©ä½“çš„æ€»é‡é‡çš„æœ€å¤§å€¼
-    public int maxW = Integer.MIN_VALUE; // å­˜å‚¨èƒŒåŒ…ä¸­ç‰©å“æ€»é‡é‡çš„æœ€å¤§å€¼
+    // 0-1±³°ü£º´Ón¸öÎïÌåÖĞÑ¡ÔñÎïÌå×°Èë±³°ü£¬±³°ü×î´ó³ĞÖØW£¬ÎïÌå²»¿É·Ö¸î£¬ÇóÄÜ×°ÈëÎïÌåµÄ×ÜÖØÁ¿µÄ×î´óÖµ
+    public int maxW = Integer.MIN_VALUE; // ´æ´¢±³°üÖĞÎïÆ·×ÜÖØÁ¿µÄ×î´óÖµ
 
-    // cw è¡¨ç¤ºå½“å‰å·²ç»è£…è¿›å»çš„ç‰©å“çš„é‡é‡å’Œï¼›i è¡¨ç¤ºè€ƒå¯Ÿåˆ°å“ªä¸ªç‰©å“äº†ï¼›
-    // w èƒŒåŒ…é‡é‡ï¼›items è¡¨ç¤ºæ¯ä¸ªç‰©å“çš„é‡é‡ï¼›n è¡¨ç¤ºç‰©å“ä¸ªæ•°
-    // å‡è®¾èƒŒåŒ…å¯æ‰¿å—é‡é‡ 100ï¼Œç‰©å“ä¸ªæ•° 10ï¼Œç‰©å“é‡é‡å­˜å‚¨åœ¨æ•°ç»„ a ä¸­ï¼Œé‚£å¯ä»¥è¿™æ ·è°ƒç”¨å‡½æ•°ï¼š
+    // cw ±íÊ¾µ±Ç°ÒÑ¾­×°½øÈ¥µÄÎïÆ·µÄÖØÁ¿ºÍ£»i ±íÊ¾¿¼²ìµ½ÄÄ¸öÎïÆ·ÁË£»
+    // w ±³°üÖØÁ¿£»items ±íÊ¾Ã¿¸öÎïÆ·µÄÖØÁ¿£»n ±íÊ¾ÎïÆ·¸öÊı
+    // ¼ÙÉè±³°ü¿É³ĞÊÜÖØÁ¿ 100£¬ÎïÆ·¸öÊı 10£¬ÎïÆ·ÖØÁ¿´æ´¢ÔÚÊı×é a ÖĞ£¬ÄÇ¿ÉÒÔÕâÑùµ÷ÓÃº¯Êı£º
     // f(0, 0, a, 10, 100)
     public void f(int i, int cw, int[] items, int n, int w) {
-        if (cw == w || i == n) { // cw==w è¡¨ç¤ºè£…æ»¡äº† ;i==n è¡¨ç¤ºå·²ç»è€ƒå¯Ÿå®Œæ‰€æœ‰çš„ç‰©å“
+        if (cw == w || i == n) { // cw==w ±íÊ¾×°ÂúÁË ;i==n ±íÊ¾ÒÑ¾­¿¼²ìÍêËùÓĞµÄÎïÆ·
             if (cw > maxW) maxW = cw;
             return;
         }
         f(i + 1, cw, items, n, w);
-        if (cw + items[i] <= w) {// å·²ç»è¶…è¿‡å¯ä»¥èƒŒåŒ…æ‰¿å—çš„é‡é‡çš„æ—¶å€™ï¼Œå°±ä¸è¦å†è£…äº†
+        if (cw + items[i] <= w) {// ÒÑ¾­³¬¹ı¿ÉÒÔ±³°ü³ĞÊÜµÄÖØÁ¿µÄÊ±ºò£¬¾Í²»ÒªÔÙ×°ÁË
             f(i + 1, cw + items[i], items, n, w);
         }
     }

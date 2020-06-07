@@ -56,7 +56,7 @@ public class Test {
                 if (data == null) {
                     Thread.sleep(100);
                 } else {
-                    // TODO:... 娑堣垂鏁版嵁鐨勪笟鍔￠�昏緫...
+                    // TODO:... 消费数据的业务逻辑...
                 }
             }
         }

@@ -1,80 +1,80 @@
 package com.example.lib.course39_dynamicplanning1.teacher;
 
 /**
- * åŠ¨æ€è§„åˆ’
+ * ¶¯Ì¬¹æ»®
  */
 public class DynamicPlanning1 {
 
-    // 0-1èƒŒåŒ… åˆæ­¥
+    // 0-1±³°ü ³õ²½
 
-    // å›æº¯ç®—æ³•å®ç°ã€‚æ³¨æ„ï¼šæˆ‘æŠŠè¾“å…¥çš„å˜é‡éƒ½å®šä¹‰æˆäº†æˆå‘˜å˜é‡ã€‚
+    // »ØËİËã·¨ÊµÏÖ¡£×¢Òâ£ºÎÒ°ÑÊäÈëµÄ±äÁ¿¶¼¶¨Òå³ÉÁË³ÉÔ±±äÁ¿¡£
     /*
-    private int maxW = Integer.MIN_VALUE; // ç»“æœæ”¾åˆ° maxW ä¸­
-    private int[] weight = {2, 2, 4, 6, 3};  // ç‰©å“é‡é‡
-    private int n = 5; // ç‰©å“ä¸ªæ•°
-    private int w = 9; // èƒŒåŒ…æ‰¿å—çš„æœ€å¤§é‡é‡
+    private int maxW = Integer.MIN_VALUE; // ½á¹û·Åµ½ maxW ÖĞ
+    private int[] weight = {2, 2, 4, 6, 3};  // ÎïÆ·ÖØÁ¿
+    private int n = 5; // ÎïÆ·¸öÊı
+    private int w = 9; // ±³°ü³ĞÊÜµÄ×î´óÖØÁ¿
 
-    public void f(int i, int cw) { // è°ƒç”¨ f(0, 0)
-        if (cw == w || i == n) { // cw==w è¡¨ç¤ºè£…æ»¡äº†,i==n è¡¨ç¤ºç‰©å“éƒ½è€ƒå¯Ÿå®Œäº†
+    public void f(int i, int cw) { // µ÷ÓÃ f(0, 0)
+        if (cw == w || i == n) { // cw==w ±íÊ¾×°ÂúÁË,i==n ±íÊ¾ÎïÆ·¶¼¿¼²ìÍêÁË
             if (cw > maxW) maxW = cw;
             return;
         }
-        f(i + 1, cw); // é€‰æ‹©ä¸è£…ç¬¬ i ä¸ªç‰©å“
+        f(i + 1, cw); // Ñ¡Ôñ²»×°µÚ i ¸öÎïÆ·
         if (cw + weight[i] <= w) {
-            f(i + 1, cw + weight[i]); // é€‰æ‹©è£…ç¬¬ i ä¸ªç‰©å“
+            f(i + 1, cw + weight[i]); // Ñ¡Ôñ×°µÚ i ¸öÎïÆ·
         }
     }
     */
 
-    // åŠ¨æ€è§„åˆ’
-    private int maxW = Integer.MIN_VALUE; // ç»“æœæ”¾åˆ° maxW ä¸­
-    private int[] weight = {2, 2, 4, 6, 3};  // ç‰©å“é‡é‡
-    private int n = 5; // ç‰©å“ä¸ªæ•°
-    private int w = 9; // èƒŒåŒ…æ‰¿å—çš„æœ€å¤§é‡é‡
-    private boolean[][] mem = new boolean[5][10]; // å¤‡å¿˜å½•,é»˜è®¤å€¼ false
+    // ¶¯Ì¬¹æ»®
+    private int maxW = Integer.MIN_VALUE; // ½á¹û·Åµ½ maxW ÖĞ
+    private int[] weight = {2, 2, 4, 6, 3};  // ÎïÆ·ÖØÁ¿
+    private int n = 5; // ÎïÆ·¸öÊı
+    private int w = 9; // ±³°ü³ĞÊÜµÄ×î´óÖØÁ¿
+    private boolean[][] mem = new boolean[5][10]; // ±¸ÍüÂ¼,Ä¬ÈÏÖµ false
 
-    public void f(int i, int cw) { // è°ƒç”¨ f(0, 0)
-        if (cw == w || i == n) { // cw==w è¡¨ç¤ºè£…æ»¡äº†,i==n è¡¨ç¤ºç‰©å“éƒ½è€ƒå¯Ÿå®Œäº†
+    public void f(int i, int cw) { // µ÷ÓÃ f(0, 0)
+        if (cw == w || i == n) { // cw==w ±íÊ¾×°ÂúÁË,i==n ±íÊ¾ÎïÆ·¶¼¿¼²ìÍêÁË
             if (cw > maxW) maxW = cw;
             return;
         }
-        if (mem[i][cw]) return; // é‡å¤çŠ¶æ€
-        mem[i][cw] = true; // è®°å½• (i, cw) è¿™ä¸ªçŠ¶æ€
-        f(i + 1, cw); // é€‰æ‹©ä¸è£…ç¬¬ i ä¸ªç‰©å“
+        if (mem[i][cw]) return; // ÖØ¸´×´Ì¬
+        mem[i][cw] = true; // ¼ÇÂ¼ (i, cw) Õâ¸ö×´Ì¬
+        f(i + 1, cw); // Ñ¡Ôñ²»×°µÚ i ¸öÎïÆ·
         if (cw + weight[i] <= w) {
-            f(i + 1, cw + weight[i]); // é€‰æ‹©è£…ç¬¬ i ä¸ªç‰©å“
+            f(i + 1, cw + weight[i]); // Ñ¡Ôñ×°µÚ i ¸öÎïÆ·
         }
     }
 
-    // weight: ç‰©å“é‡é‡,n: ç‰©å“ä¸ªæ•°,w: èƒŒåŒ…å¯æ‰¿è½½é‡é‡
+    // weight: ÎïÆ·ÖØÁ¿,n: ÎïÆ·¸öÊı,w: ±³°ü¿É³ĞÔØÖØÁ¿
     public int knapsack(int[] weight, int n, int w) {
-        boolean[][] states = new boolean[n][w + 1]; // é»˜è®¤å€¼ false
-        states[0][0] = true;  // ç¬¬ä¸€è¡Œçš„æ•°æ®è¦ç‰¹æ®Šå¤„ç†,å¯ä»¥åˆ©ç”¨å“¨å…µä¼˜åŒ–
+        boolean[][] states = new boolean[n][w + 1]; // Ä¬ÈÏÖµ false
+        states[0][0] = true;  // µÚÒ»ĞĞµÄÊı¾İÒªÌØÊâ´¦Àí,¿ÉÒÔÀûÓÃÉÚ±øÓÅ»¯
         states[0][weight[0]] = true;
-        for (int i = 1; i < n; ++i) { // åŠ¨æ€è§„åˆ’çŠ¶æ€è½¬ç§»
-            for (int j = 0; j <= w; ++j) {// ä¸æŠŠç¬¬ i ä¸ªç‰©å“æ”¾å…¥èƒŒåŒ…
+        for (int i = 1; i < n; ++i) { // ¶¯Ì¬¹æ»®×´Ì¬×ªÒÆ
+            for (int j = 0; j <= w; ++j) {// ²»°ÑµÚ i ¸öÎïÆ··ÅÈë±³°ü
                 if (states[i - 1][j] == true) states[i][j] = states[i - 1][j];
             }
-            for (int j = 0; j <= w - weight[i]; ++j) {// æŠŠç¬¬ i ä¸ªç‰©å“æ”¾å…¥èƒŒåŒ…
+            for (int j = 0; j <= w - weight[i]; ++j) {// °ÑµÚ i ¸öÎïÆ··ÅÈë±³°ü
                 if (states[i - 1][j] == true) states[i][j + weight[i]] = true;
             }
         }
-        for (int i = w; i >= 0; --i) { // è¾“å‡ºç»“æœ
+        for (int i = w; i >= 0; --i) { // Êä³ö½á¹û
             if (states[n - 1][i] == true) return i;
         }
         return 0;
     }
 
     public static int knapsack2(int[] items, int n, int w) {
-        boolean[] states = new boolean[w + 1]; // é»˜è®¤å€¼ false
-        states[0] = true;  // ç¬¬ä¸€è¡Œçš„æ•°æ®è¦ç‰¹æ®Šå¤„ç†,å¯ä»¥åˆ©ç”¨å“¨å…µä¼˜åŒ–
+        boolean[] states = new boolean[w + 1]; // Ä¬ÈÏÖµ false
+        states[0] = true;  // µÚÒ»ĞĞµÄÊı¾İÒªÌØÊâ´¦Àí,¿ÉÒÔÀûÓÃÉÚ±øÓÅ»¯
         states[items[0]] = true;
-        for (int i = 1; i < n; ++i) { // åŠ¨æ€è§„åˆ’
-            for (int j = w - items[i]; j >= 0; --j) {// æŠŠç¬¬ i ä¸ªç‰©å“æ”¾å…¥èƒŒåŒ…
+        for (int i = 1; i < n; ++i) { // ¶¯Ì¬¹æ»®
+            for (int j = w - items[i]; j >= 0; --j) {// °ÑµÚ i ¸öÎïÆ··ÅÈë±³°ü
                 if (states[j] == true) states[j + items[i]] = true;
             }
         }
-        for (int i = w; i >= 0; --i) { // è¾“å‡ºç»“æœ
+        for (int i = w; i >= 0; --i) { // Êä³ö½á¹û
             if (states[i] == true) return i;
         }
         return 0;

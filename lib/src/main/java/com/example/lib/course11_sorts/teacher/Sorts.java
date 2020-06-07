@@ -1,40 +1,40 @@
 package com.example.lib.course11_sorts.teacher;
 
 /**
- * å†’æ³¡æ’åºã€æ’å…¥æ’åºã€é€‰æ‹©æ’åº
+ * Ã°ÅİÅÅĞò¡¢²åÈëÅÅĞò¡¢Ñ¡ÔñÅÅĞò
  * <p>
  * Author: Zheng
  */
 public class Sorts {
 
-    // å†’æ³¡æ’åºï¼Œaæ˜¯æ•°ç»„ï¼Œnè¡¨ç¤ºæ•°ç»„å¤§å°
+    // Ã°ÅİÅÅĞò£¬aÊÇÊı×é£¬n±íÊ¾Êı×é´óĞ¡
     public static void bubbleSort(int[] a, int n) {
         if (n <= 1) return;
 
         for (int i = 0; i < n; ++i) {
-            // æå‰é€€å‡ºæ ‡å¿—ä½
+            // ÌáÇ°ÍË³ö±êÖ¾Î»
             boolean flag = false;
             for (int j = 0; j < n - i - 1; ++j) {
-                if (a[j] > a[j + 1]) { // äº¤æ¢
+                if (a[j] > a[j + 1]) { // ½»»»
                     int tmp = a[j];
                     a[j] = a[j + 1];
                     a[j + 1] = tmp;
-                    // æ­¤æ¬¡å†’æ³¡æœ‰æ•°æ®äº¤æ¢
+                    // ´Ë´ÎÃ°ÅİÓĞÊı¾İ½»»»
                     flag = true;
                 }
             }
-            if (!flag) break;  // æ²¡æœ‰æ•°æ®äº¤æ¢ï¼Œæå‰é€€å‡º
+            if (!flag) break;  // Ã»ÓĞÊı¾İ½»»»£¬ÌáÇ°ÍË³ö
         }
     }
 
-    // æ’å…¥æ’åºï¼Œaè¡¨ç¤ºæ•°ç»„ï¼Œnè¡¨ç¤ºæ•°ç»„å¤§å°
+    // ²åÈëÅÅĞò£¬a±íÊ¾Êı×é£¬n±íÊ¾Êı×é´óĞ¡
     public static void insertionSort(int[] a, int n) {
         if (n <= 1) return;
 
         for (int i = 1; i < n; ++i) {
             int value = a[i];
             int j = i - 1;
-            // æŸ¥æ‰¾è¦æ’å…¥çš„ä½ç½®å¹¶ç§»åŠ¨æ•°æ®
+            // ²éÕÒÒª²åÈëµÄÎ»ÖÃ²¢ÒÆ¶¯Êı¾İ
             for (; j >= 0; --j) {
                 if (a[j] > value) {
                     a[j + 1] = a[j];
@@ -46,12 +46,12 @@ public class Sorts {
         }
     }
 
-    // é€‰æ‹©æ’åºï¼Œaè¡¨ç¤ºæ•°ç»„ï¼Œnè¡¨ç¤ºæ•°ç»„å¤§å°
+    // Ñ¡ÔñÅÅĞò£¬a±íÊ¾Êı×é£¬n±íÊ¾Êı×é´óĞ¡
     public static void selectionSort(int[] a, int n) {
         if (n <= 1) return;
 
         for (int i = 0; i < n - 1; ++i) {
-            // æŸ¥æ‰¾æœ€å°å€¼
+            // ²éÕÒ×îĞ¡Öµ
             int minIndex = i;
             for (int j = i + 1; j < n; ++j) {
                 if (a[j] < a[minIndex]) {
@@ -59,7 +59,7 @@ public class Sorts {
                 }
             }
 
-            // äº¤æ¢
+            // ½»»»
             int tmp = a[i];
             a[i] = a[minIndex];
             a[minIndex] = tmp;

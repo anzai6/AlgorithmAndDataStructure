@@ -1,7 +1,7 @@
 package com.example.lib.course9_queue.my;
 
 /**
- * åŸºäºé“¾è¡¨å®ç°çš„é˜Ÿåˆ—
+ * »ùÓÚÁ´±íÊµÏÖµÄ¶ÓÁĞ
  * Created by qinshunan on 2019/2/27.
  */
 
@@ -11,7 +11,7 @@ public class MyQueueBasedOnLinkedList {
     private Node tail;
 
     /**
-     * å…¥é˜Ÿ
+     * Èë¶Ó
      *
      * @param data
      */
@@ -26,7 +26,7 @@ public class MyQueueBasedOnLinkedList {
     }
 
     /**
-     * å‡ºé˜Ÿ
+     * ³ö¶Ó
      *
      * @return
      */

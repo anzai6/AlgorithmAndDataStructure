@@ -1,43 +1,43 @@
 package com.example.lib.course58_exercise.solution;
 
 /**
- * 爬楼梯
+ * ��¥��
  * https://leetcode-cn.com/problems/climbing-stairs/
  */
 public class ClimbingStairsSolution {
 
     /**
      *
-     假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+     ������������¥�ݡ���Ҫ n ������ܵ���¥����
 
-     每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+     ÿ��������� 1 �� 2 ��̨�ס����ж����ֲ�ͬ�ķ�����������¥���أ�
 
-     注意：给定 n 是一个正整数。
+     ע�⣺���� n ��һ����������
 
-     示例 1：
+     ʾ�� 1��
 
-     输入： 2
-     输出： 2
-     解释： 有两种方法可以爬到楼顶。
-     1.  1 阶 + 1 阶
-     2.  2 阶
-     示例 2：
+     ���룺 2
+     ����� 2
+     ���ͣ� �����ַ�����������¥����
+     1.  1 �� + 1 ��
+     2.  2 ��
+     ʾ�� 2��
 
-     输入： 3
-     输出： 3
-     解释： 有三种方法可以爬到楼顶。
-     1.  1 阶 + 1 阶 + 1 阶
-     2.  1 阶 + 2 阶
-     3.  2 阶 + 1 阶
+     ���룺 3
+     ����� 3
+     ���ͣ� �����ַ�����������¥����
+     1.  1 �� + 1 �� + 1 ��
+     2.  1 �� + 2 ��
+     3.  2 �� + 1 ��
 
 
-     分析可用递归求解，公式：
+     �������õݹ���⣬��ʽ��
      f(n) = f(n-1) + f(n-2)
      *
      */
 
     /**
-     * 动态规划解法：改进版，省掉O(n)空间复杂度
+     * ��̬�滮�ⷨ���Ľ��棬ʡ��O(n)�ռ临�Ӷ�
      *
      * @param n
      * @return
@@ -51,8 +51,8 @@ public class ClimbingStairsSolution {
         if (n == 2) {
             return 2;
         }
-        int first = 2; // 往前一位，相当于f(n-1)
-        int second = 1; // 往前两位，相当于f(n-2)
+        int first = 2; // ��ǰһλ���൱��f(n-1)
+        int second = 1; // ��ǰ��λ���൱��f(n-2)
         int result = 0;
         for (int i = 3; i < n + 1; i++) {
             result = first + second;
@@ -63,7 +63,7 @@ public class ClimbingStairsSolution {
     }
 
     /**
-     * 动态规划解法：根据f(n) = f(n-1) + f(n-2)即可解决
+     * ��̬�滮�ⷨ������f(n) = f(n-1) + f(n-2)���ɽ��
      *
      * @param n
      * @return
@@ -87,7 +87,7 @@ public class ClimbingStairsSolution {
     }
 
     /**
-     * 递归解法，递归公式为
+     * �ݹ�ⷨ���ݹ鹫ʽΪ
      * f(n) = f(n-1) + f(n-2)
      *
      * @param n

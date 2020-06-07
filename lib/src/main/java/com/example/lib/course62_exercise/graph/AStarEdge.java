@@ -1,12 +1,12 @@
 package com.example.lib.course62_exercise.graph;
 
 /**
- * è¾¹
+ * ±ß
  */
 public class AStarEdge {
-    Point startPoint; // èµ·å§‹é¡¶ç‚¹
-    Point endPoint; // è¾¹çš„ç»ˆç‚¹
-    int weight; // è¾¹çš„æƒé‡
+    Point startPoint; // ÆğÊ¼¶¥µã
+    Point endPoint; // ±ßµÄÖÕµã
+    int weight; // ±ßµÄÈ¨ÖØ
 
     public AStarEdge(Point startPoint, Point endPoint) {
         this.startPoint = startPoint;

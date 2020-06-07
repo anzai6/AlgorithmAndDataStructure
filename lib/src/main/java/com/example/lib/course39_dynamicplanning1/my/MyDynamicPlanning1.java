@@ -1,27 +1,27 @@
 package com.example.lib.course39_dynamicplanning1.my;
 
 /**
- * åŠ¨æ€è§„åˆ’
+ * ¶¯Ì¬¹æ»®
  * Created by qinshunan on 2019/5/8.
  */
 
 public class MyDynamicPlanning1 {
 
-    // 0-1èƒŒåŒ…ï¼šnä¸ªç‰©ä½“ï¼ŒèƒŒåŒ…æœ€å¤§æ‰¿é‡wï¼Œæ±‚èƒŒåŒ…è£…é‡æœ€å¤§å€¼
+    // 0-1±³°ü£ºn¸öÎïÌå£¬±³°ü×î´ó³ĞÖØw£¬Çó±³°ü×°ÖØ×î´óÖµ
 
-    private int maxW = Integer.MIN_VALUE; // ç»“æœæ”¾åˆ° maxW ä¸­
-    private int[] weight = {2, 2, 4, 6, 3};  // ç‰©å“é‡é‡
-    private int n = 5; // ç‰©å“ä¸ªæ•°
-    private int w = 16; // èƒŒåŒ…æ‰¿å—çš„æœ€å¤§é‡é‡
+    private int maxW = Integer.MIN_VALUE; // ½á¹û·Åµ½ maxW ÖĞ
+    private int[] weight = {2, 2, 4, 6, 3};  // ÎïÆ·ÖØÁ¿
+    private int n = 5; // ÎïÆ·¸öÊı
+    private int w = 16; // ±³°ü³ĞÊÜµÄ×î´óÖØÁ¿
 
-    // å…ˆç”¨å›æº¯å®ç°
+    // ÏÈÓÃ»ØËİÊµÏÖ
 
     /**
-     * æ™®é€šç‰ˆå›æº¯ç®—æ³•å®ç°
-     * ä½¿ç”¨findPackWeight1(0, 0);
+     * ÆÕÍ¨°æ»ØËİËã·¨ÊµÏÖ
+     * Ê¹ÓÃfindPackWeight1(0, 0);
      *
-     * @param i  ç¬¬iä¸ªç‰©ä½“
-     * @param cw å½“å‰èƒŒåŒ…è£…è½½çš„é‡é‡
+     * @param i  µÚi¸öÎïÌå
+     * @param cw µ±Ç°±³°ü×°ÔØµÄÖØÁ¿
      */
     public void findPackWeight1(int i, int cw) {
         if (i == n || cw == w) {
@@ -29,21 +29,21 @@ public class MyDynamicPlanning1 {
             return;
         }
 
-        findPackWeight1(i + 1, cw); // ä¸è£…èƒŒåŒ…
+        findPackWeight1(i + 1, cw); // ²»×°±³°ü
         if (cw + weight[i] <= w) {
-            findPackWeight1(i + 1, cw + weight[i]); // è£…èƒŒåŒ…
+            findPackWeight1(i + 1, cw + weight[i]); // ×°±³°ü
         }
 
     }
 
-    private boolean[][] findPackWeightStatus = new boolean[n][w]; // è®°å½•ä»¥åŠè®¡ç®—è¿‡çš„çŠ¶æ€
+    private boolean[][] findPackWeightStatus = new boolean[n][w]; // ¼ÇÂ¼ÒÔ¼°¼ÆËã¹ıµÄ×´Ì¬
 
     /**
-     * å‡çº§ç‰ˆå›æº¯ç®—æ³•å®ç°
-     * ä½¿ç”¨findPackWeight2(0, 0);
+     * Éı¼¶°æ»ØËİËã·¨ÊµÏÖ
+     * Ê¹ÓÃfindPackWeight2(0, 0);
      *
-     * @param i  ç¬¬iä¸ªç‰©ä½“
-     * @param cw å½“å‰èƒŒåŒ…è£…è½½çš„é‡é‡
+     * @param i  µÚi¸öÎïÌå
+     * @param cw µ±Ç°±³°ü×°ÔØµÄÖØÁ¿
      */
     public void findPackWeight2(int i, int cw) {
         if (i == n || cw == w) {
@@ -51,13 +51,13 @@ public class MyDynamicPlanning1 {
             return;
         }
 
-        if (findPackWeightStatus[i][cw]) // å·²ç»è®¡ç®—è¿‡çš„çŠ¶æ€
+        if (findPackWeightStatus[i][cw]) // ÒÑ¾­¼ÆËã¹ıµÄ×´Ì¬
             return;
 
         findPackWeightStatus[i][cw] = true;
-        findPackWeight1(i + 1, cw); // ä¸è£…èƒŒåŒ…
+        findPackWeight1(i + 1, cw); // ²»×°±³°ü
         if (cw + weight[i] <= w) {
-            findPackWeight1(i + 1, cw + weight[i]); // è£…èƒŒåŒ…
+            findPackWeight1(i + 1, cw + weight[i]); // ×°±³°ü
         }
     }
 
@@ -67,30 +67,30 @@ public class MyDynamicPlanning1 {
     }
 
     /**
-     * åŠ¨æ€è§„åˆ’-æœ€æ— è„‘ç‰ˆ
+     * ¶¯Ì¬¹æ»®-×îÎŞÄÔ°æ
      *
      * @param weight
      * @param n
      * @param w
      */
     public void knapsack1(int[] weight, int n, int w) {
-        boolean[][] status = new boolean[n][w + 1]; // è®°å½•æŸä¸ªç‰©ä½“å¯¹åº”çš„èƒŒåŒ…é‡é‡çŠ¶æ€
-        // åŠ¨æ€è§„åˆ’é¦–è¦å°±æ˜¯åˆ©ç”¨å“¨å…µæ¨¡å¼
+        boolean[][] status = new boolean[n][w + 1]; // ¼ÇÂ¼Ä³¸öÎïÌå¶ÔÓ¦µÄ±³°üÖØÁ¿×´Ì¬
+        // ¶¯Ì¬¹æ»®Ê×Òª¾ÍÊÇÀûÓÃÉÚ±øÄ£Ê½
         status[0][0] = true;
         status[0][weight[0]] = true;
         for (int i = 1; i < n; i++) {
-            // ç¬¬iä¸ªç‰©ä½“ä¸è£…
+            // µÚi¸öÎïÌå²»×°
             for (int j = 0; j <= w; j++) {
                 if (status[i - 1][j]) status[i][j] = true;
             }
 
-            // ç¬¬iä¸ªç‰©ä½“è£…è¿›èƒŒåŒ…
+            // µÚi¸öÎïÌå×°½ø±³°ü
             for (int j = 0; j <= w - weight[i]; j++) {
                 if (status[i - 1][j]) status[i][j + weight[i]] = true;
             }
         }
 
-        // ä»åå¾€å‰éå†ï¼Œé‡åˆ°ç¬¬ä¸€ä¸ªå°±æ˜¯æœ€å¤§çš„å€¼
+        // ´ÓºóÍùÇ°±éÀú£¬Óöµ½µÚÒ»¸ö¾ÍÊÇ×î´óµÄÖµ
         for (int i = w; i >= 0; i--) {
             if (status[n - 1][i]) {
                 System.out.println(i + "");
@@ -100,30 +100,30 @@ public class MyDynamicPlanning1 {
     }
 
     /**
-     * åŠ¨æ€è§„åˆ’-èŠ‚çœç©ºé—´ç‰ˆåŠ å¼ºç‰ˆ
+     * ¶¯Ì¬¹æ»®-½ÚÊ¡¿Õ¼ä°æ¼ÓÇ¿°æ
      *
      * @param weight
      * @param n
      * @param w
      */
     public void knapsack2(int[] weight, int n, int w) {
-        // è¿™é‡Œç›¸æ¯”ä¸Šä¸€ä¸ªæ–¹æ³•ä½¿ç”¨äºŒç»´æ•°ç»„èŠ‚çœäº†ç©ºé—´
-        boolean[] status = new boolean[w + 1]; // è®°å½•æŸä¸ªç‰©ä½“å¯¹åº”çš„èƒŒåŒ…é‡é‡çŠ¶æ€
-        // åŠ¨æ€è§„åˆ’é¦–è¦å°±æ˜¯åˆ©ç”¨å“¨å…µæ¨¡å¼
+        // ÕâÀïÏà±ÈÉÏÒ»¸ö·½·¨Ê¹ÓÃ¶şÎ¬Êı×é½ÚÊ¡ÁË¿Õ¼ä
+        boolean[] status = new boolean[w + 1]; // ¼ÇÂ¼Ä³¸öÎïÌå¶ÔÓ¦µÄ±³°üÖØÁ¿×´Ì¬
+        // ¶¯Ì¬¹æ»®Ê×Òª¾ÍÊÇÀûÓÃÉÚ±øÄ£Ê½
         status[0] = true;
         status[weight[0]] = true;
         for (int i = 1; i < n; i++) {
-            // ç¬¬iä¸ªç‰©ä½“ä¸è£…ï¼Œè¿™é‡Œçœæ‰äº†ä¸è£…çš„å¾ªç¯å¤„ç†
+            // µÚi¸öÎïÌå²»×°£¬ÕâÀïÊ¡µôÁË²»×°µÄÑ­»·´¦Àí
             /*for (int j = 0; j <= w; j++) {
             }*/
 
-            // ç¬¬iä¸ªç‰©ä½“è£…è¿›èƒŒåŒ… æ³¨æ„è¿™é‡Œåªèƒ½ä»å¤§åˆ°å°å¾ªç¯ï¼Œä¸ç„¶å¾ªç¯å†…çš„åˆ¤æ–­ä¼šå¯¹åé¢çš„å€¼æœ‰å¹²æ‰°
+            // µÚi¸öÎïÌå×°½ø±³°ü ×¢ÒâÕâÀïÖ»ÄÜ´Ó´óµ½Ğ¡Ñ­»·£¬²»È»Ñ­»·ÄÚµÄÅĞ¶Ï»á¶ÔºóÃæµÄÖµÓĞ¸ÉÈÅ
             for (int j = w - weight[i]; j >= 0; j--) {
                 if (status[j]) status[j + weight[i]] = true;
             }
         }
 
-        // ä»åå¾€å‰éå†ï¼Œé‡åˆ°ç¬¬ä¸€ä¸ªå°±æ˜¯æœ€å¤§çš„å€¼
+        // ´ÓºóÍùÇ°±éÀú£¬Óöµ½µÚÒ»¸ö¾ÍÊÇ×î´óµÄÖµ
         for (int i = w; i >= 0; i--) {
             if (status[i]) {
                 System.out.println(i + "");

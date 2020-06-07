@@ -1,7 +1,7 @@
 package com.example.lib.course61_exercise.solution;
 
 /**
- * è·¯å¾„æ€»å’Œ
+ * Â·¾¶×ÜºÍ
  * https://leetcode-cn.com/problems/path-sum/
  */
 
@@ -9,12 +9,12 @@ public class PathSumSolution {
 
     /**
      *
-     ç»™å®šä¸€ä¸ªäºŒå‰æ ‘å’Œä¸€ä¸ªç›®æ ‡å’Œï¼Œåˆ¤æ–­è¯¥æ ‘ä¸­æ˜¯å¦å­˜åœ¨æ ¹èŠ‚ç‚¹åˆ°å¶å­èŠ‚ç‚¹çš„è·¯å¾„ï¼Œè¿™æ¡è·¯å¾„ä¸Šæ‰€æœ‰èŠ‚ç‚¹å€¼ç›¸åŠ ç­‰äºŽç›®æ ‡å’Œã€‚
+     ¸ø¶¨Ò»¸ö¶þ²æÊ÷ºÍÒ»¸öÄ¿±êºÍ£¬ÅÐ¶Ï¸ÃÊ÷ÖÐÊÇ·ñ´æÔÚ¸ù½Úµãµ½Ò¶×Ó½ÚµãµÄÂ·¾¶£¬ÕâÌõÂ·¾¶ÉÏËùÓÐ½ÚµãÖµÏà¼ÓµÈÓÚÄ¿±êºÍ¡£
 
-     è¯´æ˜Ž:Â å¶å­èŠ‚ç‚¹æ˜¯æŒ‡æ²¡æœ‰å­èŠ‚ç‚¹çš„èŠ‚ç‚¹ã€‚
+     ËµÃ÷:?Ò¶×Ó½ÚµãÊÇÖ¸Ã»ÓÐ×Ó½ÚµãµÄ½Úµã¡£
 
-     ç¤ºä¾‹:Â 
-     ç»™å®šå¦‚ä¸‹äºŒå‰æ ‘ï¼Œä»¥åŠç›®æ ‡å’Œ sum = 22ï¼Œ
+     Ê¾Àý:?
+     ¸ø¶¨ÈçÏÂ¶þ²æÊ÷£¬ÒÔ¼°Ä¿±êºÍ sum = 22£¬
 
            5
           / \
@@ -23,7 +23,7 @@ public class PathSumSolution {
        11  13  4
       /  \      \
      7    2      1
-     è¿”å›ž true, å› ä¸ºå­˜åœ¨ç›®æ ‡å’Œä¸º 22 çš„æ ¹èŠ‚ç‚¹åˆ°å¶å­èŠ‚ç‚¹çš„è·¯å¾„ 5->4->11->2ã€‚
+     ·µ»Ø true, ÒòÎª´æÔÚÄ¿±êºÍÎª 22 µÄ¸ù½Úµãµ½Ò¶×Ó½ÚµãµÄÂ·¾¶ 5->4->11->2¡£
 
      *
      */
@@ -43,14 +43,14 @@ public class PathSumSolution {
 
     /**
      * @param treeNode
-     * @param surplus  å‰©ä½™çš„å€¼
+     * @param surplus  Ê£ÓàµÄÖµ
      * @return
      */
     public void hasPathSumIn(TreeNode treeNode, int surplus) {
         if (hasPathSum)
             return;
         if (treeNode != null) {
-            if (treeNode.left == null && treeNode.right == null && treeNode.val == surplus) { // æ ¹èŠ‚ç‚¹
+            if (treeNode.left == null && treeNode.right == null && treeNode.val == surplus) { // ¸ù½Úµã
                 hasPathSum = true;
             } else {
                 hasPathSumIn(treeNode.left, surplus - treeNode.val);

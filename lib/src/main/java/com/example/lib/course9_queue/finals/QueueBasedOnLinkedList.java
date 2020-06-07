@@ -1,19 +1,19 @@
 package com.example.lib.course9_queue.finals;
 
 /**
- * åŸºäºé“¾è¡¨å®ç°çš„é˜Ÿåˆ—
+ * »ùÓÚÁ´±íÊµÏÖµÄ¶ÓÁĞ
  * <p>
  * Author: Zheng
  */
 public class QueueBasedOnLinkedList {
 
-    // é˜Ÿåˆ—çš„é˜Ÿé¦–å’Œé˜Ÿå°¾
+    // ¶ÓÁĞµÄ¶ÓÊ×ºÍ¶ÓÎ²
 
-    // å…¥é˜Ÿ
+    // Èë¶Ó
     public void enqueue(String value) {
     }
 
-    // å‡ºé˜Ÿ
+    // ³ö¶Ó
     public String dequeue() {
         return null;
     }

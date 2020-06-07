@@ -4,40 +4,40 @@ public class Subject57 {
     /**
      *
 
-     æ•°ç»„ï¼š
-     1.å®ç°ä¸€ä¸ªæ”¯æŒåŠ¨æ€æ‰©å®¹çš„æ•°ç»„
+     Êı×é£º
+     1.ÊµÏÖÒ»¸öÖ§³Ö¶¯Ì¬À©ÈİµÄÊı×é
 
-     2.å®ç°ä¸€ä¸ªå¤§å°å›ºå®šçš„æœ‰åºæ•°ç»„ï¼Œæ”¯æŒåŠ¨æ€å¢åˆ æ”¹æ“ä½œ
+     2.ÊµÏÖÒ»¸ö´óĞ¡¹Ì¶¨µÄÓĞĞòÊı×é£¬Ö§³Ö¶¯Ì¬ÔöÉ¾¸Ä²Ù×÷
 
-     3.å®ç°ä¸¤ä¸ªæœ‰åºæ•°ç»„åˆå¹¶ä¸ºä¸€ä¸ªæœ‰åºæ•°ç»„
+     3.ÊµÏÖÁ½¸öÓĞĞòÊı×éºÏ²¢ÎªÒ»¸öÓĞĞòÊı×é
 
-     é“¾è¡¨ï¼š
-     1.å®ç°å•é“¾è¡¨ã€å¾ªç¯é“¾è¡¨ã€åŒå‘é“¾è¡¨ï¼Œæ”¯æŒå¢åˆ æ“ä½œ
+     Á´±í£º
+     1.ÊµÏÖµ¥Á´±í¡¢Ñ­»·Á´±í¡¢Ë«ÏòÁ´±í£¬Ö§³ÖÔöÉ¾²Ù×÷
 
-     2.å®ç°å•é“¾è¡¨åè½¬
+     2.ÊµÏÖµ¥Á´±í·´×ª
 
-     3.å®ç°ä¸¤ä¸ªæœ‰åºçš„é“¾è¡¨åˆå¹¶ä¸ºä¸€ä¸ªæœ‰åºé“¾è¡¨
+     3.ÊµÏÖÁ½¸öÓĞĞòµÄÁ´±íºÏ²¢ÎªÒ»¸öÓĞĞòÁ´±í
 
-     4.å®ç°æ±‚é“¾è¡¨çš„ä¸­é—´ç»“ç‚¹
+     4.ÊµÏÖÇóÁ´±íµÄÖĞ¼ä½áµã
 
 
-     å¯¹åº”çš„ LeetCode ç»ƒä¹ é¢˜ï¼ˆ@Smallfly æ•´ç†ï¼‰
-     æ•°ç»„
-     Three Sumï¼ˆæ±‚ä¸‰æ•°ä¹‹å’Œï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/3sum/
+     ¶ÔÓ¦µÄ LeetCode Á·Ï°Ìâ£¨@Smallfly ÕûÀí£©
+     Êı×é
+     Three Sum£¨ÇóÈıÊıÖ®ºÍ£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/3sum/
 
-     Majority Elementï¼ˆæ±‚ä¼—æ•°ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/majority-element/
+     Majority Element£¨ÇóÖÚÊı£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/majority-element/
 
-     Missing Positiveï¼ˆæ±‚ç¼ºå¤±çš„ç¬¬ä¸€ä¸ªæ­£æ•°ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/first-missing-positive/
+     Missing Positive£¨ÇóÈ±Ê§µÄµÚÒ»¸öÕıÊı£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/first-missing-positive/
 
-     é“¾è¡¨
-     Linked List Cycle Iï¼ˆç¯å½¢é“¾è¡¨ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/linked-list-cycle/
+     Á´±í
+     Linked List Cycle I£¨»·ĞÎÁ´±í£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/linked-list-cycle/
 
-     Merge k Sorted Listsï¼ˆåˆå¹¶ k ä¸ªæ’åºé“¾è¡¨ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/merge-k-sorted-lists/
+     Merge k Sorted Lists£¨ºÏ²¢ k ¸öÅÅĞòÁ´±í£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/merge-k-sorted-lists/
 
 
 

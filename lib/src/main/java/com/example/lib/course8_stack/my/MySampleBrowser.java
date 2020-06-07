@@ -6,9 +6,9 @@ package com.example.lib.course8_stack.my;
 
 public class MySampleBrowser {
 
-    private String mCurrentPage; // å½“å‰æµè§ˆçš„ç½‘é¡µ
-    private MyStackBasedLinkedList mBackStack; // å›é€€æ ˆ
-    private MyStackBasedLinkedList mForwardStack; // å‰è¿›æ ˆ
+    private String mCurrentPage; // µ±Ç°ä¯ÀÀµÄÍøÒ³
+    private MyStackBasedLinkedList mBackStack; // »ØÍËÕ»
+    private MyStackBasedLinkedList mForwardStack; // Ç°½øÕ»
 
     public MySampleBrowser() {
         mBackStack = new MyStackBasedLinkedList();
@@ -16,7 +16,7 @@ public class MySampleBrowser {
     }
 
     /**
-     * å…³é—­æµè§ˆå™¨
+     * ¹Ø±Õä¯ÀÀÆ÷
      */
     public void closeBrower() {
         mCurrentPage = null;
@@ -25,12 +25,12 @@ public class MySampleBrowser {
     }
 
     /**
-     * æ‰“å¼€é“¾æ¥
+     * ´ò¿ªÁ´½Ó
      *
      * @param url
      */
     public void open(String url) {
-        if (!isStringEmpty(mCurrentPage)) { // ç¬¬ä¸€æ¬¡æ‰“å¼€ç½‘é¡µé“¾æ¥ä¸å…¥å›é€€æ ˆ
+        if (!isStringEmpty(mCurrentPage)) { // µÚÒ»´Î´ò¿ªÍøÒ³Á´½Ó²»Èë»ØÍËÕ»
             mBackStack.push(mCurrentPage);
             mForwardStack.clear();
         }
@@ -38,7 +38,7 @@ public class MySampleBrowser {
     }
 
     /**
-     * åé€€
+     * ºóÍË
      *
      * @return
      */
@@ -54,7 +54,7 @@ public class MySampleBrowser {
     }
 
     /**
-     * å‰è¿›
+     * Ç°½ø
      *
      * @return
      */
@@ -70,7 +70,7 @@ public class MySampleBrowser {
     }
 
     /**
-     * æœ‰é“¾æ¥å›é€€
+     * ÓĞÁ´½Ó»ØÍË
      *
      * @return
      */
@@ -79,7 +79,7 @@ public class MySampleBrowser {
     }
 
     /**
-     * æœ‰é“¾æ¥å‰è¿›
+     * ÓĞÁ´½ÓÇ°½ø
      *
      * @return
      */

@@ -1,10 +1,10 @@
 package com.example.lib.course38_backtracking.my;
 
 /**
- * ç®€å•çš„æ­£åˆ™è¡¨è¾¾å¼å›æº¯ç®—æ³•
- * è¿™é‡Œç®€åŒ–æ­£åˆ™è¡¨è¾¾å¼ï¼Œåªæœ‰ä¸¤ä¸ª"?"å’Œ"*"
- * ? æŒ‡æ‹¥æœ‰ä¸€ä¸ªæˆ–é›¶ä¸ªä»»æ„å­—ç¬¦
- * * æŒ‡æ‹¥æœ‰ä¸€ä¸ªæˆ–ä»»æ„ä¸ªå­—ç¬¦
+ * ¼òµ¥µÄÕıÔò±í´ïÊ½»ØËİËã·¨
+ * ÕâÀï¼ò»¯ÕıÔò±í´ïÊ½£¬Ö»ÓĞÁ½¸ö"?"ºÍ"*"
+ * ? Ö¸ÓµÓĞÒ»¸ö»òÁã¸öÈÎÒâ×Ö·û
+ * * Ö¸ÓµÓĞÒ»¸ö»òÈÎÒâ¸ö×Ö·û
  * Created by qinshunan on 2019/5/7.
  */
 public class MyPattern {
@@ -12,7 +12,7 @@ public class MyPattern {
     private char[] patternList;
     private int patternLen;
     private int textLen;
-    private boolean isMatch = false; // æ˜¯å¦åŒ¹é…
+    private boolean isMatch = false; // ÊÇ·ñÆ¥Åä
 
     public MyPattern(String pattern) {
         this.patternList = pattern.toCharArray();
@@ -27,37 +27,37 @@ public class MyPattern {
     }
 
     /**
-     * @param textList        æ–‡æœ¬å­—ç¬¦æ•°ç»„
-     * @param textMatchLen    æ–‡æœ¬å­—ç¬¦æ•°ç»„ä¸­è¦åŒ¹é…çš„å­—ç¬¦ä½ç½®
-     * @param patternMatchLen æ­£åˆ™è¡¨è¾¾å¼å­—ç¬¦æ•°ç»„ä¸­è¦åŒ¹é…çš„å­—ç¬¦ä½ç½®
+     * @param textList        ÎÄ±¾×Ö·ûÊı×é
+     * @param textMatchLen    ÎÄ±¾×Ö·ûÊı×éÖĞÒªÆ¥ÅäµÄ×Ö·ûÎ»ÖÃ
+     * @param patternMatchLen ÕıÔò±í´ïÊ½×Ö·ûÊı×éÖĞÒªÆ¥ÅäµÄ×Ö·ûÎ»ÖÃ
      */
     public void match(char[] textList, int textMatchLen, int patternMatchLen) {
 
-        if (isMatch)// å·²ç»åŒ¹é…æˆåŠŸ
+        if (isMatch)// ÒÑ¾­Æ¥Åä³É¹¦
             return;
 
-        if (patternMatchLen == patternLen) { // å…¨éƒ¨åŒ¹é…å®Œ
-            if (textMatchLen == textLen) // ç†è§£è¿™é‡Œæ˜¯é‡ç‚¹ï¼Œåªæœ‰å½“æ­£åˆ™å’Œæ–‡æœ¬éƒ½åŒ¹é…å®Œæˆæ‰æ˜¯åŒ¹é…æˆåŠŸ
+        if (patternMatchLen == patternLen) { // È«²¿Æ¥ÅäÍê
+            if (textMatchLen == textLen) // Àí½âÕâÀïÊÇÖØµã£¬Ö»ÓĞµ±ÕıÔòºÍÎÄ±¾¶¼Æ¥ÅäÍê³É²ÅÊÇÆ¥Åä³É¹¦
                 isMatch = true;
             return;
         }
 
-        if (textMatchLen >= textLen) // æ–‡æœ¬å·²ç»åŒ¹é…å®Œ
+        if (textMatchLen >= textLen) // ÎÄ±¾ÒÑ¾­Æ¥ÅäÍê
             return;
 
         char patternChar = patternList[patternMatchLen];
-        if ('?' == patternChar) { // åŒ¹é…?
-            match(textList, textMatchLen + 1, patternMatchLen + 1); // ä¸€ä¸ª
-            match(textList, textMatchLen, patternMatchLen + 1); // 0ä¸ª
-        } else if ('*' == patternChar) { // åŒ¹é…*
+        if ('?' == patternChar) { // Æ¥Åä?
+            match(textList, textMatchLen + 1, patternMatchLen + 1); // Ò»¸ö
+            match(textList, textMatchLen, patternMatchLen + 1); // 0¸ö
+        } else if ('*' == patternChar) { // Æ¥Åä*
             for (int i = 0; i < textLen; i++) {
-                match(textList, textMatchLen + i, patternMatchLen); // ä»»æ„ä¸ª
+                match(textList, textMatchLen + i, patternMatchLen); // ÈÎÒâ¸ö
             }
         } else {
             char textChar = textList[textMatchLen];
-            if (textChar == patternChar) { // ç›¸åŒå­—ç¬¦åŒ¹é…
-                match(textList, textMatchLen + 1, patternMatchLen + 1); // ä¸‹ä¸€ä¸ª
-            } else { // ä¸åŒ¹é…
+            if (textChar == patternChar) { // ÏàÍ¬×Ö·ûÆ¥Åä
+                match(textList, textMatchLen + 1, patternMatchLen + 1); // ÏÂÒ»¸ö
+            } else { // ²»Æ¥Åä
             }
         }
     }

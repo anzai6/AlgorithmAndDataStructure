@@ -1,24 +1,24 @@
 package com.example.lib.course39_dynamicplanning1.finals;
 
 /**
- * åŠ¨æ€è§„åˆ’
+ * ¶¯Ì¬¹æ»®
  * Created by qinshunan on 2019/5/8.
  */
 
 public class DynamicPlanning2 {
 
-    // 0-1èƒŒåŒ…å‡çº§ç‰ˆï¼šnä¸ªç‰©ä½“ï¼Œæ¯ä¸ªç‰©ä½“è¿˜æœ‰ä»·å€¼ï¼ŒèƒŒåŒ…æœ€å¤§æ‰¿é‡wï¼Œæ±‚èƒŒåŒ…æ‰¿é‡å†…çš„æœ€å¤§ä»·å€¼
+    // 0-1±³°üÉı¼¶°æ£ºn¸öÎïÌå£¬Ã¿¸öÎïÌå»¹ÓĞ¼ÛÖµ£¬±³°ü×î´ó³ĞÖØw£¬Çó±³°ü³ĞÖØÄÚµÄ×î´ó¼ÛÖµ
 
-    private int[] weight = {2, 2, 4, 6, 3};  // ç‰©å“é‡é‡
-    private int[] value = {5, 7, 2, 4, 9};  // ç‰©å“ä»·å€¼
-    private int n = 5; // ç‰©å“ä¸ªæ•°
-    private int w = 16; // èƒŒåŒ…æ‰¿å—çš„æœ€å¤§é‡é‡
+    private int[] weight = {2, 2, 4, 6, 3};  // ÎïÆ·ÖØÁ¿
+    private int[] value = {5, 7, 2, 4, 9};  // ÎïÆ·¼ÛÖµ
+    private int n = 5; // ÎïÆ·¸öÊı
+    private int w = 16; // ±³°ü³ĞÊÜµÄ×î´óÖØÁ¿
 
     public void knapsack() {
     }
 
     /**
-     * åŠ¨æ€è§„åˆ’-æ— è„‘ç‰ˆ
+     * ¶¯Ì¬¹æ»®-ÎŞÄÔ°æ
      *
      * @param weight
      * @param n
@@ -28,7 +28,7 @@ public class DynamicPlanning2 {
     }
 
     /**
-     * åŠ¨æ€è§„åˆ’-èŠ‚çœç©ºé—´ç‰ˆåŠ å¼ºç‰ˆ
+     * ¶¯Ì¬¹æ»®-½ÚÊ¡¿Õ¼ä°æ¼ÓÇ¿°æ
      *
      * @param weight
      * @param n

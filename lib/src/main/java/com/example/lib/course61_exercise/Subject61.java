@@ -7,35 +7,35 @@ package com.example.lib.course61_exercise;
 public class Subject61 {
     /**
      *
-     å…³äºäºŒå‰æ ‘å’Œå †çš„ 7 ä¸ªå¿…çŸ¥å¿…ä¼šçš„ä»£ç å®ç°
-     äºŒå‰æ ‘
-     å®ç°ä¸€ä¸ªäºŒå‰æŸ¥æ‰¾æ ‘ï¼Œå¹¶ä¸”æ”¯æŒæ’å…¥ã€åˆ é™¤ã€æŸ¥æ‰¾æ“ä½œ
+     ¹ØÓÚ¶ş²æÊ÷ºÍ¶ÑµÄ 7 ¸ö±ØÖª±Ø»áµÄ´úÂëÊµÏÖ
+     ¶ş²æÊ÷
+     ÊµÏÖÒ»¸ö¶ş²æ²éÕÒÊ÷£¬²¢ÇÒÖ§³Ö²åÈë¡¢É¾³ı¡¢²éÕÒ²Ù×÷
 
-     å®ç°æŸ¥æ‰¾äºŒå‰æŸ¥æ‰¾æ ‘ä¸­æŸä¸ªèŠ‚ç‚¹çš„åç»§ã€å‰é©±èŠ‚ç‚¹
+     ÊµÏÖ²éÕÒ¶ş²æ²éÕÒÊ÷ÖĞÄ³¸ö½ÚµãµÄºó¼Ì¡¢Ç°Çı½Úµã
 
-     å®ç°äºŒå‰æ ‘å‰ã€ä¸­ã€ååºä»¥åŠæŒ‰å±‚éå†
+     ÊµÏÖ¶ş²æÊ÷Ç°¡¢ÖĞ¡¢ºóĞòÒÔ¼°°´²ã±éÀú
 
-     å †
-     å®ç°ä¸€ä¸ªå°é¡¶å †ã€å¤§é¡¶å †ã€ä¼˜å…ˆçº§é˜Ÿåˆ—
+     ¶Ñ
+     ÊµÏÖÒ»¸öĞ¡¶¥¶Ñ¡¢´ó¶¥¶Ñ¡¢ÓÅÏÈ¼¶¶ÓÁĞ
 
-     å®ç°å †æ’åº
+     ÊµÏÖ¶ÑÅÅĞò
 
-     åˆ©ç”¨ä¼˜å…ˆçº§é˜Ÿåˆ—åˆå¹¶ K ä¸ªæœ‰åºæ•°ç»„
+     ÀûÓÃÓÅÏÈ¼¶¶ÓÁĞºÏ²¢ K ¸öÓĞĞòÊı×é
 
-     æ±‚ä¸€ç»„åŠ¨æ€æ•°æ®é›†åˆçš„æœ€å¤§ Top K
+     ÇóÒ»×é¶¯Ì¬Êı¾İ¼¯ºÏµÄ×î´ó Top K
 
-     å¯¹åº”çš„ LeetCode ç»ƒä¹ é¢˜ï¼ˆ@Smallfly æ•´ç†ï¼‰
-     Invert Binary Treeï¼ˆç¿»è½¬äºŒå‰æ ‘ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/invert-binary-tree/
+     ¶ÔÓ¦µÄ LeetCode Á·Ï°Ìâ£¨@Smallfly ÕûÀí£©
+     Invert Binary Tree£¨·­×ª¶ş²æÊ÷£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/invert-binary-tree/
 
-     Maximum Depth of Binary Treeï¼ˆäºŒå‰æ ‘çš„æœ€å¤§æ·±åº¦ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+     Maximum Depth of Binary Tree£¨¶ş²æÊ÷µÄ×î´óÉî¶È£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
 
-     Validate Binary Search Treeï¼ˆéªŒè¯äºŒå‰æŸ¥æ‰¾æ ‘ï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/validate-binary-search-tree/
+     Validate Binary Search Tree£¨ÑéÖ¤¶ş²æ²éÕÒÊ÷£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/validate-binary-search-tree/
 
-     Path Sumï¼ˆè·¯å¾„æ€»å’Œï¼‰
-     ä¸­æ–‡ç‰ˆï¼šhttps://leetcode-cn.com/problems/path-sum/
+     Path Sum£¨Â·¾¶×ÜºÍ£©
+     ÖĞÎÄ°æ£ºhttps://leetcode-cn.com/problems/path-sum/
 
      *
      */

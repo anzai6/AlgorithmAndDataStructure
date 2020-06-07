@@ -1,50 +1,50 @@
 package com.example.lib.course63_exercise.dynamicprogramming;
 
 /**
- * 0-1èƒŒåŒ…ï¼šåŠ¨æ€è§„åˆ’ç®—æ³•
+ * 0-1±³°ü£º¶¯Ì¬¹æ»®Ëã·¨
  */
 
 public class DynamicProgrammingZeroOneKnapsackExercise {
 
-    // 0-1èƒŒåŒ…ï¼šä»nä¸ªç‰©ä½“ä¸­é€‰æ‹©ç‰©ä½“è£…å…¥èƒŒåŒ…ï¼ŒèƒŒåŒ…æœ€å¤§æ‰¿é‡Wï¼Œç‰©ä½“ä¸å¯åˆ†å‰²ï¼Œæ±‚èƒ½è£…å…¥ç‰©ä½“çš„æ€»é‡é‡çš„æœ€å¤§å€¼
-    int maxPackW = 150; // èƒŒåŒ…æœ€å¤§æ‰¿é‡
-    int n = 10; // 10ä¸ªç‰©ä½“
-    int[] packW = new int[]{4, 9, 45, 23, 43, 31, 18, 12, 27, 32}; // ä¸‹æ ‡å¯¹åº”ç‰©ä½“ï¼Œå€¼æ˜¯ç‰©ä½“çš„é‡é‡
+    // 0-1±³°ü£º´Ón¸öÎïÌåÖĞÑ¡ÔñÎïÌå×°Èë±³°ü£¬±³°ü×î´ó³ĞÖØW£¬ÎïÌå²»¿É·Ö¸î£¬ÇóÄÜ×°ÈëÎïÌåµÄ×ÜÖØÁ¿µÄ×î´óÖµ
+    int maxPackW = 150; // ±³°ü×î´ó³ĞÖØ
+    int n = 10; // 10¸öÎïÌå
+    int[] packW = new int[]{4, 9, 45, 23, 43, 31, 18, 12, 27, 32}; // ÏÂ±ê¶ÔÓ¦ÎïÌå£¬ÖµÊÇÎïÌåµÄÖØÁ¿
 
     /**
-     * æ±‚èƒŒåŒ…è£…å…¥ç‰©å“æ€»é‡é‡çš„æœ€å¤§å€¼:åŠ¨æ€è§„åˆ’æ— è„‘ç‰ˆ
+     * Çó±³°ü×°ÈëÎïÆ·×ÜÖØÁ¿µÄ×î´óÖµ:¶¯Ì¬¹æ»®ÎŞÄÔ°æ
      *
      * @return
      */
     public int dynamicProgramming() {
-        boolean[][] packResult = new boolean[n][maxPackW + 1]; // å¯¹åº”ç‰©ä½“é‡é‡
-        packResult[0][packW[0]] = true; // ç¬¬ä¸€ä¸ªç‰©ä½“è£…è¿›å»
-        packResult[0][0] = true; // ç¬¬ä¸€ä¸ªç‰©ä½“ä¸è£…è¿›å»
+        boolean[][] packResult = new boolean[n][maxPackW + 1]; // ¶ÔÓ¦ÎïÌåÖØÁ¿
+        packResult[0][packW[0]] = true; // µÚÒ»¸öÎïÌå×°½øÈ¥
+        packResult[0][0] = true; // µÚÒ»¸öÎïÌå²»×°½øÈ¥
         for (int i = 1; i < n; i++) {
-            int thingW = packW[i];  // ç‰©ä½“é‡é‡
+            int thingW = packW[i];  // ÎïÌåÖØÁ¿
             for (int j = maxPackW; j >= 0; j--) {
-                if (packResult[i - 1][j]) { // è£…æœ‰ç‰©ä½“
-                    packResult[i][j] = true; // ä¸è£…è¿›å»
-                    if (thingW + j <= maxPackW) // å¯ä»¥è£…è¿›å»
+                if (packResult[i - 1][j]) { // ×°ÓĞÎïÌå
+                    packResult[i][j] = true; // ²»×°½øÈ¥
+                    if (thingW + j <= maxPackW) // ¿ÉÒÔ×°½øÈ¥
                         packResult[i][j + thingW] = true;
                 }
 
             }
         }
 
-        int maxW = -1; // å­˜å‚¨èƒŒåŒ…ä¸­ç‰©å“æ€»é‡é‡çš„æœ€å¤§å€¼
+        int maxW = -1; // ´æ´¢±³°üÖĞÎïÆ·×ÜÖØÁ¿µÄ×î´óÖµ
 
         for (int i = maxPackW; i >= 0; i--) {
-            if (packResult[n - 1][i]) { // æœ€å¤§å€¼
+            if (packResult[n - 1][i]) { // ×î´óÖµ
                 maxW = i;
                 break;
             }
         }
 
-        // è®¡ç®—å‡ºæ¯ä¸ªèƒŒåŒ…è£…æˆ–è€…ä¸è£…
+        // ¼ÆËã³öÃ¿¸ö±³°ü×°»òÕß²»×°
         int rest = maxW;
         for (int i = n - 1; i >= 1; i--) {
-            if (rest >= packW[i] && packResult[i - 1][rest - packW[i]]) { // è£…
+            if (rest >= packW[i] && packResult[i - 1][rest - packW[i]]) { // ×°
                 rest -= packW[i];
                 System.out.print("1 ");
             } else {
@@ -52,8 +52,8 @@ public class DynamicProgrammingZeroOneKnapsackExercise {
             }
         }
 
-        // ç¬¬ä¸€ä¸ª
-        if (rest == packW[0] && packResult[0][packW[0]]) { // è£…
+        // µÚÒ»¸ö
+        if (rest == packW[0] && packResult[0][packW[0]]) { // ×°
             System.out.print("1 ");
         } else {
             System.out.print("0 ");
@@ -63,29 +63,29 @@ public class DynamicProgrammingZeroOneKnapsackExercise {
     }
 
     /**
-     * æ±‚èƒŒåŒ…è£…å…¥ç‰©å“æ€»é‡é‡çš„æœ€å¤§å€¼:åŠ¨æ€è§„åˆ’èŠ‚çœç‰ˆ
+     * Çó±³°ü×°ÈëÎïÆ·×ÜÖØÁ¿µÄ×î´óÖµ:¶¯Ì¬¹æ»®½ÚÊ¡°æ
      *
      * @return
      */
     public int dynamicProgramming2() {
-        boolean[] packResult = new boolean[maxPackW + 1]; // å¯¹åº”ç‰©ä½“é‡é‡
-        packResult[packW[0]] = true; // ç¬¬ä¸€ä¸ªç‰©ä½“è£…è¿›å»
-        packResult[0] = true; // ç¬¬ä¸€ä¸ªç‰©ä½“ä¸è£…è¿›å»
+        boolean[] packResult = new boolean[maxPackW + 1]; // ¶ÔÓ¦ÎïÌåÖØÁ¿
+        packResult[packW[0]] = true; // µÚÒ»¸öÎïÌå×°½øÈ¥
+        packResult[0] = true; // µÚÒ»¸öÎïÌå²»×°½øÈ¥
         for (int i = 1; i < n; i++) {
-            int thingW = packW[i];  // ç‰©ä½“é‡é‡
+            int thingW = packW[i];  // ÎïÌåÖØÁ¿
             for (int j = maxPackW; j >= 0; j--) {
-                if (packResult[j]) { // è£…æœ‰ç‰©ä½“
-                    if (thingW + j <= maxPackW) // å¯ä»¥è£…è¿›å»
+                if (packResult[j]) { // ×°ÓĞÎïÌå
+                    if (thingW + j <= maxPackW) // ¿ÉÒÔ×°½øÈ¥
                         packResult[j + thingW] = true;
                 }
 
             }
         }
 
-        int maxW = -1; // å­˜å‚¨èƒŒåŒ…ä¸­ç‰©å“æ€»é‡é‡çš„æœ€å¤§å€¼
+        int maxW = -1; // ´æ´¢±³°üÖĞÎïÆ·×ÜÖØÁ¿µÄ×î´óÖµ
 
         for (int i = maxPackW; i >= 0; i--) {
-            if (packResult[i]) { // æœ€å¤§å€¼
+            if (packResult[i]) { // ×î´óÖµ
                 maxW = i;
                 break;
             }

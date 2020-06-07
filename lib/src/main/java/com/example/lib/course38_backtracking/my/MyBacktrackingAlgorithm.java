@@ -1,7 +1,7 @@
 package com.example.lib.course38_backtracking.my;
 
 /**
- * å›æº¯ç®—æ³•
+ * »ØËİËã·¨
  * Created by qinshunan on 2019/5/7.
  */
 
@@ -16,56 +16,56 @@ public class MyBacktrackingAlgorithm {
     //            * * * * * * Q *
     //            * * * Q * * * *
     //            * * * * * Q * *
-    // å…«çš‡åï¼šå…«è¡Œå…«åˆ—æ­£æ–¹å½¢æ£‹ç›˜ï¼Œæ”¾å…¥å…«ä¸ªæ£‹å­ï¼Œæ¯ä¸ªæ£‹å­ä¸Šä¸‹å·¦å³æ¨ªç«–ç›´çº¿ä¸èƒ½æœ‰æ£‹å­ï¼Œä¸¤æ¡å¯¹è§’çº¿ä¹Ÿä¸èƒ½æœ‰æ£‹å­
-    // å›æº¯ç®—æ³•ï¼šä»ç¬¬ä¸€è¡Œåˆ°ç¬¬å…«è¡Œä¾æ¬¡æ‘†æ”¾æ£‹å­ï¼Œæ¯ä¸€è¡Œæ¯ä¸€åˆ—åªèƒ½æœ‰ä¸€ä¸ªæ£‹å­ï¼Œå¯¹è§’çº¿åˆ¤æ–­å¯ä»¥åªåˆ¤æ–­å·²ç»æ‘†æ”¾çš„æ£‹å­ï¼Œå³ä¸Šå¯¹è§’çº¿çš„æ£‹å­
+    // °Ë»Êºó£º°ËĞĞ°ËÁĞÕı·½ĞÎÆåÅÌ£¬·ÅÈë°Ë¸öÆå×Ó£¬Ã¿¸öÆå×ÓÉÏÏÂ×óÓÒºáÊúÖ±Ïß²»ÄÜÓĞÆå×Ó£¬Á½Ìõ¶Ô½ÇÏßÒ²²»ÄÜÓĞÆå×Ó
+    // »ØËİËã·¨£º´ÓµÚÒ»ĞĞµ½µÚ°ËĞĞÒÀ´Î°Ú·ÅÆå×Ó£¬Ã¿Ò»ĞĞÃ¿Ò»ÁĞÖ»ÄÜÓĞÒ»¸öÆå×Ó£¬¶Ô½ÇÏßÅĞ¶Ï¿ÉÒÔÖ»ÅĞ¶ÏÒÑ¾­°Ú·ÅµÄÆå×Ó£¬¼´ÉÏ¶Ô½ÇÏßµÄÆå×Ó
     int len = 8;
-    int[] result = new int[len]; // ä¸‹æ ‡è¡¨ç¤ºè¡Œï¼Œå€¼è¡¨ç¤ºæ£‹å­æ”¾åœ¨å“ªä¸€åˆ—
-    boolean isComplete = false; // ç»ˆæ­¢æ¡ä»¶
+    int[] result = new int[len]; // ÏÂ±ê±íÊ¾ĞĞ£¬Öµ±íÊ¾Æå×Ó·ÅÔÚÄÄÒ»ÁĞ
+    boolean isComplete = false; // ÖÕÖ¹Ìõ¼ş
 
     /**
-     * é€šè¿‡findEightQueens(0)å¼€å§‹ä¸€åˆ—ä¸€è¡Œçš„éå†æ‰¾åˆ°åˆé€‚æ‘†æ”¾æ£‹å­çš„ä½ç½®ï¼Œä¸åˆé€‚åˆ™å›æº¯
+     * Í¨¹ıfindEightQueens(0)¿ªÊ¼Ò»ÁĞÒ»ĞĞµÄ±éÀúÕÒµ½ºÏÊÊ°Ú·ÅÆå×ÓµÄÎ»ÖÃ£¬²»ºÏÊÊÔò»ØËİ
      *
-     * @param row è¡Œ
+     * @param row ĞĞ
      */
     public void findEightQueens(int row) {
         if (row == 0)
             isComplete = false;
 
-        if (row == 8) { // æ‘†æ”¾å®Œæˆ
+        if (row == 8) { // °Ú·ÅÍê³É
             isComplete = true;
             printQueens(result);
             return;
         }
 
         for (int column = 0; column < len; column++) {
-//            if (isComplete) // æ‘†æ”¾å®Œæˆåå…³æ‰æ‰€æœ‰å¾ªç¯,å³æ‰¾åˆ°ä¸€ä¸ªè§£å³å¯
+//            if (isComplete) // °Ú·ÅÍê³Éºó¹ØµôËùÓĞÑ­»·,¼´ÕÒµ½Ò»¸ö½â¼´¿É
 //                return;
-            if (isOk(row, column)) { // è¡¨ç¤ºèƒ½å¤Ÿæ‘†æ”¾
-                result[row] = column; // æ‘†æ”¾
-                findEightQueens(row + 1); // æ‘†æ”¾ä¸‹ä¸€è¡Œçš„æ£‹å­
+            if (isOk(row, column)) { // ±íÊ¾ÄÜ¹»°Ú·Å
+                result[row] = column; // °Ú·Å
+                findEightQueens(row + 1); // °Ú·ÅÏÂÒ»ĞĞµÄÆå×Ó
             }
         }
     }
 
     /**
-     * æ ¹æ®å·²æ‘†æ”¾çš„æ£‹å­ï¼Œåˆ¤æ–­åœ¨rowè¡Œcolumnåˆ—æ‘†æ”¾æ£‹å­æ˜¯å¦åˆé€‚
+     * ¸ù¾İÒÑ°Ú·ÅµÄÆå×Ó£¬ÅĞ¶ÏÔÚrowĞĞcolumnÁĞ°Ú·ÅÆå×ÓÊÇ·ñºÏÊÊ
      *
-     * @param row    è¡Œ
-     * @param column åˆ—
+     * @param row    ĞĞ
+     * @param column ÁĞ
      * @return
      */
     private boolean isOk(int row, int column) {
-        int leftUpDiagonalAngle = column - 1; // å·¦ä¸Šå¯¹è§’çº¿çš„å€¼
-        int rightUpDiagonalAngle = column + 1; // å³ä¸Šå¯¹è§’çº¿çš„å€¼
+        int leftUpDiagonalAngle = column - 1; // ×óÉÏ¶Ô½ÇÏßµÄÖµ
+        int rightUpDiagonalAngle = column + 1; // ÓÒÉÏ¶Ô½ÇÏßµÄÖµ
 
-        for (int i = row - 1; i >= 0; i--) { // åˆ—æ•°é€’å‡ï¼Œä¾æ¬¡ä¸å‰é¢å·²æ‘†æ”¾å¥½çš„æ£‹å­åˆ¤æ–­æ–°æ‘†æ”¾çš„ä½ç½®rowæ˜¯å¦åˆé€‚
-            if (result[i] == column) // åŒä¸€è¡Œçš„ä¸åˆé€‚
+        for (int i = row - 1; i >= 0; i--) { // ÁĞÊıµİ¼õ£¬ÒÀ´ÎÓëÇ°ÃæÒÑ°Ú·ÅºÃµÄÆå×ÓÅĞ¶ÏĞÂ°Ú·ÅµÄÎ»ÖÃrowÊÇ·ñºÏÊÊ
+            if (result[i] == column) // Í¬Ò»ĞĞµÄ²»ºÏÊÊ
                 return false;
 
-            if (leftUpDiagonalAngle >= 0 && result[i] == leftUpDiagonalAngle) // åœ¨å·¦ä¸Šå¯¹è§’çº¿ä¸Šä¹Ÿä¸åˆé€‚
+            if (leftUpDiagonalAngle >= 0 && result[i] == leftUpDiagonalAngle) // ÔÚ×óÉÏ¶Ô½ÇÏßÉÏÒ²²»ºÏÊÊ
                 return false;
 
-            if (rightUpDiagonalAngle < 8 && result[i] == rightUpDiagonalAngle) // åœ¨å·¦ä¸‹å¯¹è§’çº¿ä¸Šä¹Ÿä¸åˆé€‚
+            if (rightUpDiagonalAngle < 8 && result[i] == rightUpDiagonalAngle) // ÔÚ×óÏÂ¶Ô½ÇÏßÉÏÒ²²»ºÏÊÊ
                 return false;
 
             --leftUpDiagonalAngle;
@@ -88,26 +88,26 @@ public class MyBacktrackingAlgorithm {
         System.out.println();
     }
 
-    // 0-1èƒŒåŒ…ï¼šä»nä¸ªç‰©ä½“ä¸­é€‰æ‹©ç‰©ä½“è£…å…¥èƒŒåŒ…ï¼ŒèƒŒåŒ…æœ€å¤§æ‰¿é‡Wï¼Œç‰©ä½“ä¸å¯åˆ†å‰²ï¼Œæ±‚èƒ½è£…å…¥ç‰©ä½“çš„æ€»é‡é‡çš„æœ€å¤§å€¼
-    int maxW = -1; // å­˜å‚¨èƒŒåŒ…ä¸­ç‰©å“æ€»é‡é‡çš„æœ€å¤§å€¼
-    int maxPackW = 150; // èƒŒåŒ…æœ€å¤§æ‰¿é‡
-    int n = 10; // 10ä¸ªç‰©ä½“
-    int[] packW = new int[]{4, 9, 45, 23, 43, 31, 18, 12, 27, 32}; // ä¸‹æ ‡å¯¹åº”ç‰©ä½“ï¼Œå€¼æ˜¯ç‰©ä½“çš„é‡é‡
-    int[] packResult = new int[n]; // ä¸‹æ ‡å¯¹åº”ç‰©ä½“ï¼Œå€¼æ˜¯ä»£è¡¨ç‰©ä½“æ˜¯å¦è£…è¿›å»ï¼Œ0ä¸è£…ï¼Œ1 è£…
-    public int[] maxResult = new int[n]; // å¯¹åº”æœ€å¤§é‡é‡çš„ç»“æœ
+    // 0-1±³°ü£º´Ón¸öÎïÌåÖĞÑ¡ÔñÎïÌå×°Èë±³°ü£¬±³°ü×î´ó³ĞÖØW£¬ÎïÌå²»¿É·Ö¸î£¬ÇóÄÜ×°ÈëÎïÌåµÄ×ÜÖØÁ¿µÄ×î´óÖµ
+    int maxW = -1; // ´æ´¢±³°üÖĞÎïÆ·×ÜÖØÁ¿µÄ×î´óÖµ
+    int maxPackW = 150; // ±³°ü×î´ó³ĞÖØ
+    int n = 10; // 10¸öÎïÌå
+    int[] packW = new int[]{4, 9, 45, 23, 43, 31, 18, 12, 27, 32}; // ÏÂ±ê¶ÔÓ¦ÎïÌå£¬ÖµÊÇÎïÌåµÄÖØÁ¿
+    int[] packResult = new int[n]; // ÏÂ±ê¶ÔÓ¦ÎïÌå£¬ÖµÊÇ´ú±íÎïÌåÊÇ·ñ×°½øÈ¥£¬0²»×°£¬1 ×°
+    public int[] maxResult = new int[n]; // ¶ÔÓ¦×î´óÖØÁ¿µÄ½á¹û
 
     /**
-     * pretendPack(0,0)å¯ç”¨
+     * pretendPack(0,0)ÆôÓÃ
      *
-     * @param i  å½“å‰æ˜¯ç¬¬å‡ ä¸ªç‰©ä½“
-     * @param cw å·²ç»è£…è¿›èƒŒåŒ…çš„ç‰©ä½“çš„æ€»é‡é‡
+     * @param i  µ±Ç°ÊÇµÚ¼¸¸öÎïÌå
+     * @param cw ÒÑ¾­×°½ø±³°üµÄÎïÌåµÄ×ÜÖØÁ¿
      */
     public void pretendPack(int i, int cw) {
         if (i == 0) {
             maxW = -1;
         }
 
-        if (i == n || cw == maxPackW) { // æ‰€æœ‰ç‰©ä½“å·²ç»é€‰æ‹©å®Œæ¯•æˆ–è€…èƒŒåŒ…å·²ç»è£…æ»¡
+        if (i == n || cw == maxPackW) { // ËùÓĞÎïÌåÒÑ¾­Ñ¡ÔñÍê±Ï»òÕß±³°üÒÑ¾­×°Âú
             if (cw > maxW) {
                 maxW = cw;
                 for (int j = 0; j < n; j++) {
@@ -117,8 +117,8 @@ public class MyBacktrackingAlgorithm {
             return;
         }
         packResult[i] = 0;
-        pretendPack(i + 1, cw); // å½“å‰ç‰©ä½“æ²¡æœ‰è£…è¿›å»ï¼Œç›´æ¥è¿›å…¥ä¸‹ä¸€ä¸ªç‰©ä½“
-        if (cw + packW[i] <= maxPackW) { // å½“å‰ç‰©ä½“è£…è¿›å»ä¸ä¼šè¶…é‡
+        pretendPack(i + 1, cw); // µ±Ç°ÎïÌåÃ»ÓĞ×°½øÈ¥£¬Ö±½Ó½øÈëÏÂÒ»¸öÎïÌå
+        if (cw + packW[i] <= maxPackW) { // µ±Ç°ÎïÌå×°½øÈ¥²»»á³¬ÖØ
             packResult[i] = 1;
             pretendPack(i + 1, cw + packW[i]);
         }
@@ -132,7 +132,7 @@ public class MyBacktrackingAlgorithm {
     }
 
     public static void main(String[] args) {
-        // å…«çš‡åé—®é¢˜
+        // °Ë»ÊºóÎÊÌâ
         MyBacktrackingAlgorithm myBacktrackingAlgorithm = new MyBacktrackingAlgorithm();
 //        myBacktrackingAlgorithm.findEightQueens(0);
 

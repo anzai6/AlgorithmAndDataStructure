@@ -3,7 +3,7 @@ package com.example.lib.course6_linkedlist.finals;
 import java.util.Scanner;
 
 /**
- * åŸºäºå•é“¾è¡¨LRUç®—æ³•ï¼ˆjavaï¼‰
+ * »ùÓÚµ¥Á´±íLRUËã·¨£¨java£©
  *
  * @author hoda
  * @create 2018-12-17
@@ -11,22 +11,22 @@ import java.util.Scanner;
 public class LRUBaseLinkedList<T> {
 
     /**
-     * é»˜è®¤é“¾è¡¨å®¹é‡
+     * Ä¬ÈÏÁ´±íÈİÁ¿
      */
     private final static Integer DEFAULT_CAPACITY = 10;
 
     /**
-     * å¤´ç»“ç‚¹
+     * Í·½áµã
      */
     private SNode<T> headNode;
 
     /**
-     * é“¾è¡¨é•¿åº¦
+     * Á´±í³¤¶È
      */
     private Integer length;
 
     /**
-     * é“¾è¡¨å®¹é‡
+     * Á´±íÈİÁ¿
      */
     private Integer capacity;
 
@@ -40,7 +40,7 @@ public class LRUBaseLinkedList<T> {
     }
 
     /**
-     * åˆ é™¤preNodeç»“ç‚¹ä¸‹ä¸€ä¸ªå…ƒç´ 
+     * É¾³ıpreNode½áµãÏÂÒ»¸öÔªËØ
      *
      * @param preNode
      */
@@ -48,7 +48,7 @@ public class LRUBaseLinkedList<T> {
     }
 
     /**
-     * é“¾è¡¨å¤´éƒ¨æ’å…¥èŠ‚ç‚¹
+     * Á´±íÍ·²¿²åÈë½Úµã
      *
      * @param data
      */
@@ -56,7 +56,7 @@ public class LRUBaseLinkedList<T> {
     }
 
     /**
-     * è·å–æŸ¥æ‰¾åˆ°å…ƒç´ çš„å‰ä¸€ä¸ªç»“ç‚¹
+     * »ñÈ¡²éÕÒµ½ÔªËØµÄÇ°Ò»¸ö½áµã
      *
      * @param data
      * @return
@@ -66,7 +66,7 @@ public class LRUBaseLinkedList<T> {
     }
 
     /**
-     * åˆ é™¤å°¾ç»“ç‚¹
+     * É¾³ıÎ²½áµã
      */
     private void deleteElemAtEnd() {
     }

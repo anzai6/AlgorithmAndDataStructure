@@ -1,24 +1,24 @@
 package com.example.lib.course9_queue.finals;
 
 /**
- * åŠ¨æ€æ•°ç»„é˜Ÿåˆ—(ä¸å«æ‰©å®¹)
+ * ¶¯Ì¬Êı×é¶ÓÁĞ(²»º¬À©Èİ)
  * Created by wangzheng on 2018/10/9.
  */
 public class DynamicArrayQueue {
-    // æ•°ç»„ï¼šitemsï¼Œæ•°ç»„å¤§å°ï¼šn
+    // Êı×é£ºitems£¬Êı×é´óĞ¡£ºn
     private String[] items;
     private int n = 0;
 
-    // ç”³è¯·ä¸€ä¸ªå¤§å°ä¸ºcapacityçš„æ•°ç»„
+    // ÉêÇëÒ»¸ö´óĞ¡ÎªcapacityµÄÊı×é
     public DynamicArrayQueue(int capacity) {
     }
 
-    // å…¥é˜Ÿæ“ä½œï¼Œå°†itemæ”¾å…¥é˜Ÿå°¾
+    // Èë¶Ó²Ù×÷£¬½«item·ÅÈë¶ÓÎ²
     public boolean enqueue(String item) {
         return true;
     }
 
-    // å‡ºé˜Ÿ
+    // ³ö¶Ó
     public String dequeue() {
         return null;
     }

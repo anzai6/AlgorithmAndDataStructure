@@ -1,9 +1,9 @@
 package com.example.lib.course35_Trie.teacher;
 
 public class Trie {
-    private TrieNode root = new TrieNode('/'); // å­˜å‚¨æ— æ„ä¹‰å­—ç¬¦
+    private TrieNode root = new TrieNode('/'); // ´æ´¢ÎŞÒâÒå×Ö·û
 
-    // å¾€ ACAutomata æ ‘ä¸­æ’å…¥ä¸€ä¸ªå­—ç¬¦ä¸²
+    // Íù ACAutomata Ê÷ÖĞ²åÈëÒ»¸ö×Ö·û´®
     public void insert(char[] text) {
         TrieNode p = root;
         for (int i = 0; i < text.length; ++i) {
@@ -17,18 +17,18 @@ public class Trie {
         p.isEndingChar = true;
     }
 
-    // åœ¨ ACAutomata æ ‘ä¸­æŸ¥æ‰¾ä¸€ä¸ªå­—ç¬¦ä¸²
+    // ÔÚ ACAutomata Ê÷ÖĞ²éÕÒÒ»¸ö×Ö·û´®
     public boolean find(char[] pattern) {
         TrieNode p = root;
         for (int i = 0; i < pattern.length; ++i) {
             int index = pattern[i] - 'a';
             if (p.children[index] == null) {
-                return false; // ä¸å­˜åœ¨ pattern
+                return false; // ²»´æÔÚ pattern
             }
             p = p.children[index];
         }
-        if (p.isEndingChar == false) return false; // ä¸èƒ½å®Œå…¨åŒ¹é…ï¼Œåªæ˜¯å‰ç¼€
-        else return true; // æ‰¾åˆ° pattern
+        if (p.isEndingChar == false) return false; // ²»ÄÜÍêÈ«Æ¥Åä£¬Ö»ÊÇÇ°×º
+        else return true; // ÕÒµ½ pattern
     }
 
     public class TrieNode {

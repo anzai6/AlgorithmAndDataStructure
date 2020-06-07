@@ -1,17 +1,17 @@
 package com.example.lib.course9_queue.teacher;
 
 /**
- * åŸºäºŽé“¾è¡¨å®žçŽ°çš„é˜Ÿåˆ—
+ * »ùÓÚÁ´±íÊµÏÖµÄ¶ÓÁÐ
  * <p>
  * Author: Zheng
  */
 public class QueueBasedOnLinkedList {
 
-    // é˜Ÿåˆ—çš„é˜Ÿé¦–å’Œé˜Ÿå°¾
+    // ¶ÓÁÐµÄ¶ÓÊ×ºÍ¶ÓÎ²
     private Node head = null;
     private Node tail = null;
 
-    // å…¥é˜Ÿ
+    // Èë¶Ó
     public void enqueue(String value) {
         if (tail == null) {
             Node newNode = new Node(value, null);
@@ -23,7 +23,7 @@ public class QueueBasedOnLinkedList {
         }
     }
 
-    // å‡ºé˜Ÿ
+    // ³ö¶Ó
     public String dequeue() {
         if (head == null) return null;
 

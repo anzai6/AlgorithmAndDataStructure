@@ -3,7 +3,7 @@ package com.example.lib.course8_stack.finals;
 import com.example.lib.Node;
 
 /**
- * åŸºäºæ•°ç»„å®ç°çš„æ ˆã€‚
+ * »ùÓÚÊı×éÊµÏÖµÄÕ»¡£
  * <p>
  * Author: Zheng
  */
@@ -14,7 +14,7 @@ public class StackBasedArrayList {
     }
 
     /**
-     * æˆ‘ç”¨-1è¡¨ç¤ºæ ˆä¸­æ²¡æœ‰æ•°æ®ã€‚
+     * ÎÒÓÃ-1±íÊ¾Õ»ÖĞÃ»ÓĞÊı¾İ¡£
      */
     public int pop() {
         return 0;
