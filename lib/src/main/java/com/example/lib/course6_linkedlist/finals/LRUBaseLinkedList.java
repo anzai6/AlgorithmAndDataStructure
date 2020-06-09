@@ -1,7 +1,5 @@
 package com.example.lib.course6_linkedlist.finals;
 
-import java.util.Scanner;
-
 /**
  * 基于单链表LRU算法（java）
  *
@@ -13,7 +11,7 @@ public class LRUBaseLinkedList<T> {
     /**
      * 默认链表容量
      */
-    private final static Integer DEFAULT_CAPACITY = 10;
+    private final static int DEFAULT_CAPACITY = 10;
 
     /**
      * 头结点
@@ -23,20 +21,41 @@ public class LRUBaseLinkedList<T> {
     /**
      * 链表长度
      */
-    private Integer length;
+    private int length;
 
     /**
      * 链表容量
      */
-    private Integer capacity;
+    private int capacity;
 
     public LRUBaseLinkedList() {
+        this(DEFAULT_CAPACITY);
     }
 
-    public LRUBaseLinkedList(Integer capacity) {
+    public LRUBaseLinkedList(int capacity) {
+        this.capacity = capacity;
     }
 
     public void add(T data) {
+        if (headNode == null) {
+            length++;
+            headNode = new SNode<>(data, null);
+            return;
+        }
+        SNode pre = findPreNode(data);
+        if (pre != null) { // 包含
+            deleteElemOptim(pre);
+            insertElemAtBegin(data);
+        } else if (headNode != null && headNode.element.equals(data)) {
+            return;
+        } else {
+            if (length == capacity) {
+                deleteElemAtEnd();
+                length--;
+            }
+            length++;
+            insertElemAtBegin(data);
+        }
     }
 
     /**
@@ -45,6 +64,10 @@ public class LRUBaseLinkedList<T> {
      * @param preNode
      */
     private void deleteElemOptim(SNode preNode) {
+        if (preNode == null && preNode.next == null) {
+            return;
+        }
+        preNode.next = preNode.next.next;
     }
 
     /**
@@ -52,7 +75,10 @@ public class LRUBaseLinkedList<T> {
      *
      * @param data
      */
-    private void intsertElemAtBegin(T data) {
+    private void insertElemAtBegin(T data) {
+        SNode sNode = new SNode(data, null);
+        sNode.next = headNode;
+        headNode = sNode;
     }
 
     /**
@@ -62,6 +88,15 @@ public class LRUBaseLinkedList<T> {
      * @return
      */
     private SNode findPreNode(T data) {
+        SNode pre = null;
+        SNode p = headNode;
+        while (p != null) {
+            if (p.element.equals(data)) {
+                return pre;
+            }
+            pre = p;
+            p = p.next;
+        }
         return null;
     }
 
@@ -69,13 +104,24 @@ public class LRUBaseLinkedList<T> {
      * 删除尾结点
      */
     private void deleteElemAtEnd() {
+        if (headNode == null || headNode.next == null) {
+            headNode = null;
+            return;
+        }
+        SNode pre = headNode;
+        SNode p = headNode.next;
+        while (p != null && p.next != null) {
+            pre = p;
+            p = p.next;
+        }
+        pre.next = null;
     }
 
     private void printAll() {
-        SNode node = headNode.getNext();
+        SNode node = headNode;
         while (node != null) {
             System.out.print(node.getElement() + ",");
-            node = node.getNext();
+            node = node.next;
         }
         System.out.println();
     }
@@ -118,10 +164,39 @@ public class LRUBaseLinkedList<T> {
 
     public static void main(String[] args) {
         LRUBaseLinkedList list = new LRUBaseLinkedList();
-        Scanner sc = new Scanner(System.in);
-        while (true) {
-            list.add(sc.nextInt());
-            list.printAll();
-        }
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.printAll();
+        list.add(6);
+        list.add(7);
+        list.add(8);
+        list.add(9);
+        list.printAll();
+
+
+
+        System.out.println("======有参测试========");
+        LRUBaseLinkedList lru = new LRUBaseLinkedList<Integer>(4);
+        lru.add(1);
+        lru.printAll();
+        lru.add(2);
+       lru.printAll();
+        lru.add(3);
+       lru.printAll();
+        lru.add(4);
+       lru.printAll();
+        lru.add(2);
+       lru.printAll();
+        lru.add(4);
+       lru.printAll();
+        lru.add(7);
+       lru.printAll();
+        lru.add(1);
+       lru.printAll();
+        lru.add(2);
+       lru.printAll();
     }
 }
