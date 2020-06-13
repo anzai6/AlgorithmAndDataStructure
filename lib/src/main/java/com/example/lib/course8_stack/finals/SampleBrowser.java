@@ -31,10 +31,17 @@ public class SampleBrowser {
     private LinkedListBasedStack forwardStack;
 
     public SampleBrowser() {
+        backStack = new LinkedListBasedStack();
+        forwardStack = new LinkedListBasedStack();
     }
 
     public void open(String url) {
         showUrl(url, "Open");
+        forwardStack.clear();
+        if (currentPage != null && !"".equals(currentPage)) {
+            backStack.push(currentPage);
+        }
+        currentPage = url;
     }
 
     public boolean canGoBack() {
@@ -46,15 +53,29 @@ public class SampleBrowser {
     }
 
     public String goBack() {
-
-        System.out.println("* Cannot go back, no pages behind.");
-        return null;
+        if (!canGoBack()) {
+            System.out.println("* Cannot go back, no pages behind.");
+            return "";
+        }
+        if (currentPage != null && !"".equals(currentPage)) {
+            forwardStack.push(currentPage);
+        }
+        currentPage = backStack.pop();
+        showUrl(currentPage, "goBack");
+        return currentPage;
     }
 
     public String goForward() {
-
-        System.out.println("** Cannot go forward, no pages ahead.");
-        return null;
+        if (!canGoForward()) {
+            System.out.println("* Cannot go goForward, no pages behind.");
+            return "";
+        }
+        if (currentPage != null && !"".equals(currentPage)) {
+            backStack.push(currentPage);
+        }
+        currentPage = forwardStack.pop();
+        showUrl(currentPage, "goForward");
+        return currentPage;
     }
 
     public void showUrl(String url, String prefix) {
@@ -78,17 +99,30 @@ public class SampleBrowser {
         }
 
         public void clear() {
+            top = null;
+            size = 0;
         }
 
         public void push(String data) {
+            Node newNode = new Node(data, null);
+            if (top != null) {
+                newNode.next = top;
+            }
+            top = newNode;
+            ++size;
         }
 
         public String pop() {
-            return "";
+            if (top == null)
+                return "";
+            String value = top.data;
+            top = top.next;
+            --size;
+            return value;
         }
 
         public String getTopData() {
-            return "";
+            return top == null ? "" : top.data;
         }
 
         public int size() {
