@@ -1,7 +1,5 @@
 package com.example.lib.course9_queue.finals;
 
-import com.example.lib.course9_queue.my.MyCircularQueue;
-
 /**
  * 环形队列
  */
@@ -29,7 +27,7 @@ public class CircularQueue {
     // 入队,空置一个空间操作起来会比较容易
     public boolean enqueue(String item) {
         int next = (tail + 1) % n;
-        if(next == head){
+        if (next == head) {
             System.out.println("queue is full");
             return false;
         }
@@ -40,11 +38,12 @@ public class CircularQueue {
 
     // 出队
     public String dequeue() {
-        if(tail == head){
+        if (tail == head) {
             System.out.println("queue is empty");
             return "";
         }
-        head = (head +1)%n;
+        items[head] = null;
+        head = (head + 1) % n;
         return items[head];
     }
 
@@ -56,21 +55,21 @@ public class CircularQueue {
     }
 
     public static void main(String[] args) {
-        MyCircularQueue<String> myCircularQueue = new MyCircularQueue<>(10);
+        CircularQueue myCircularQueue = new CircularQueue(10);
         for (int i = 0; i < 5; i++) {
-            myCircularQueue.enQueue(i + "");
+            myCircularQueue.enqueue(i + "");
         }
         System.out.println("入队：5");
         myCircularQueue.printAll();
 
         for (int i = 0; i < 6; i++) {
-            myCircularQueue.deQueue();
+            myCircularQueue.dequeue();
         }
         System.out.println("出队：6");
         myCircularQueue.printAll();
 
         for (int i = 0; i < 10; i++) {
-            myCircularQueue.enQueue(i + "");
+            myCircularQueue.enqueue(i + "");
         }
         System.out.println("入队：10");
         myCircularQueue.printAll();
