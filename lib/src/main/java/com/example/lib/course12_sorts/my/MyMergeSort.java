@@ -1,6 +1,6 @@
 package com.example.lib.course12_sorts.my;
 
-import com.example.lib.course11_sorts.my.MySorts;
+import com.example.lib.course11_sorts.finals.Sorts;
 
 /**
  * 归并排序（可控制为稳定排序，时间复杂度是nlogn，因为合并时需要一个数组过度，所以空间复杂度是n）
@@ -80,7 +80,7 @@ public class MyMergeSort {
     public static void main(String[] args) {
         MyMergeSort myMergeSort = new MyMergeSort();
         int n = 10;
-        int[] data1 = MySorts.getRandomArray(n);
+        int[] data1 = Sorts.getRandomArray(n);
         System.out.println("排序前");
         printArray(data1);
         System.out.println("归并排序：");

@@ -1,6 +1,6 @@
 package com.example.lib.course13_sort.my;
 
-import com.example.lib.course11_sorts.my.MySorts;
+import com.example.lib.course11_sorts.finals.Sorts;
 
 /**
  * 计数排序：要求排序的都是数组中存储的都是非负整数，而且范围不大，可做成稳定性的，需要空间n即非原地排序,时间复杂的是：7n+c
@@ -59,7 +59,7 @@ public class MyCountingSort {
     public static void main(String[] args) {
         MyCountingSort myCountingSort = new MyCountingSort();
         int n = 1000;
-        int[] data1 = MySorts.getRandomArray(n);
+        int[] data1 = Sorts.getRandomArray(n);
         System.out.println("排序前");
         printArray(data1);
         System.out.println("计数排序：");

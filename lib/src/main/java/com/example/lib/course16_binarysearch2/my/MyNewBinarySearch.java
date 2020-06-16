@@ -1,6 +1,6 @@
 package com.example.lib.course16_binarysearch2.my;
 
-import com.example.lib.course11_sorts.my.MySorts;
+import com.example.lib.course11_sorts.finals.Sorts;
 import com.example.lib.course13_sort.my.MyCountingSort;
 
 /**
@@ -134,7 +134,7 @@ public class MyNewBinarySearch {
     public static void main(String[] args) {
         MyCountingSort myCountingSort = new MyCountingSort();
         int n = 10;
-        int[] data1 = MySorts.getRandomArray(n);
+        int[] data1 = Sorts.getRandomArray(n);
         System.out.println("≈≈–Ú«∞");
         printArray(data1);
         System.out.println("º∆ ˝≈≈–Ú£∫");

@@ -1,6 +1,6 @@
 package com.example.lib.course12_sorts.my;
 
-import com.example.lib.course11_sorts.my.MySorts;
+import com.example.lib.course11_sorts.finals.Sorts;
 
 /**
  * 快速排序：时间复杂度nlogn,原地排序，非稳定性
@@ -68,7 +68,7 @@ public class MyQuickSort {
     public static void main(String[] args) {
         MyQuickSort myQuickSort = new MyQuickSort();
         int n = 10;
-        int[] data1 = MySorts.getRandomArray(n);
+        int[] data1 = Sorts.getRandomArray(n);
         System.out.println("排序前");
         printArray(data1);
         System.out.println("快速排序：");

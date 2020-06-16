@@ -1,6 +1,6 @@
 package com.example.lib.course28_heap.finals;
 
-import com.example.lib.course11_sorts.my.MySorts;
+import com.example.lib.course11_sorts.finals.Sorts;
 
 /**
  * 堆排序：先把数组建成堆数组，然后再排序
@@ -62,7 +62,7 @@ public class MyHeapSort {
     public static void main(String[] args) {
         MyHeapSort myHeapSort = new MyHeapSort();
         int n = 30;
-        int[] data = MySorts.getRandomArray(n);
+        int[] data = Sorts.getRandomArray(n);
         System.out.println("排序前");
         printArray(data);
         System.out.println("堆排序：");
