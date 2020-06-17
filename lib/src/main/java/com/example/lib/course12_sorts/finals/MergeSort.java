@@ -4,6 +4,8 @@ import com.example.lib.course11_sorts.finals.Sorts;
 
 /**
  * 归并排序（可控制为稳定排序，时间复杂度是nlogn，因为合并时需要一个数组过度，所以空间复杂度是n）
+ * 时间复杂度推导公式：f(n) = 2*f(n/2) + n , f(1) = C.... => f(n) = n * C + log^n * n
+ * 稳定性主要靠合并有序数组时保证
  * Created by qinshunan on 2019/3/5.
  */
 public class MergeSort {
@@ -56,7 +58,8 @@ public class MergeSort {
         int k = 0;
         // 合并
         while (i <= m && j <= r) {
-            if (arr[i] < arr[j]) {
+            // 注意 = 也要取 i 的值，以此保证排序的稳定性
+            if (arr[i] <= arr[j]) {
                 newArr[k] = arr[i];
                 i++;
             } else {
