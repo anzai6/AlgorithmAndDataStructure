@@ -1,7 +1,8 @@
 package com.example.lib.course15_binarysearch.finals;
 
-import com.example.lib.course11_sorts.finals.Sorts;
-import com.example.lib.course13_sort.my.MyCountingSort;
+import com.example.lib.course13_sort.finals.CountingSort;
+
+import java.util.HashMap;
 
 /**
  * 二分查找
@@ -19,7 +20,23 @@ public class BinarySearch {
      * @return
      */
     public int binarySearch(int[] arr, int len, int value) {
-
+        if (arr == null || arr.length == 0) {
+            System.out.println("arr is empty");
+            return -1;
+        }
+        int low = 0;
+        int high = len - 1;
+        int center = 0;
+        while (low <= high) {
+            center = (low + high) / 2;
+            if (arr[center] > value) { // 大于，在下区间
+                high = center - 1;
+            } else if (arr[center] < value) { // 小于，在上区间
+                low = center + 1;
+            } else {
+                return center;
+            }
+        }
         return -1;
     }
 
@@ -32,18 +49,33 @@ public class BinarySearch {
      * @return
      */
     public int recursionBinarySearch(int[] arr, int len, int value) {
-        return 0;
+        if (arr == null || arr.length == 0) {
+            System.out.println("arr is empty");
+            return -1;
+        }
+        return subRecursionBinarySearch(arr, 0, len - 1, value);
     }
 
     public int subRecursionBinarySearch(int[] arr, int low, int high, int value) {
-
-        return 1;
+        if (low > high) {
+            return -1;
+        }
+        int center = (low + high) / 2;
+        if (arr[center] > value) { // 大于，在下区间
+            return subRecursionBinarySearch(arr, low, center - 1, value);
+        } else if (arr[center] < value) { // 小于，在上区间
+            return subRecursionBinarySearch(arr, center + 1, high, value);
+        } else {
+            return center;
+        }
     }
 
     public static void main(String[] args) {
-        MyCountingSort myCountingSort = new MyCountingSort();
-        int n = 4;
-        int[] data1 = Sorts.getRandomArray(n);
+        CountingSort myCountingSort = new CountingSort();
+        int n = 10;
+        int maxValue = 2 * n;
+        int value = (int) (Math.random() * maxValue);
+        int[] data1 = getRandomArrayNoSame(n, maxValue);
         System.out.println("排序前");
         printArray(data1);
         System.out.println("计数排序：");
@@ -51,9 +83,9 @@ public class BinarySearch {
         printArray(data1);
 
         BinarySearch myBinarySearch = new BinarySearch();
-        int a1 = myBinarySearch.binarySearch(data1, n, 1);
-        int a2 = myBinarySearch.recursionBinarySearch(data1, n, 1);
-        System.out.println("二分查找：" + a1 + " : " + a2);
+        int a1 = myBinarySearch.binarySearch(data1, n, value);
+        int a2 = myBinarySearch.recursionBinarySearch(data1, n, value);
+        System.out.println("二分查找：value = " + value + ", 位置：" + a1 + " : " + a2);
     }
 
     public static void printArray(int[] data) {
@@ -61,5 +93,25 @@ public class BinarySearch {
             System.out.print(a + " ");
         }
         System.out.println();
+    }
+
+    /**
+     * 获取一个随机数组,元素不同
+     *
+     * @param n 长度
+     * @return
+     */
+    public static int[] getRandomArrayNoSame(int n, int maxValue) {
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        int[] data = new int[n];
+        for (int i = 0; i < n; i++) {
+            int newValue = (int) (Math.random() * maxValue);
+            while (hashMap.containsKey(newValue)) {
+                newValue = (int) (Math.random() * maxValue);
+            }
+            hashMap.put(Integer.valueOf(newValue), Integer.valueOf(newValue));
+            data[i] = newValue;
+        }
+        return data;
     }
 }

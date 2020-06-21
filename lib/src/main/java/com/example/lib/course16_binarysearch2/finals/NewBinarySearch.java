@@ -1,7 +1,7 @@
 package com.example.lib.course16_binarysearch2.finals;
 
 import com.example.lib.course11_sorts.finals.Sorts;
-import com.example.lib.course13_sort.my.MyCountingSort;
+import com.example.lib.course13_sort.finals.CountingSort;
 
 /**
  * 二分查找扩展：查找：第一个等于给定值；最后一个等于给定值；第一个大于等于给定值；最后一个小于等于给定值；
@@ -132,7 +132,7 @@ public class NewBinarySearch {
     }
 
     public static void main(String[] args) {
-        MyCountingSort myCountingSort = new MyCountingSort();
+        CountingSort myCountingSort = new CountingSort();
         int n = 10;
         int[] data1 = Sorts.getRandomArray(n);
         System.out.println("排序前");
