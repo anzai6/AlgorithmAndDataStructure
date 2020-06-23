@@ -12,11 +12,36 @@ public class BinarySearchTree {
     private Node tree;
 
     /**
-     * 插入
+     * 插入，节点不能相同
      *
      * @param value
      */
     public void insert(int value) {
+        Node newNode = new Node(value);
+        if (tree == null) {
+            tree = newNode;
+            return;
+        }
+        Node p = tree;
+        while (p != null) {
+            if (p.data < value) { // 大于，往右
+                if (p.right != null) { // 不为空，继续
+                    p = p.right;
+                } else { // 为空，直接插入
+                    p.right = newNode;
+                    return;
+                }
+            } else if (p.data > value) { // 小于，往左
+                if (p.left != null) { // 不为空，继续
+                    p = p.left;
+                } else { // 为空，直接插入
+                    p.left = newNode;
+                    return;
+                }
+            } else { // 等于，直接返回
+                return;
+            }
+        }
     }
 
     /**
@@ -26,16 +51,51 @@ public class BinarySearchTree {
      * @return
      */
     public Node find(int value) {
+        Node p = tree;
+        while (p != null){
+            if (p.data < value) { // 大于，往右
+                p = p.right;
+            } else if (p.data > value) { // 小于，往左
+                p = p.left;
+            } else { // 等于，直接返回
+                return p;
+            }
+        }
         return null;
     }
 
     /**
-     * 删除节点
+     * 删除节点,找到删除借点后，继续寻找它左边最大值或者右边最小值替换自己的位置
      *
      * @return
      */
     public boolean delete(int value) {
-        return true;
+        Node p = tree;
+        Node pre = null;
+        while (p != null){
+            if (p.data < value) { // 大于，往右
+                pre = p;
+                p = p.right;
+            } else if (p.data > value) { // 小于，往左
+                pre = p;
+                p = p.left;
+            } else { // 等于,继续寻找它左边最大值
+                if(p.left == null){
+                    if(pre == null){
+                        tree = p.right;
+                    }else {
+                        if(pre.data > value){ // 在父节点的左边
+                            pre.left = p.right;
+                        }else {
+                            pre.right = p.right;
+                        }
+                    }
+                }else
+
+                return p;
+            }
+        }
+        return false;
     }
 
     /**
@@ -73,6 +133,7 @@ public class BinarySearchTree {
     /**
      * 中序遍历：左子节点->当前节点->右子节点
      * 即相当于顺序遍历
+     *
      * @param node
      */
     public void centerOrderPrint(Node node) {
@@ -118,7 +179,7 @@ public class BinarySearchTree {
      * @param node
      */
     public int getNodeHigh(Node node) {
-            return 0;
+        return 0;
     }
 
 
