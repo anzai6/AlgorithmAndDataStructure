@@ -1,5 +1,7 @@
 package com.example.lib.course23_tree.finals;
 
+import java.util.LinkedList;
+
 /**
  * 二叉查找树：左子节点小于父节点，右子节点大于父节点，假设节点不同
  * 插入，查找，删除，查最大，查最小
@@ -52,7 +54,7 @@ public class BinarySearchTree {
      */
     public Node find(int value) {
         Node p = tree;
-        while (p != null){
+        while (p != null) {
             if (p.data < value) { // 大于，往右
                 p = p.right;
             } else if (p.data > value) { // 小于，往左
@@ -65,37 +67,70 @@ public class BinarySearchTree {
     }
 
     /**
-     * 删除节点,找到删除借点后，继续寻找它左边最大值或者右边最小值替换自己的位置
+     * 删除节点,
+     * 1.找到删除借点后
+     * 2.判断左右子节点都存在才需要寻找替换的节点，否则直接删除自身即可
+     * 3.左右子节点都存在时寻找它左边最大值或者右边最小值的节点，将它的值替换到待删除节点，然后自己成为新的待删除节点
+     * 4.删除待删除节点（此时待删除节点一定不可能有两个子节点）
      *
      * @return
      */
     public boolean delete(int value) {
         Node p = tree;
-        Node pre = null;
-        while (p != null){
+        Node fNode = null; // 待删除节点
+        Node preFNode = null; // 待删除节点的父节点
+        while (p != null) {
             if (p.data < value) { // 大于，往右
-                pre = p;
+                preFNode = p;
                 p = p.right;
             } else if (p.data > value) { // 小于，往左
-                pre = p;
+                preFNode = p;
                 p = p.left;
-            } else { // 等于,继续寻找它左边最大值
-                if(p.left == null){
-                    if(pre == null){
-                        tree = p.right;
-                    }else {
-                        if(pre.data > value){ // 在父节点的左边
-                            pre.left = p.right;
-                        }else {
-                            pre.right = p.right;
-                        }
-                    }
-                }else
-
-                return p;
+            } else { // 等于，退出循环
+                fNode = p;
+                p = null;
+                break;
             }
         }
-        return false;
+
+        // 没有找到对应节点
+        if (fNode == null) {
+            return false;
+        }
+
+        // 只有左右子节点都存在才需要寻找替换的节点，否则直接删除自身即可
+        // 寻找它左边最大值或者右边最小值的节点，这里寻找左边最大值
+        if (fNode.left != null || fNode.right != null) {
+            Node leftSubNode = fNode.left;
+            Node leftSubNodePre = fNode;
+            // 一直往右，找到最大节点
+            while (leftSubNode.right != null) {
+                leftSubNodePre = leftSubNode;
+                leftSubNode = leftSubNode.right;
+            }
+
+            // 替换值后，等于删除了 value
+            fNode.data = leftSubNode.data;
+            // 更新待删除节点和父节点
+            fNode = leftSubNode;
+            preFNode = leftSubNodePre;
+        }
+
+        // 此时，待删除节点不会同时有左右子节点了，所以用子节点代替
+        Node child = fNode.left != null ? fNode.left : fNode.right;
+
+        if (preFNode == null) {
+            tree = child;
+            return true;
+        }
+
+        if (preFNode.left == fNode) {
+            preFNode.left = child;
+        } else {
+            preFNode.right = child;
+        }
+
+        return true;
     }
 
     /**
@@ -104,7 +139,14 @@ public class BinarySearchTree {
      * @return
      */
     public Node findMax() {
-        return null;
+        if (tree == null) {
+            return null;
+        }
+        Node p = tree;
+        while (p.right != null) {
+            p = p.right;
+        }
+        return p;
     }
 
     /**
@@ -113,10 +155,18 @@ public class BinarySearchTree {
      * @return
      */
     public Node findMin() {
-        return null;
+        if (tree == null) {
+            return null;
+        }
+        Node p = tree;
+        while (p.left != null) {
+            p = p.left;
+        }
+        return p;
     }
 
     public void preOrderPrint() {
+        preOrderPrint(tree);
     }
 
     /**
@@ -125,9 +175,16 @@ public class BinarySearchTree {
      * @param node
      */
     public void preOrderPrint(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.data + " ");
+        preOrderPrint(node.left);
+        preOrderPrint(node.right);
     }
 
     public void centerOrderPrint() {
+        centerOrderPrint(tree);
     }
 
     /**
@@ -137,9 +194,16 @@ public class BinarySearchTree {
      * @param node
      */
     public void centerOrderPrint(Node node) {
+        if (node == null) {
+            return;
+        }
+        centerOrderPrint(node.left);
+        System.out.print(node.data + " ");
+        centerOrderPrint(node.right);
     }
 
     public void postOrderPrint() {
+        postOrderPrint(tree);
     }
 
     /**
@@ -148,6 +212,12 @@ public class BinarySearchTree {
      * @param node
      */
     public void postOrderPrint(Node node) {
+        if (node == null) {
+            return;
+        }
+        postOrderPrint(node.left);
+        postOrderPrint(node.right);
+        System.out.print(node.data + " ");
     }
 
     public void layerPrint() {
@@ -161,6 +231,24 @@ public class BinarySearchTree {
      * @param node
      */
     public void layerPrint(Node node) {
+        LinkedList<Node> nodes = new LinkedList<>();
+        LinkedList<Node> nextLayerNodes = new LinkedList<>();
+        nodes.add(node);
+        while (!nodes.isEmpty()) {
+            Node p = nodes.poll();
+            System.out.print(p.data + " ");
+            if (p.left != null) {
+                nextLayerNodes.add(p.left);
+            }
+            if (p.right != null) {
+                nextLayerNodes.add(p.right);
+            }
+            if (nodes.isEmpty()) { // 遍历完一层，换下一层
+                nodes = nextLayerNodes;
+                nextLayerNodes = new LinkedList<>();
+                System.out.println();
+            }
+        }
     }
 
     /**
@@ -170,7 +258,7 @@ public class BinarySearchTree {
      * @return
      */
     public int getHigh() {
-        return 1;
+        return getNodeHigh(tree);
     }
 
     /**
@@ -179,7 +267,13 @@ public class BinarySearchTree {
      * @param node
      */
     public int getNodeHigh(Node node) {
-        return 0;
+        if (node == null) {
+            return -1;
+        }
+        int leftHigh = getNodeHigh(node.left);
+        int rightHigh = getNodeHigh(node.right);
+        int max = Math.max(leftHigh, rightHigh);
+        return 1 + max;
     }
 
 
@@ -191,12 +285,18 @@ public class BinarySearchTree {
         public Node(int data) {
             this.data = data;
         }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "data=" + data +
+                    '}';
+        }
     }
 
     public static void main(String[] args) {
         int[] data = {10, 8, 18, 4, 14, 6, 16, 1, 11, 7, 17, 3, 13, 9, 19, 2, 12, 5, 15, 20, 0};
-//        int length = data.length;
-        int length = 20;
+        int length = data.length;
         BinarySearchTree myBinarySearchTree = new BinarySearchTree();
         for (int i = 0; i < length; i++) {
             myBinarySearchTree.insert(data[i]);
