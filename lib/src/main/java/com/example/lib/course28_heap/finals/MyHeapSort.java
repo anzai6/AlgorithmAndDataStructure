@@ -17,15 +17,28 @@ public class MyHeapSort {
      * @param len  内容长度
      */
     public void heapSort(int[] data, int len) {
+        if (data == null || len <= 1 || data.length < len) {
+            return;
+        }
+        // 建堆
+        buildHeap(data, len);
+        // 排序，每次取最大值跟最后一个交换
+        for (int i = len; i > 1; i--) {
+            swap(data, i, 1);
+            fromUpToDownHeapUp(data, i - 1, 1);
+        }
     }
 
     /**
-     * 把数组建成堆数组
+     * 把数组建成堆数组，从最后一个叶子结点的父节点开始，自上而下堆化建堆
      *
      * @param data
      * @param len  内容长度
      */
     public void buildHeap(int[] data, int len) {
+        for (int i = len / 2; i >= 1; i--) {
+            fromUpToDownHeapUp(data, len, i);
+        }
     }
 
 
@@ -37,6 +50,26 @@ public class MyHeapSort {
      * @param index 待堆化的节点下标
      */
     public void fromUpToDownHeapUp(int[] data, int count, int index) {
+        if (index < 1) {
+            return;
+        }
+        // 有子节点的情况下才循环
+        while (index * 2 <= count) {
+            int leftSub = index * 2; // 左子节点
+            int rightSub = index * 2 + 1; // 右子节点
+            int maxSub = leftSub; // 最大值的子节点坐标
+            // 有右子节点且比左子节点大
+            if (rightSub <= count && data[rightSub] > data[leftSub]) {
+                maxSub = rightSub;
+            }
+            // 最大子节点大于自身则需要往下堆化
+            if (data[maxSub] > data[index]) {
+                swap(data, maxSub, index);
+                index = maxSub;
+            } else { // 堆化结束
+                return;
+            }
+        }
     }
 
     /**
@@ -47,6 +80,16 @@ public class MyHeapSort {
      * @param index 待堆化的节点下标
      */
     public void fromDownToUpHeapUp(int[] data, int count, int index) {
+        if (index > count || index <= 1) {
+            return;
+        }
+        int parentIndex = index / 2;
+        // 父节点大于自身则需要往上堆化
+        while (parentIndex >= 1 && data[parentIndex] < data[index]) {
+            swap(data, parentIndex, index);
+            index = parentIndex;
+            parentIndex = index / 2;
+        }
     }
 
     /**
@@ -57,11 +100,14 @@ public class MyHeapSort {
      * @param p
      */
     private void swap(int[] list, int i, int p) {
+        int item = list[p];
+        list[p] = list[i];
+        list[i] = item;
     }
 
     public static void main(String[] args) {
         MyHeapSort myHeapSort = new MyHeapSort();
-        int n = 30;
+        int n = 10;
         int[] data = Sorts.getRandomArray(n);
         System.out.println("排序前");
         printArray(data);
