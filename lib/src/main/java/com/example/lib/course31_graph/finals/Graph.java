@@ -40,7 +40,6 @@ public class Graph {
         adj[t].add(s);
     }
 
-
     /**
      * 广度优先算法：从顶点s到t的最短路径
      *
@@ -124,7 +123,6 @@ public class Graph {
                 prev[h] = -1;
             }
         }
-
     }
 
     /**
@@ -149,7 +147,39 @@ public class Graph {
      * @param n
      */
     public Queue<Integer> getThreeByBfs(int s, int n) {
-        return null;
+        if (n <= 0) {
+            return null;
+        }
+        // 广度优先即按层遍历
+        boolean[] visited = new boolean[v]; // 存储已经遍历的点
+        Queue<Integer> queue = new LinkedList<>(); // 存放正在遍历的点
+        int nextCount = 0; // 下一层的节点数
+        int currentCount = 1; // 当前正在遍历的这一层的节点数
+        queue.add(s);
+        visited[s] = true;
+        while (!queue.isEmpty() && n > 0) {
+            int i = queue.poll();
+            currentCount--;
+            LinkedList<Integer> edgeList = adj[i];
+            Iterator<Integer> iterator = edgeList.iterator();
+            while (iterator.hasNext()) {
+                int h = iterator.next();
+                // 没有访问过就添加
+                if (!visited[h]) {
+                    nextCount++;
+                    queue.add(h);
+                    visited[h] = true;
+                }
+            }
+            // 遍历完一层时
+            if (currentCount == 0) {
+                n--;
+                currentCount = nextCount;
+                nextCount = 0;
+            }
+        }
+        printQueue(queue);
+        return queue;
     }
 
     /**
@@ -160,9 +190,6 @@ public class Graph {
      */
     public Queue<Integer> getThreeByDfs(int s, int n) {
         return null;
-    }
-
-    private void reGetThreeByDfs(Queue<Integer> queue, boolean[] visited, int s, int n) {
     }
 
     /**
@@ -195,11 +222,10 @@ public class Graph {
         //      |    |
         //      6 —— 7
 //        myGraph.bfs(0, 7); // 0-3-4-6-7
-        myGraph.dfs(0, 7);
+//        myGraph.dfs(0, 7);
 
         // 获取n度好友
-//        myGraph.getThreeByBfs(0, 1);
-//        myGraph.getThreeByDfs(0, 2); // 实现有问题，不能准确
+//        myGraph.getThreeByBfs(0, 4);
     }
 
 }
