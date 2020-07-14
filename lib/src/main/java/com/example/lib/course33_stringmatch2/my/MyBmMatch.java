@@ -51,7 +51,7 @@ public class MyBmMatch {
         }
 
         // 好字符规则数据预处理
-        // 值存储模式串中与后缀子串匹配的子串在模式串中的起始起始字符坐标，下标是这个匹配的后缀子串的长度，例如
+        // 值存储模式串中与后缀子串匹配的子串在模式串中的起始字符坐标，下标是这个匹配的后缀子串的长度，例如
         // 模式串：dcdc
         // 则其后缀子串有：  c              dc            cdc
         // 对应   sufix[1] == 1; sufix[2] == 0; sufix[3] == -1
@@ -139,7 +139,7 @@ public class MyBmMatch {
     }
 
     /**
-     * 坏字符规则
+     * 好字符规则
      *
      * @param mainStr  主串
      * @param matchStr 模式串
@@ -182,7 +182,7 @@ public class MyBmMatch {
     public static void main(String[] args) {
         MyBmMatch myBmMatch = new MyBmMatch();
         String mainStr = "wrekjfsdkfjpouiewrsldkjfxcmlds;fksprioepwsfa";
-        String matchStr = "sdfe";
+        String matchStr = "fxcm";
         int i = myBmMatch.bmSearch(mainStr, matchStr);
         System.out.print("" + i);
     }
