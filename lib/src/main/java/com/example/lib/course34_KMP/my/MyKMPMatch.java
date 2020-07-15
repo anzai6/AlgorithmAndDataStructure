@@ -95,7 +95,7 @@ public class MyKMPMatch {
     public static void main(String[] args) {
         MyKMPMatch myKMP = new MyKMPMatch();
         String mainStr = "wrekjfsdkfjpouiewrsdkojfxcmlds;fksprioepwsfa";
-        String matchStr = "sdko";
+        String matchStr = "sdkf";
         int i = myKMP.KMPMatch(mainStr, matchStr);
         System.out.print("" + i);
     }
