@@ -1,4 +1,4 @@
-package com.example.lib.course33_stringmatch2.my;
+package com.example.lib.course33_bm.my;
 
 import com.example.lib.course32_stringmatch.my.MyStringMatch;
 

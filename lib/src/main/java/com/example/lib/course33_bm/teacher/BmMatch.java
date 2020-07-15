@@ -1,4 +1,4 @@
-package com.example.lib.course33_stringmatch2.teacher;
+package com.example.lib.course33_bm.teacher;
 
 
 public class BmMatch {

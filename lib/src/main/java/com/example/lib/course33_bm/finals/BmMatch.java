@@ -1,4 +1,4 @@
-package com.example.lib.course33_stringmatch2.finals;
+package com.example.lib.course33_bm.finals;
 
 import java.util.HashMap;
 
