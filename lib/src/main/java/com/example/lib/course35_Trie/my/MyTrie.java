@@ -3,7 +3,7 @@ package com.example.lib.course35_Trie.my;
 /**
  * Trie树：适合通过前缀搜素匹配字符串，类似于搜索引擎的自动提示功能，比如：输入he 提示 hello
  * 还有输入法的自动补全，编辑器的自动补全等等，不太适合完全匹配的字符串查找，耗费内存过多，这个用红黑树或者散列表更合适
- * Created by qinshunan on 2019/4/19.
+ * Created by qinshunan on 2019/4/19.ce
  */
 
 public class MyTrie {
