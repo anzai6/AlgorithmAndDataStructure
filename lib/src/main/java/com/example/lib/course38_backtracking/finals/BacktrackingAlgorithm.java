@@ -22,12 +22,37 @@ public class BacktrackingAlgorithm {
     int[] result = new int[len]; // 下标表示行，值表示棋子放在哪一列
     boolean isComplete = false; // 终止条件
 
+    public void findEightQueens() {
+        for (int i = 0; i < len; i++) {
+            result[i] = -1;
+        }
+        findEightQueens(0);
+    }
+
     /**
      * 通过findEightQueens(0)开始一列一行的遍历找到合适摆放棋子的位置，不合适则回溯
      *
      * @param row 行
      */
     public void findEightQueens(int row) {
+        if (row == 8) {
+            isComplete = true;
+            printQueens(result);
+            return;
+        }
+        // 遍历每一列
+        for (int i = 0; i < len; i++) {
+            if (isComplete) {
+                return;
+            }
+            if (!isOk(row, i)) {
+                continue;
+            }
+            result[row] = i;
+            findEightQueens(row + 1);
+            // 回溯
+            result[row] = -1;
+        }
     }
 
     /**
@@ -38,6 +63,24 @@ public class BacktrackingAlgorithm {
      * @return
      */
     private boolean isOk(int row, int column) {
+        // 一行一行往上判断左上角和右上角以及当前列
+        for (int i = row - 1; i >= 0; i--) {
+
+            // 当前列是否放了棋子
+            if (result[i] == column) {
+                return false;
+            }
+
+            // 左上角
+            if (result[row - i] == column - i) {
+                return false;
+            }
+            // 右上角
+            if (row + i < len && result[row + i] == column + i) {
+                return false;
+            }
+        }
+
         return true;
     }
 
@@ -70,6 +113,25 @@ public class BacktrackingAlgorithm {
      * @param cw 已经装进背包的物体的总重量
      */
     public void pretendPack(int i, int cw) {
+        if (i == n || cw == maxPackW) { // 所有物体已经选择完毕或者背包已经装满
+            if (cw > maxW) {
+                maxW = cw;
+                for (int j = 0; j < n; j++) {
+                    maxResult[j] = packResult[j];
+                }
+            }
+            return;
+        }
+
+        // 不装进背包
+        packResult[i] = 0;
+        pretendPack(i + 1, cw);
+
+        // 装进背包
+        if (maxPackW >= cw + packW[i]) {
+            packResult[i] = 1;
+            pretendPack(i + 1, cw + packW[i]);
+        }
     }
 
     private void printPackResult() {
@@ -82,8 +144,9 @@ public class BacktrackingAlgorithm {
     public static void main(String[] args) {
         // 八皇后问题
         BacktrackingAlgorithm myBacktrackingAlgorithm = new BacktrackingAlgorithm();
-//        myBacktrackingAlgorithm.findEightQueens(0);
+        myBacktrackingAlgorithm.findEightQueens();
 
+        // 0-1 背包问题
         myBacktrackingAlgorithm.pretendPack(0, 0);
         myBacktrackingAlgorithm.printPackResult();
         System.out.println("maxW: " + myBacktrackingAlgorithm.maxW);
