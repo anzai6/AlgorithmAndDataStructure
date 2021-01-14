@@ -69,5 +69,6 @@ public class Pattern {
     public static void main(String[] args) {
         Pattern myPattern = new Pattern("?df?sd?p");
         System.out.println(myPattern.match("fdfwsdp") + "");
+        //
     }
 }
